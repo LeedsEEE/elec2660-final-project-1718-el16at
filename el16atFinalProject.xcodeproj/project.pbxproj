@@ -16,6 +16,11 @@
 		A22B6CD71FC745EA002CC9C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22B6CD51FC745EA002CC9C8 /* LaunchScreen.storyboard */; };
 		A22B6CE21FC745EA002CC9C8 /* el16atFinalProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6CE11FC745EA002CC9C8 /* el16atFinalProjectTests.m */; };
 		A22B6CED1FC745EA002CC9C8 /* el16atFinalProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6CEC1FC745EA002CC9C8 /* el16atFinalProjectUITests.m */; };
+		A22B6CFC1FC74CFE002CC9C8 /* AddTaskFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6CFB1FC74CFE002CC9C8 /* AddTaskFormViewController.m */; };
+		A22B6CFF1FC74D4C002CC9C8 /* AddEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6CFE1FC74D4C002CC9C8 /* AddEvent.m */; };
+		A22B6D041FC752CD002CC9C8 /* Task+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6D011FC752CD002CC9C8 /* Task+CoreDataClass.m */; };
+		A22B6D051FC752CD002CC9C8 /* Task+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6D031FC752CD002CC9C8 /* Task+CoreDataProperties.m */; };
+		A22B6D081FC755D3002CC9C8 /* Task+AddTheTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6D071FC755D3002CC9C8 /* Task+AddTheTasks.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,16 @@
 		A22B6CE81FC745EA002CC9C8 /* el16atFinalProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = el16atFinalProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22B6CEC1FC745EA002CC9C8 /* el16atFinalProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = el16atFinalProjectUITests.m; sourceTree = "<group>"; };
 		A22B6CEE1FC745EA002CC9C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A22B6CFA1FC74CFE002CC9C8 /* AddTaskFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddTaskFormViewController.h; path = ../AddTaskFormViewController.h; sourceTree = "<group>"; };
+		A22B6CFB1FC74CFE002CC9C8 /* AddTaskFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddTaskFormViewController.m; path = ../AddTaskFormViewController.m; sourceTree = "<group>"; };
+		A22B6CFD1FC74D4C002CC9C8 /* AddEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddEvent.h; path = ../../AddEvent.h; sourceTree = "<group>"; };
+		A22B6CFE1FC74D4C002CC9C8 /* AddEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddEvent.m; path = ../../AddEvent.m; sourceTree = "<group>"; };
+		A22B6D001FC752CD002CC9C8 /* Task+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Task+CoreDataClass.h"; sourceTree = "<group>"; };
+		A22B6D011FC752CD002CC9C8 /* Task+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+CoreDataClass.m"; sourceTree = "<group>"; };
+		A22B6D021FC752CD002CC9C8 /* Task+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Task+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A22B6D031FC752CD002CC9C8 /* Task+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A22B6D061FC755D3002CC9C8 /* Task+AddTheTasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Task+AddTheTasks.h"; sourceTree = SOURCE_ROOT; };
+		A22B6D071FC755D3002CC9C8 /* Task+AddTheTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+AddTheTasks.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +118,17 @@
 		A22B6CC31FC745E9002CC9C8 /* el16atFinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				A22B6D001FC752CD002CC9C8 /* Task+CoreDataClass.h */,
+				A22B6D011FC752CD002CC9C8 /* Task+CoreDataClass.m */,
+				A22B6D061FC755D3002CC9C8 /* Task+AddTheTasks.h */,
+				A22B6D071FC755D3002CC9C8 /* Task+AddTheTasks.m */,
+				A22B6D021FC752CD002CC9C8 /* Task+CoreDataProperties.h */,
+				A22B6D031FC752CD002CC9C8 /* Task+CoreDataProperties.m */,
 				A22B6CC71FC745E9002CC9C8 /* AppDelegate.h */,
+				A22B6CFD1FC74D4C002CC9C8 /* AddEvent.h */,
+				A22B6CFE1FC74D4C002CC9C8 /* AddEvent.m */,
+				A22B6CFA1FC74CFE002CC9C8 /* AddTaskFormViewController.h */,
+				A22B6CFB1FC74CFE002CC9C8 /* AddTaskFormViewController.m */,
 				A22B6CC81FC745E9002CC9C8 /* AppDelegate.m */,
 				A22B6CCA1FC745E9002CC9C8 /* ViewController.h */,
 				A22B6CCB1FC745E9002CC9C8 /* ViewController.m */,
@@ -276,10 +301,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A22B6CFC1FC74CFE002CC9C8 /* AddTaskFormViewController.m in Sources */,
 				A22B6CCC1FC745E9002CC9C8 /* ViewController.m in Sources */,
+				A22B6D081FC755D3002CC9C8 /* Task+AddTheTasks.m in Sources */,
+				A22B6D051FC752CD002CC9C8 /* Task+CoreDataProperties.m in Sources */,
 				A22B6CD21FC745E9002CC9C8 /* el16atFinalProject.xcdatamodeld in Sources */,
 				A22B6CC91FC745E9002CC9C8 /* AppDelegate.m in Sources */,
+				A22B6CFF1FC74D4C002CC9C8 /* AddEvent.m in Sources */,
 				A22B6CC61FC745E9002CC9C8 /* main.m in Sources */,
+				A22B6D041FC752CD002CC9C8 /* Task+CoreDataClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
