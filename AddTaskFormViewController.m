@@ -33,7 +33,6 @@
         
         [Task addTaskInfoFromDictionary:taskInfo];
     }*/
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +41,14 @@
 }
 
 - (IBAction)SaveButton:(UIButton *)sender {
+    /*
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd.MMM.yy"];
+    
+    NSDate *date = (NSDate *) [NSManagedObject valueForKey:@"dueDate"];*/
+    
+    //NSLog(@"theDate: |%@| \n", [dateFormat stringFromDate:date]);//output is null
+   
     NSDictionary *taskInfo = @{@"taskName": self.NameText.text, @"dueDate" : self.DateDayText.text,  @"estimatedTime" : self.TimeHoursText.text, @"difficulty": self.DifficultyText.text};
     
     [Task addTaskInfoFromDictionary:taskInfo];

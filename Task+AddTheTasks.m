@@ -23,7 +23,29 @@
     
     taskEntity.taskID = (int)[(NSNumber *)[taskInfo valueForKey:@"taskID"] integerValue];
     taskEntity.taskName = [taskInfo valueForKey:@"taskName"];
-    taskEntity.dueDate = [taskInfo valueForKey:@"dueDate"];
+    
+    
+    
+    /*NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd.MMM.yy"];
+    NSDate *date = (NSDate *) [taskInfo valueForKey:@"dueDate"];*/
+    
+    /*
+    NSDateFormatter *myXMLdateReader = [[NSDateFormatter alloc] init];
+    [myXMLdateReader setDateFormat:@"dd/MM/yy"];
+    NSDate *itsDate = [myXMLdateReader dateFromString: [TBXML textForElement:xmlDate]];
+    [myXMLdateReader release];
+    [Sets setValue:itsDate forKey:@"dueDate"];
+    */
+    /*
+    NSDateFormatter *parseFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    [parseFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"US"] autorelease]];
+    [parseFormatter setDateFormat:@"EEE, dd MM yy Z"];
+    NSString *dateString = @"Mon, 02 May 2011 +0000";
+    NSDate *dateToAdd = [parser.parseFormatter dateFromString:dateString];
+     */
+    
+    taskEntity.dueDate =  [taskInfo valueForKey:@"dueDate"];
     taskEntity.displayColour = (int)[(NSNumber *)[taskInfo valueForKey:@"displayColour"] integerValue];
     taskEntity.estimatedTime = (int)[(NSNumber *)[taskInfo valueForKey:@"estimatedTime"] integerValue];
     taskEntity.difficulty = [taskInfo valueForKey:@"difficulty"];
