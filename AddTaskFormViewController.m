@@ -11,9 +11,10 @@
 
 @interface AddTaskFormViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *NameText;
-@property (weak, nonatomic) IBOutlet UITextField *DateDayText;//DATE
-@property (weak, nonatomic) IBOutlet UITextField *DateMonthText; //DATE
-@property (weak, nonatomic) IBOutlet UITextField *DateYearText; //DATE
+//property (weak, nonatomic) IBOutlet UITextField *DateDayText;//DATE
+//@property (weak, nonatomic) IBOutlet UITextField *DateMonthText; //DATE
+//@property (weak, nonatomic) IBOutlet UITextField *DateYearText; //DATE
+@property (weak, nonatomic) IBOutlet UIDatePicker *DatePicker;
 @property (weak, nonatomic) IBOutlet UITextField *TimeHoursText; //NEDD TO SORT TIE SO THAT HOURS AND MINUTES GO TO ONE TIME NOT GOING TO ADDTO DICITIONARY JUST YET WELL ILL ADD A TIME BUT NOT MINUTES
 @property (weak, nonatomic) IBOutlet UITextField *TimeMinutesText;
 @property (weak, nonatomic) IBOutlet UITextField *DifficultyText;
@@ -49,9 +50,12 @@
     
     //NSLog(@"theDate: |%@| \n", [dateFormat stringFromDate:date]);//output is null
    
-    NSDictionary *taskInfo = @{@"taskName": self.NameText.text, @"dueDate" : self.DateDayText.text,  @"estimatedTime" : self.TimeHoursText.text, @"difficulty": self.DifficultyText.text};
+    NSDictionary *taskInfo = @{@"taskName": self.NameText.text,
+                               @"dueDate" : self.DatePicker.date,
+                               @"estimatedTime" : self.TimeHoursText.text,
+                               @"difficulty": self.DifficultyText.text};
     
-    [Task addTaskInfoFromDictionary:taskInfo];
+    self.DisplayOutput.text = [Task addTaskInfoFromDictionary:taskInfo].description;
 }
 
 
