@@ -11,20 +11,12 @@
 
 @interface AddTaskFormViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *NameText;
-@property (weak, nonatomic) IBOutlet UITextField *DateDayText;
-@property (weak, nonatomic) IBOutlet UITextField *DateMonthText;
-@property (weak, nonatomic) IBOutlet UITextField *DateYearText;
-@property (weak, nonatomic) IBOutlet UITextField *TimeHoursText;
-@property (weak, nonatomic) IBOutlet UITextField *TimeMinutesText;
-@property (weak, nonatomic) IBOutlet UITextField *DifficultyText;
-@property (weak, nonatomic) IBOutlet UITextView *DispplayOutput;
 
 @end
 
-@implementation AddTaskFormViewController
+//@implementation AddTaskFormViewController
 
-- (IBAction)SaveButton:(id)sender {
-}
+//- (IBAction)SaveButton:(UIBUtton)sender {
+//}
 
-@end
+//@end

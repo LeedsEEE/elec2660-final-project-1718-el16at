@@ -820,8 +820,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="How long should it take?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJU-nK-ul5">
-                                <frame key="frameInset" minX="43" minY="303" width="192" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long should it take?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJU-nK-ul5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="1Pe-Lc-Vhw"/>
+                                    <constraint firstAttribute="width" constant="192" id="6pU-ni-Mcy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -854,7 +857,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qox-2m-Pu6">
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="SaveButton:" destination="xaz-tC-grg" eventType="touchUpInside" id="jZt-1V-Zk4"/>
+                                    <action selector="SaveButton:" destination="xaz-tC-grg" eventType="touchUpInside" id="89s-J5-hh6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVV-CK-pXz">
@@ -869,9 +872,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="xaz-tC-grg" id="wKM-FR-pAf"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="dd" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IN0-o5-M9e">
                                 <constraints>
@@ -880,9 +880,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="xaz-tC-grg" id="XFV-zK-6dQ"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mg9-Nq-jcl">
                                 <constraints>
@@ -891,9 +888,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="xaz-tC-grg" id="ajD-gR-hkC"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="yy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mvu-ie-uUW">
                                 <constraints>
@@ -902,9 +896,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="xaz-tC-grg" id="2Zg-QU-Bva"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T5b-Pr-Rue">
                                 <constraints>
@@ -913,9 +904,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="xaz-tC-grg" id="3Ik-gi-Rud"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="18r-YV-eNY">
                                 <constraints>
@@ -924,9 +912,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="xaz-tC-grg" id="bEq-Zn-jhp"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Difficulty " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sob-FD-M7W">
                                 <constraints>
@@ -935,9 +920,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="xaz-tC-grg" id="7Qm-cn-dfP"/>
-                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Output" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rgo-T1-b6l">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -999,8 +981,8 @@
                         <outlet property="DateMonthText" destination="mg9-Nq-jcl" id="uJm-oi-WqI"/>
                         <outlet property="DateYearText" destination="mvu-ie-uUW" id="6to-zc-fjS"/>
                         <outlet property="DifficultyText" destination="sob-FD-M7W" id="aBn-Bs-rq7"/>
-                        <outlet property="DispplayOutput" destination="Rgo-T1-b6l" id="Msu-dY-gn7"/>
-                        <outlet property="NameText" destination="QDe-AI-dTl" id="QQZ-np-ABO"/>
+                        <outlet property="DisplayOutput" destination="Rgo-T1-b6l" id="uq2-Yv-nAG"/>
+                        <outlet property="NameText" destination="QDe-AI-dTl" id="dlb-v4-hh9"/>
                         <outlet property="TimeHoursText" destination="T5b-Pr-Rue" id="hEb-EG-h9t"/>
                         <outlet property="TimeMinutesText" destination="18r-YV-eNY" id="SFy-Ah-F4N"/>
                     </connections>

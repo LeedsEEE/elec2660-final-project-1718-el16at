@@ -9,5 +9,6 @@
 #import "Task+CoreDataClass.h"
 
 @interface Task (AddTheTasks)
++ (Task *)addTaskInfoFromDictionary :(NSDictionary *)taskInfo;
 
 @end

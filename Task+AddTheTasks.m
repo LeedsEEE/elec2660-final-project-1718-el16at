@@ -14,17 +14,18 @@
 + (Task *)addTaskInfoFromDictionary :(NSDictionary *)taskInfo
 {
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     
     Task *taskEntity = nil;
+    
     //Create new object
     taskEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:context];
     
-    taskEntity.taskID = [taskInfo valueForKey:@"taskID"];
+    taskEntity.taskID = (int)[(NSNumber *)[taskInfo valueForKey:@"taskID"] integerValue];
     taskEntity.taskName = [taskInfo valueForKey:@"taskName"];
     taskEntity.dueDate = [taskInfo valueForKey:@"dueDate"];
-    taskEntity.displayColour = [taskInfo valueForKey:@"displayColour"];
-    taskEntity.estimatedTime = [taskInfo valueForKey:@"estimatedTime"];
+    taskEntity.displayColour = (int)[(NSNumber *)[taskInfo valueForKey:@"displayColour"] integerValue];
+    taskEntity.estimatedTime = (int)[(NSNumber *)[taskInfo valueForKey:@"estimatedTime"] integerValue];
     taskEntity.difficulty = [taskInfo valueForKey:@"difficulty"];
     taskEntity.completed = [taskInfo valueForKey:@"completed"];
     
