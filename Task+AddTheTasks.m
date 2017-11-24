@@ -22,6 +22,13 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"task"];  //creates request to search through the database
     request.predicate = [NSPredicate predicateWithFormat:@"taskID = @%", taskID];
     
+    NSError *error;
+    NSArray *matchFound = [context executeFetchRequest: request error: &error];   //goes through the database fetching all the taskID and returns the error if there is an error
+    //CHECK LINE ABOVE
+    if (!matchFound || error || ([matchFound count] > 1) { //these are errors that could happen and they will be delt with in this loop
+        //hadle errors here
+    }
+    
     
     //Create new object
     
