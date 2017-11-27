@@ -21,6 +21,7 @@
 		A22B6D041FC752CD002CC9C8 /* Task+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6D011FC752CD002CC9C8 /* Task+CoreDataClass.m */; };
 		A22B6D051FC752CD002CC9C8 /* Task+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6D031FC752CD002CC9C8 /* Task+CoreDataProperties.m */; };
 		A22B6D081FC755D3002CC9C8 /* Task+AddTheTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6D071FC755D3002CC9C8 /* Task+AddTheTasks.m */; };
+		A2E4934C1FCC12FA00BD83D6 /* EditTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E4934B1FCC12FA00BD83D6 /* EditTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		A22B6D031FC752CD002CC9C8 /* Task+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A22B6D061FC755D3002CC9C8 /* Task+AddTheTasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Task+AddTheTasks.h"; sourceTree = SOURCE_ROOT; };
 		A22B6D071FC755D3002CC9C8 /* Task+AddTheTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+AddTheTasks.m"; sourceTree = SOURCE_ROOT; };
+		A2E4934A1FCC12FA00BD83D6 /* EditTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTask.h; sourceTree = "<group>"; };
+		A2E4934B1FCC12FA00BD83D6 /* EditTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 				A22B6CCA1FC745E9002CC9C8 /* ViewController.h */,
 				A22B6CCB1FC745E9002CC9C8 /* ViewController.m */,
 				A22B6CCD1FC745E9002CC9C8 /* Main.storyboard */,
+				A2E4934A1FCC12FA00BD83D6 /* EditTask.h */,
+				A2E4934B1FCC12FA00BD83D6 /* EditTask.m */,
 				A22B6CD31FC745EA002CC9C8 /* Assets.xcassets */,
 				A22B6CD51FC745EA002CC9C8 /* LaunchScreen.storyboard */,
 				A22B6CD81FC745EA002CC9C8 /* Info.plist */,
@@ -309,6 +314,7 @@
 				A22B6CC91FC745E9002CC9C8 /* AppDelegate.m in Sources */,
 				A22B6CFF1FC74D4C002CC9C8 /* AddEvent.m in Sources */,
 				A22B6CC61FC745E9002CC9C8 /* main.m in Sources */,
+				A2E4934C1FCC12FA00BD83D6 /* EditTask.m in Sources */,
 				A22B6D041FC752CD002CC9C8 /* Task+CoreDataClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +547,7 @@
 				A22B6CF31FC745EA002CC9C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A22B6CF41FC745EA002CC9C8 /* Build configuration list for PBXNativeTarget "el16atFinalProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +556,7 @@
 				A22B6CF61FC745EA002CC9C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A22B6CF71FC745EA002CC9C8 /* Build configuration list for PBXNativeTarget "el16atFinalProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +565,7 @@
 				A22B6CF91FC745EA002CC9C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -8,12 +8,11 @@
 
 #import "AddTaskFormViewController.h"
 #import "Task+AddTheTasks.h"
+#import "Task+AddTheTasks.m"
+#import "AppDelegate.h"
 
 @interface AddTaskFormViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *NameText;
-//property (weak, nonatomic) IBOutlet UITextField *DateDayText;//DATE
-//@property (weak, nonatomic) IBOutlet UITextField *DateMonthText; //DATE
-//@property (weak, nonatomic) IBOutlet UITextField *DateYearText; //DATE
 @property (weak, nonatomic) IBOutlet UIDatePicker *DatePicker;
 @property (weak, nonatomic) IBOutlet UITextField *TimeHoursText; //NEDD TO SORT TIE SO THAT HOURS AND MINUTES GO TO ONE TIME NOT GOING TO ADDTO DICITIONARY JUST YET WELL ILL ADD A TIME BUT NOT MINUTES
 @property (weak, nonatomic) IBOutlet UITextField *TimeMinutesText;
@@ -28,12 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    /*
-    - (IBAction)SaveButton:(UIButton *)sender {
-        NSDictionary *taskInfo = @{@"taskName": self.NameText.text, @"dueDate" : self.DateDayText.text,  @"estimatedTime" : self.TimeHoursText.text, @"difficulty": self.DifficultyText.text};
-        
-        [Task addTaskInfoFromDictionary:taskInfo];
-    }*/
+ 
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,18 +36,37 @@
 }
 
 - (IBAction)SaveButton:(UIButton *)sender {
+    //need to convertNSNumber to NSInteger
+    /*int taskID;                             //https://stackoverflow.com/questions/22826563/objective-c-cant-convert-nsnumber-to-int
+    taskID = [taskIDInteger intvalue];*/
+    
+    [taskID = int16Value : int16_t]
+    
+    NSInteger *taskID = taskInfo [@"taskID"];            //second tutorial
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"task"];  //creates request to search through the database
+    request.predicate = [NSPredicate predicateWithFormat:@"taskID = @%", taskID];
+    taskID++;
+    
+    //////****************repeated code need to sort
     /*
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"dd.MMM.yy"];
++ (Task *)addTaskInfoFromDictionary :(NSDictionary *)taskInfo{
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+        
+        Task *taskEntity = nil; //first tutorial*/
+
+    //NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"taskEntity"]; //code adapted from https://stackoverflow.com/questions/35578789/core-data-nsfetchrequest-within-specific-object-using-nspredicate
+    //[NSPredicate predicateWithFormat : @"taskEntity.taskID"];
+   // request.predicate = [NSPredicate predicateWithFormat:@"taskID = @%", taskID];
+
     
-    NSDate *date = (NSDate *) [NSManagedObject valueForKey:@"dueDate"];*/
-    
-    //NSLog(@"theDate: |%@| \n", [dateFormat stringFromDate:date]);//output is null
    
     NSDictionary *taskInfo = @{@"taskName": self.NameText.text,
                                @"dueDate" : self.DatePicker.date,
                                @"estimatedTime" : self.TimeHoursText.text,
-                               @"difficulty": self.DifficultyText.text};
+                               @"difficulty": self.DifficultyText.text
+                               };
+    //@"taskID" : taskEntity.taskID++
     
     self.DisplayOutput.text = [Task addTaskInfoFromDictionary:taskInfo].description;
 }
