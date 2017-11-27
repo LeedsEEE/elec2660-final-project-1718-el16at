@@ -40,12 +40,11 @@
     /*int taskID;                             //https://stackoverflow.com/questions/22826563/objective-c-cant-convert-nsnumber-to-int
     taskID = [taskIDInteger intvalue];*/
     
-    [taskID = int16Value : int16_t]
-    
+    /*
     NSInteger *taskID = taskInfo [@"taskID"];            //second tutorial
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"task"];  //creates request to search through the database
     request.predicate = [NSPredicate predicateWithFormat:@"taskID = @%", taskID];
-    taskID++;
+    taskID++;*/
     
     //////****************repeated code need to sort
     /*

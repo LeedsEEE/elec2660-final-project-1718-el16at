@@ -18,7 +18,7 @@
     
     Task *taskEntity = nil; //first tutorial
     
-    NSNumber *taskID = taskInfo [@"taskID"];            //second tutorial
+    /*NSNumber *taskID = taskInfo [@"taskID"];            //second tutorial
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"task"];  //creates request to search through the database
     request.predicate = [NSPredicate predicateWithFormat:@"taskID = @%", taskID];
     
@@ -46,7 +46,7 @@
         taskEntity.difficulty = [taskInfo valueForKey:@"difficulty"];
         taskEntity.completed = [taskInfo valueForKey:@"completed"];
         
-    }
+    }*/
         
     
     

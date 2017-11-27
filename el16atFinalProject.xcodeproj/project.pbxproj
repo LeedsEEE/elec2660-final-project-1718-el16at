@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A223AF981FCC583A00DC0AB1 /* DisplayTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A223AF971FCC583A00DC0AB1 /* DisplayTasksViewController.m */; };
 		A22B6CC61FC745E9002CC9C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6CC51FC745E9002CC9C8 /* main.m */; };
 		A22B6CC91FC745E9002CC9C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6CC81FC745E9002CC9C8 /* AppDelegate.m */; };
 		A22B6CCC1FC745E9002CC9C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6CCB1FC745E9002CC9C8 /* ViewController.m */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A223AF961FCC583A00DC0AB1 /* DisplayTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayTasksViewController.h; sourceTree = "<group>"; };
+		A223AF971FCC583A00DC0AB1 /* DisplayTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayTasksViewController.m; sourceTree = "<group>"; };
 		A22B6CC11FC745E9002CC9C8 /* el16atFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = el16atFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22B6CC51FC745E9002CC9C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A22B6CC71FC745E9002CC9C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				A22B6CCA1FC745E9002CC9C8 /* ViewController.h */,
 				A22B6CCB1FC745E9002CC9C8 /* ViewController.m */,
 				A22B6CCD1FC745E9002CC9C8 /* Main.storyboard */,
+				A223AF961FCC583A00DC0AB1 /* DisplayTasksViewController.h */,
+				A223AF971FCC583A00DC0AB1 /* DisplayTasksViewController.m */,
 				A2E4934A1FCC12FA00BD83D6 /* EditTask.h */,
 				A2E4934B1FCC12FA00BD83D6 /* EditTask.m */,
 				A22B6CD31FC745EA002CC9C8 /* Assets.xcassets */,
@@ -314,6 +319,7 @@
 				A22B6CC91FC745E9002CC9C8 /* AppDelegate.m in Sources */,
 				A22B6CFF1FC74D4C002CC9C8 /* AddEvent.m in Sources */,
 				A22B6CC61FC745E9002CC9C8 /* main.m in Sources */,
+				A223AF981FCC583A00DC0AB1 /* DisplayTasksViewController.m in Sources */,
 				A2E4934C1FCC12FA00BD83D6 /* EditTask.m in Sources */,
 				A22B6D041FC752CD002CC9C8 /* Task+CoreDataClass.m in Sources */,
 			);
