@@ -37,38 +37,9 @@
 }
 
 - (IBAction)SaveButton:(UIButton *)sender {
-    //need to convertNSNumber to NSInteger
-    /*int taskID;                             //https://stackoverflow.com/questions/22826563/objective-c-cant-convert-nsnumber-to-int
-    taskID = [taskIDInteger intvalue];*/
-    
-    /*
-    NSInteger *taskID = taskInfo [@"taskID"];            //second tutorial
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"task"];  //creates request to search through the database
-    request.predicate = [NSPredicate predicateWithFormat:@"taskID = @%", taskID];
-    taskID++;*/
-    
-    //////****************repeated code need to sort
-    /*
-+ (Task *)addTaskInfoFromDictionary :(NSDictionary *)taskInfo{
-    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
-        
-        Task *taskEntity = nil; //first tutorial*/
-
-    //NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"taskEntity"]; //code adapted from https://stackoverflow.com/questions/35578789/core-data-nsfetchrequest-within-specific-object-using-nspredicate
-    //[NSPredicate predicateWithFormat : @"taskEntity.taskID"];
-   // request.predicate = [NSPredicate predicateWithFormat:@"taskID = @%", taskID];
-    
-    /*taskMethods *taskMethod;
-    taskMethod =[[taskMethods alloc] init];
-    [taskMethod numberOfTasks:TaskCount];*/ //https://stackoverflow.com/questions/3572448/objective-c-call-function-on-another-class
-    
     [taskMethods numberOfTasks];
     _calculatedTaskID =  taskMethods.numberOfTasks + 1;
     NSNumber *IDOfTask = [NSNumber numberWithInt:_calculatedTaskID]; //Converts int to NSNumber as core data cant save data type inthttps://forums.macrumors.com/threads/converting-an-int-into-an-nsnumber-then-saving-to-an-array.547952/
-    
-
-
     
    
     NSDictionary *taskInfo = @{@"taskName": self.NameText.text,
@@ -78,16 +49,15 @@
                                @"taskID": IDOfTask};
     
     self.DisplayOutput.text = [Task addTaskInfoFromDictionary:taskInfo].description;
-    /*
-    
-    AppDelegate *appDelegate = (appDelegate *)[[UIApplication sharedApplication] delegate];
+    //Save Tasks
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
-    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;//
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
 
-    NSError *error = nil;
-    NSError *saveError = nil;
-    NSArray *taskArray = [context executeFetchRequest:request error:&error];
-    [[AppDelegate managedObjectContext] save:&saveError];*/
+    //NSError *error = nil;
+    NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    //NSArray *taskArray = [context executeFetchRequest:request error:&error];
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];
     
 }
 
