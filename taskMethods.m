@@ -20,4 +20,13 @@
     NSUInteger taskCount = [context countForFetchRequest:request error:&error]; //Oran Deutsch (student) this line counts the number of tasks in the entity task
     return (int)taskCount;
 }
+
+/*+
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.persistentContainer>ViewContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
+    NSError *error = nil;
+    NSError *saveError = nil;
+    NSArray *taskArray = [context executeFetchRequest:request error:&error];
+    [[AppDelegate managedObjectContext] save:&saveError];*/
 @end

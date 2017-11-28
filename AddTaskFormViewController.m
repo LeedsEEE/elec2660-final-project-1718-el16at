@@ -77,8 +77,18 @@
                                @"difficulty": self.DifficultyText.text,
                                @"taskID": IDOfTask};
     
-    
     self.DisplayOutput.text = [Task addTaskInfoFromDictionary:taskInfo].description;
+    /*
+    
+    AppDelegate *appDelegate = (appDelegate *)[[UIApplication sharedApplication] delegate];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
+    NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;//
+
+    NSError *error = nil;
+    NSError *saveError = nil;
+    NSArray *taskArray = [context executeFetchRequest:request error:&error];
+    [[AppDelegate managedObjectContext] save:&saveError];*/
+    
 }
 
 
