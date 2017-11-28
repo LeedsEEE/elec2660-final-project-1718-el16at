@@ -11,7 +11,7 @@
 #import "Task+AddTheTasks.h"
 
 @interface DisplayTasksViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextView *displaytasks;
+
 
 
 

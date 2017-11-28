@@ -49,14 +49,13 @@
                                @"taskID": IDOfTask};
     
     self.DisplayOutput.text = [Task addTaskInfoFromDictionary:taskInfo].description;
-    //Save Tasks
+    
+    
+    //save
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
-
-    //NSError *error = nil;
     NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
-    //NSArray *taskArray = [context executeFetchRequest:request error:&error];
     [[[appDelegate persistentContainer] viewContext] save:&saveError];
     
 }

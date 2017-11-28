@@ -1,19 +1,18 @@
 //
-//  EditTask.m
+//  DeleteTaskViewViewController.m
 //  el16atFinalProject
 //
-//  Created by Alice Tiler [el16at] on 27/11/2017.
+//  Created by Alice Tiler [el16at] on 28/11/2017.
 //  Copyright © 2017 University of Leeds. All rights reserved.
 //
 
-#import "EditTask.h"
-#import "Task+AddTheTasks.h"
+#import "DeleteTaskViewViewController.h"
 
-@interface EditTask ()
+@interface DeleteTaskViewViewController ()
 
 @end
 
-@implementation EditTask
+@implementation DeleteTaskViewViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,27 +22,22 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
 
-
-/*
-NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+/*NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 NSEntityDescription *entity = [NSEntityDescription entityForName:@"entityname" inManagedObjectContext:context];
 NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userID like %@",userID];
-[fetchRequest setPredicate:predicate];
-[fetchRequest setFetchLimit:1];
 [fetchRequest setEntity:entity];
+[fetchRequest setPredicate:predicate]
+
 NSError *error;
-NSArray *arrResult = [context executeFetchRequest:fetchRequest error:&error];
-YourEntityname *entity = arrResult[0];
-entity.userID = @"2"
-[appdelegate saveContext]; //https://stackoverflow.com/questions/38458195/delete-and-update-data-in-core-data-in-ios
- */
+NSArray *items = [context executeFetchRequest:fetchRequest error:&error];
 
-
-
-
-
+for (NSManagedObject *managedObject in items)
+{
+    [context deleteObject:managedObject]; //https://stackoverflow.com/questions/38458195/delete-and-update-data-in-core-data-in-ios
+}*/
 
 
 

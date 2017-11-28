@@ -35,16 +35,15 @@
     
     NSArray *results = [context executeFetchRequest:request error:&error];
     
-  // self.displaytasks.text = [Task  ]
     
-    if (error != nil) {
+    
+  
+    
+    if (error == nil) {
         
         //Deal with failure
     }
-    else {
-        
-        //Deal with success
-    }
+   
     
     //[request release];
 }

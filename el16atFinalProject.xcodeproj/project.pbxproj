@@ -24,6 +24,8 @@
 		A22B6D081FC755D3002CC9C8 /* Task+AddTheTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6D071FC755D3002CC9C8 /* Task+AddTheTasks.m */; };
 		A2E4934C1FCC12FA00BD83D6 /* EditTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E4934B1FCC12FA00BD83D6 /* EditTask.m */; };
 		A2EAA96E1FCD716E00485B01 /* taskMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EAA96D1FCD716E00485B01 /* taskMethods.m */; };
+		A2EAA9711FCD963C00485B01 /* DeleteTaskViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EAA9701FCD963C00485B01 /* DeleteTaskViewViewController.m */; };
+		A2EAA9741FCD9BA000485B01 /* DispalyTaskTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EAA9731FCD9BA000485B01 /* DispalyTaskTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,10 @@
 		A2E4934B1FCC12FA00BD83D6 /* EditTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTask.m; sourceTree = "<group>"; };
 		A2EAA96C1FCD716E00485B01 /* taskMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = taskMethods.h; sourceTree = SOURCE_ROOT; };
 		A2EAA96D1FCD716E00485B01 /* taskMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = taskMethods.m; sourceTree = SOURCE_ROOT; };
+		A2EAA96F1FCD963C00485B01 /* DeleteTaskViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteTaskViewViewController.h; sourceTree = SOURCE_ROOT; };
+		A2EAA9701FCD963C00485B01 /* DeleteTaskViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteTaskViewViewController.m; sourceTree = SOURCE_ROOT; };
+		A2EAA9721FCD9BA000485B01 /* DispalyTaskTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispalyTaskTableViewController.h; sourceTree = SOURCE_ROOT; };
+		A2EAA9731FCD9BA000485B01 /* DispalyTaskTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispalyTaskTableViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,10 @@
 				A22B6CCA1FC745E9002CC9C8 /* ViewController.h */,
 				A22B6CCB1FC745E9002CC9C8 /* ViewController.m */,
 				A22B6CCD1FC745E9002CC9C8 /* Main.storyboard */,
+				A2EAA9721FCD9BA000485B01 /* DispalyTaskTableViewController.h */,
+				A2EAA9731FCD9BA000485B01 /* DispalyTaskTableViewController.m */,
+				A2EAA96F1FCD963C00485B01 /* DeleteTaskViewViewController.h */,
+				A2EAA9701FCD963C00485B01 /* DeleteTaskViewViewController.m */,
 				A223AF961FCC583A00DC0AB1 /* DisplayTasksViewController.h */,
 				A223AF971FCC583A00DC0AB1 /* DisplayTasksViewController.m */,
 				A2E4934A1FCC12FA00BD83D6 /* EditTask.h */,
@@ -322,7 +332,9 @@
 				A2EAA96E1FCD716E00485B01 /* taskMethods.m in Sources */,
 				A22B6D051FC752CD002CC9C8 /* Task+CoreDataProperties.m in Sources */,
 				A22B6CD21FC745E9002CC9C8 /* el16atFinalProject.xcdatamodeld in Sources */,
+				A2EAA9741FCD9BA000485B01 /* DispalyTaskTableViewController.m in Sources */,
 				A22B6CC91FC745E9002CC9C8 /* AppDelegate.m in Sources */,
+				A2EAA9711FCD963C00485B01 /* DeleteTaskViewViewController.m in Sources */,
 				A22B6CFF1FC74D4C002CC9C8 /* AddEvent.m in Sources */,
 				A22B6CC61FC745E9002CC9C8 /* main.m in Sources */,
 				A223AF981FCC583A00DC0AB1 /* DisplayTasksViewController.m in Sources */,
