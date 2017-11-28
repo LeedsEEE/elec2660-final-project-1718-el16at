@@ -23,6 +23,7 @@
 		A22B6D051FC752CD002CC9C8 /* Task+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6D031FC752CD002CC9C8 /* Task+CoreDataProperties.m */; };
 		A22B6D081FC755D3002CC9C8 /* Task+AddTheTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6D071FC755D3002CC9C8 /* Task+AddTheTasks.m */; };
 		A2E4934C1FCC12FA00BD83D6 /* EditTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E4934B1FCC12FA00BD83D6 /* EditTask.m */; };
+		A2EAA96E1FCD716E00485B01 /* taskMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EAA96D1FCD716E00485B01 /* taskMethods.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		A22B6D071FC755D3002CC9C8 /* Task+AddTheTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+AddTheTasks.m"; sourceTree = SOURCE_ROOT; };
 		A2E4934A1FCC12FA00BD83D6 /* EditTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTask.h; sourceTree = "<group>"; };
 		A2E4934B1FCC12FA00BD83D6 /* EditTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTask.m; sourceTree = "<group>"; };
+		A2EAA96C1FCD716E00485B01 /* taskMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = taskMethods.h; sourceTree = SOURCE_ROOT; };
+		A2EAA96D1FCD716E00485B01 /* taskMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = taskMethods.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				A22B6D011FC752CD002CC9C8 /* Task+CoreDataClass.m */,
 				A22B6D061FC755D3002CC9C8 /* Task+AddTheTasks.h */,
 				A22B6D071FC755D3002CC9C8 /* Task+AddTheTasks.m */,
+				A2EAA96C1FCD716E00485B01 /* taskMethods.h */,
+				A2EAA96D1FCD716E00485B01 /* taskMethods.m */,
 				A22B6D021FC752CD002CC9C8 /* Task+CoreDataProperties.h */,
 				A22B6D031FC752CD002CC9C8 /* Task+CoreDataProperties.m */,
 				A22B6CC71FC745E9002CC9C8 /* AppDelegate.h */,
@@ -314,6 +319,7 @@
 				A22B6CFC1FC74CFE002CC9C8 /* AddTaskFormViewController.m in Sources */,
 				A22B6CCC1FC745E9002CC9C8 /* ViewController.m in Sources */,
 				A22B6D081FC755D3002CC9C8 /* Task+AddTheTasks.m in Sources */,
+				A2EAA96E1FCD716E00485B01 /* taskMethods.m in Sources */,
 				A22B6D051FC752CD002CC9C8 /* Task+CoreDataProperties.m in Sources */,
 				A22B6CD21FC745E9002CC9C8 /* el16atFinalProject.xcdatamodeld in Sources */,
 				A22B6CC91FC745E9002CC9C8 /* AppDelegate.m in Sources */,

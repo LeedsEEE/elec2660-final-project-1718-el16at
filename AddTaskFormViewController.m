@@ -10,6 +10,7 @@
 #import "Task+AddTheTasks.h"
 #import "Task+AddTheTasks.m"
 #import "AppDelegate.h"
+//#import "taskMethods.h"
 
 @interface AddTaskFormViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *NameText;
@@ -57,15 +58,25 @@
     //NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"taskEntity"]; //code adapted from https://stackoverflow.com/questions/35578789/core-data-nsfetchrequest-within-specific-object-using-nspredicate
     //[NSPredicate predicateWithFormat : @"taskEntity.taskID"];
    // request.predicate = [NSPredicate predicateWithFormat:@"taskID = @%", taskID];
+    
+    /*taskMethods *taskMethod;
+    taskMethod =[[taskMethods alloc] init];
+    [taskMethod numberOfTasks:TaskCount];*/ //https://stackoverflow.com/questions/3572448/objective-c-call-function-on-another-class
+    
+    [taskMethods numberOfTasks];
+    _calculatedTaskID =  taskMethods.numberOfTasks + 1;
+    NSNumber *IDOfTask = [NSNumber numberWithInt:_calculatedTaskID]; //Converts int to NSNumber as core data cant save data type inthttps://forums.macrumors.com/threads/converting-an-int-into-an-nsnumber-then-saving-to-an-array.547952/
+    
+
 
     
    
     NSDictionary *taskInfo = @{@"taskName": self.NameText.text,
                                @"dueDate" : self.DatePicker.date,
                                @"estimatedTime" : self.TimeHoursText.text,
-                               @"difficulty": self.DifficultyText.text
-                               };
-    //@"taskID" : taskEntity.taskID++
+                               @"difficulty": self.DifficultyText.text,
+                               @"taskID": IDOfTask};
+    
     
     self.DisplayOutput.text = [Task addTaskInfoFromDictionary:taskInfo].description;
 }

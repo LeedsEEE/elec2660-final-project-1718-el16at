@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "taskMethods.h"
 
 
 @interface AddTaskFormViewController : UIViewController
-
+@property (nonatomic) int calculatedTaskID;
 
 @end
 
