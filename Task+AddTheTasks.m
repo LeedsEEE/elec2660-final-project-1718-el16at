@@ -53,7 +53,7 @@
     //Create new object
     
     //First tutorial
-    
+
     taskEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:context];
     
     taskEntity.taskID = (int)[(NSNumber *)[taskInfo valueForKey:@"taskID"] integerValue];

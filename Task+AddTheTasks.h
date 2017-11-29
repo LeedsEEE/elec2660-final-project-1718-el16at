@@ -7,8 +7,10 @@
 //
 
 #import "Task+CoreDataClass.h"
+#import "AppDelegate.h"
 
 @interface Task (AddTheTasks)
 + (Task *)addTaskInfoFromDictionary :(NSDictionary *)taskInfo;
+
 
 @end
