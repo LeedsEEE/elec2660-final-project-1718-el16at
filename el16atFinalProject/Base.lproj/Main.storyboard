@@ -98,15 +98,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRi-KB-RC7">
-                                <frame key="frameInset" minX="149" minY="130" width="77" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRi-KB-RC7">
                                 <state key="normal" title="View Tasks"/>
                                 <connections>
                                     <segue destination="T38-cH-1cn" kind="show" id="fJ0-jW-nuU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1V-nB-NCM">
-                                <frame key="frameInset" minX="146" minY="196" width="83" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1V-nB-NCM">
                                 <state key="normal" title="View Events"/>
                                 <connections>
                                     <segue destination="xdd-cN-uzm" kind="show" id="h2e-ep-SdM">
@@ -114,8 +112,7 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-Kh-aS7">
-                                <frame key="frameInset" minX="109" minY="256" width="156" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-Kh-aS7">
                                 <state key="normal" title="View Tasks and Events"/>
                                 <connections>
                                     <segue destination="fwe-Bb-ccm" kind="show" id="b7S-Eg-AY1">
@@ -131,8 +128,7 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtU-Aw-6eW">
-                                <frame key="frameInset" minX="146" minY="318" width="83" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtU-Aw-6eW">
                                 <state key="normal" title="View Weeks"/>
                                 <connections>
                                     <segue destination="zSc-2d-F5T" kind="show" id="Mg5-Jw-vEK">
@@ -144,13 +140,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6pd-6U-u8z" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="30" id="5PN-uu-zoi"/>
+                            <constraint firstItem="bRi-KB-RC7" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="110" id="5lc-Dr-7Ts"/>
+                            <constraint firstItem="PtU-Aw-6eW" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="298" id="AGt-Ij-rfy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4H2-8u-jIg" secondAttribute="trailing" constant="7" id="H5P-ce-Bj5"/>
                             <constraint firstItem="4H2-8u-jIg" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="25" id="Hf8-F3-2dt"/>
                             <constraint firstItem="r1V-nB-NCM" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="Tic-3f-Lb9"/>
                             <constraint firstItem="6pd-6U-u8z" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="dTd-iT-Kd4"/>
                             <constraint firstItem="PtU-Aw-6eW" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="g8S-3D-RVv"/>
+                            <constraint firstItem="cVB-Kh-aS7" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="236" id="lZb-io-TJb"/>
                             <constraint firstItem="bRi-KB-RC7" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="rA2-m2-JwL"/>
                             <constraint firstItem="cVB-Kh-aS7" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="rBh-3J-oO1"/>
+                            <constraint firstItem="r1V-nB-NCM" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="176" id="xmb-Hn-xQu"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -654,6 +654,9 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FB0-UM-ydd">
                                 <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="DeleteButton:" destination="dBM-rY-yWv" eventType="touchUpInside" id="ndX-WZ-QeV"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search for task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TJ3-rZ-hRa">
                                 <constraints>
@@ -703,6 +706,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="DeleteButton" destination="FB0-UM-ydd" id="lLZ-gT-CDP"/>
                         <outlet property="SearchTaskNameButton" destination="Mds-Q6-Txx" id="dMP-tc-yfN"/>
                         <outlet property="SearchTaskNameText" destination="TJ3-rZ-hRa" id="xkO-WJ-9uQ"/>
                         <outlet property="SelectedTaskOutput" destination="pJM-kn-crb" id="rnu-dG-Z4l"/>

@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *TaskNameField;
 
 @property (weak, nonatomic) IBOutlet UITextView *SelectedTaskOutput;
+@property (weak, nonatomic) IBOutlet UIButton *DeleteButton;
 
 @end
