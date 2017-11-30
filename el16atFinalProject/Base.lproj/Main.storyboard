@@ -576,7 +576,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXk-at-Bta">
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <action selector="SearchTaskNameButton:" destination="O6n-PA-Lgj" eventType="touchUpInside" id="ZM3-Uc-fCO"/>
+                                    <action selector="SearchTaskNameButton:" destination="O6n-PA-Lgj" eventType="touchUpInside" id="Tmd-J9-zsv"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search task name here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VOf-QY-YFw">
@@ -587,21 +587,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jx1-uS-z39">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b4a-ps-y62">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="iLt-Ch-mZL"/>
+                                    <constraint firstAttribute="height" constant="21" id="MBL-M6-d3X"/>
+                                    <constraint firstAttribute="width" constant="165" id="wTs-g1-95d"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="b4a-ps-y62" secondAttribute="trailing" constant="111" id="2T7-RM-Sht"/>
                             <constraint firstItem="XSk-T2-7EX" firstAttribute="leading" secondItem="7zd-PU-EE9" secondAttribute="leadingMargin" constant="14" id="623-1V-QyH"/>
                             <constraint firstItem="6cr-gS-VuP" firstAttribute="leading" secondItem="8tc-XW-8Cd" secondAttribute="leading" id="6S2-x9-AgB"/>
                             <constraint firstItem="EHQ-2s-HWi" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" id="7Wm-EM-rjh"/>
-                            <constraint firstItem="jx1-uS-z39" firstAttribute="leading" secondItem="XSk-T2-7EX" secondAttribute="trailing" constant="30" id="7oE-e6-agW"/>
                             <constraint firstItem="UjM-uE-mrg" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="278" id="CRZ-Vo-84r"/>
                             <constraint firstItem="FXk-at-Bta" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="130" id="Del-By-bAM"/>
                             <constraint firstItem="NSC-Ds-9TQ" firstAttribute="leading" secondItem="7zd-PU-EE9" secondAttribute="leadingMargin" constant="40" id="Hma-ue-dwr"/>
@@ -610,7 +611,6 @@
                             <constraint firstItem="XOP-HJ-3ut" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" id="JRe-pH-wsp"/>
                             <constraint firstItem="UjM-uE-mrg" firstAttribute="leading" secondItem="PlZ-aE-ds2" secondAttribute="trailing" constant="39.5" id="KMU-df-UQf"/>
                             <constraint firstItem="8tc-XW-8Cd" firstAttribute="leading" secondItem="XSk-T2-7EX" secondAttribute="leading" id="N9o-JB-fzk"/>
-                            <constraint firstItem="jx1-uS-z39" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="176" id="NJQ-gY-hat"/>
                             <constraint firstItem="VOf-QY-YFw" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="131" id="Pry-1H-Z2y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EHQ-2s-HWi" secondAttribute="trailing" constant="6" id="SWg-Yk-8d8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ub7-BE-gK7" secondAttribute="trailing" constant="19" id="Sx1-r2-efH"/>
@@ -624,19 +624,19 @@
                             <constraint firstItem="jUM-YM-9Rh" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="278" id="j7J-j6-jkX"/>
                             <constraint firstItem="Szs-cY-nit" firstAttribute="leading" secondItem="6cr-gS-VuP" secondAttribute="leading" id="kLy-LA-c0T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FXk-at-Bta" secondAttribute="trailing" constant="51" id="kal-pb-etl"/>
+                            <constraint firstItem="b4a-ps-y62" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="181" id="tht-ES-GSx"/>
                             <constraint firstItem="Szs-cY-nit" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="521" id="vKV-rC-YDm"/>
                             <constraint firstItem="jUM-YM-9Rh" firstAttribute="leading" secondItem="UjM-uE-mrg" secondAttribute="trailing" constant="43" id="zEy-he-ZoQ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="SearchTaskNameButton" destination="FXk-at-Bta" id="fYg-NG-V3L"/>
                         <outlet property="SearchTaskNameField" destination="VOf-QY-YFw" id="1O3-FA-GEP"/>
-                        <outlet property="TaskNameField" destination="jx1-uS-z39" id="3Lb-A9-AWi"/>
+                        <outlet property="TaskNameField" destination="b4a-ps-y62" id="OK9-pU-fwR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2CX-x1-2lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1837.5999999999999" y="432.23388305847078"/>
+            <point key="canvasLocation" x="2000.8" y="425.93703148425789"/>
         </scene>
         <!--Delete Task View View Controller-->
         <scene sceneID="hLc-E8-Duf">

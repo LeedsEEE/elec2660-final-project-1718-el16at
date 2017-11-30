@@ -51,13 +51,13 @@
     return tempDict;
 }
 
-+ (void) deleteTask :(NSDictionary *)taskName
++ (void) deleteTask :(NSDictionary *)taskname
 {
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *Task = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:context];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"taskName == %@",taskName];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"taskName == %@",taskname];
     [request setEntity:Task];
     [request setPredicate:predicate];
     

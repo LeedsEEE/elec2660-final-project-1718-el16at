@@ -25,7 +25,16 @@
 }
 
 - (IBAction)SearchTaskNameButton:(UIButton *)sender {
-    self.TaskNameField.text = [taskMethods searchTaskName:self.SearchTaskNameField.text].description;
+    
+
+    //NSArray *taskToEdit =[taskMethods searchTaskName:self.SearchTaskNameField.text];
+    NSArray *taskToEdit = [taskMethods searchTaskName:self.SearchTaskNameField.text];
+    
+    Task *taskdata = [taskToEdit objectAtIndex:0]; //https://stackoverflow.com/questions/7314492/how-to-bind-textfields-to-attributes-of-one-core-data-entity-containing-one-row
+    
+   /* NSString *detail = [NSString stringWithFormat:@"%@ %@ %@", [tempTask valueForKey:@"difficulty"], [tempTask valueForKey:@"dueDate"], [tempTask valueForKey :@"estimatedTime"]];*/
+
+    self.TaskNameField.text = taskdata.taskName;
 }
 
 
