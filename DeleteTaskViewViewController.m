@@ -24,6 +24,16 @@
     // Dispose of any resources that can be recreated.
     
 }
+- (IBAction)SearchTaskNameBtton:(UIButton*)sender {
+    //[taskMethods searchTaskName:taskname];
+    
+    
+    self.TaskNameField.text = [taskMethods searchTaskName:self.SearchTaskNameText.text].description;
+    self.SelectedTaskOutput.text = [taskMethods searchTaskName:self.SearchTaskNameText.text].description;
+    
+    
+}
+
 
 /*NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 NSEntityDescription *entity = [NSEntityDescription entityForName:@"entityname" inManagedObjectContext:context];

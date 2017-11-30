@@ -98,17 +98,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRi-KB-RC7">
-                                <frame key="frameInset" minX="138" minY="129" width="77" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRi-KB-RC7">
+                                <frame key="frameInset" minX="149" minY="130" width="77" height="30"/>
                                 <state key="normal" title="View Tasks"/>
                                 <connections>
                                     <segue destination="T38-cH-1cn" kind="show" id="fJ0-jW-nuU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1V-nB-NCM">
-                                <frame key="frameInset" minX="135" minY="202" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1V-nB-NCM">
+                                <frame key="frameInset" minX="146" minY="196" width="83" height="30"/>
                                 <state key="normal" title="View Events"/>
                                 <connections>
                                     <segue destination="xdd-cN-uzm" kind="show" id="h2e-ep-SdM">
@@ -116,22 +114,11 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-Kh-aS7">
-                                <frame key="frameInset" minX="98" minY="270" width="156" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-Kh-aS7">
+                                <frame key="frameInset" minX="109" minY="256" width="156" height="30"/>
                                 <state key="normal" title="View Tasks and Events"/>
                                 <connections>
                                     <segue destination="fwe-Bb-ccm" kind="show" id="b7S-Eg-AY1">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtU-Aw-6eW">
-                                <frame key="frameInset" minX="135" minY="331" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="View Weeks"/>
-                                <connections>
-                                    <segue destination="zSc-2d-F5T" kind="show" id="Mg5-Jw-vEK">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
@@ -144,13 +131,26 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtU-Aw-6eW">
+                                <frame key="frameInset" minX="146" minY="318" width="83" height="30"/>
+                                <state key="normal" title="View Weeks"/>
+                                <connections>
+                                    <segue destination="zSc-2d-F5T" kind="show" id="Mg5-Jw-vEK">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6pd-6U-u8z" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="30" id="5PN-uu-zoi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4H2-8u-jIg" secondAttribute="trailing" constant="7" id="H5P-ce-Bj5"/>
                             <constraint firstItem="4H2-8u-jIg" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="25" id="Hf8-F3-2dt"/>
+                            <constraint firstItem="r1V-nB-NCM" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="Tic-3f-Lb9"/>
                             <constraint firstItem="6pd-6U-u8z" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="dTd-iT-Kd4"/>
+                            <constraint firstItem="PtU-Aw-6eW" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="g8S-3D-RVv"/>
+                            <constraint firstItem="bRi-KB-RC7" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="rA2-m2-JwL"/>
+                            <constraint firstItem="cVB-Kh-aS7" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="rBh-3J-oO1"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -171,7 +171,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ynF-dx-sO1" id="DtP-2C-lS7">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gts-V5-KSP">
@@ -655,17 +655,59 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FB0-UM-ydd">
                                 <state key="normal" title="Delete"/>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search for task" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TJ3-rZ-hRa">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="Pkp-hI-IPq"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mds-Q6-Txx">
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="SearchTaskNameBtton:" destination="dBM-rY-yWv" eventType="touchUpInside" id="o6k-g0-qtc"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HX6-2x-lFZ">
+                                <frame key="frameInset" minX="66" minY="295" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="output" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pJM-kn-crb">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="9wb-Za-f4X"/>
+                                    <constraint firstAttribute="width" constant="240" id="xhR-MX-jC4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="TJ3-rZ-hRa" firstAttribute="top" secondItem="qYE-mv-fvp" secondAttribute="bottom" constant="151" id="3FI-oC-aBH"/>
                             <constraint firstItem="xXB-bD-Ibd" firstAttribute="top" secondItem="qYE-mv-fvp" secondAttribute="bottom" constant="-1" id="6Mt-Nm-CBo"/>
+                            <constraint firstItem="Mds-Q6-Txx" firstAttribute="leading" secondItem="7Zt-6e-Scj" secondAttribute="leadingMargin" constant="135" id="6pe-61-30x"/>
                             <constraint firstItem="xXB-bD-Ibd" firstAttribute="leading" secondItem="7Zt-6e-Scj" secondAttribute="leadingMargin" constant="303" id="JIE-EN-mJd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FB0-UM-ydd" secondAttribute="trailing" constant="161" id="Joc-sx-cnE"/>
                             <constraint firstItem="bsF-Fn-6Oi" firstAttribute="top" secondItem="qYE-mv-fvp" secondAttribute="bottom" constant="8" id="Qds-gu-H9p"/>
                             <constraint firstItem="bsF-Fn-6Oi" firstAttribute="centerX" secondItem="7Zt-6e-Scj" secondAttribute="centerX" id="Wsj-i9-ToZ"/>
+                            <constraint firstItem="pJM-kn-crb" firstAttribute="leading" secondItem="7Zt-6e-Scj" secondAttribute="leadingMargin" constant="50" id="bdA-xq-VHw"/>
+                            <constraint firstItem="pJM-kn-crb" firstAttribute="top" secondItem="qYE-mv-fvp" secondAttribute="bottom" constant="369" id="f6g-gl-woA"/>
+                            <constraint firstItem="Mds-Q6-Txx" firstAttribute="top" secondItem="qYE-mv-fvp" secondAttribute="bottom" constant="199" id="gzn-7Y-bS6"/>
+                            <constraint firstItem="TJ3-rZ-hRa" firstAttribute="leading" secondItem="7Zt-6e-Scj" secondAttribute="leadingMargin" constant="111" id="vIv-cm-2uw"/>
                             <constraint firstItem="FB0-UM-ydd" firstAttribute="top" secondItem="qYE-mv-fvp" secondAttribute="bottom" constant="569" id="yeI-2A-vh3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="SearchTaskNameButton" destination="Mds-Q6-Txx" id="dMP-tc-yfN"/>
+                        <outlet property="SearchTaskNameText" destination="TJ3-rZ-hRa" id="xkO-WJ-9uQ"/>
+                        <outlet property="SelectedTaskOutput" destination="pJM-kn-crb" id="rnu-dG-Z4l"/>
+                        <outlet property="TaskNameField" destination="HX6-2x-lFZ" id="4iB-MM-AJt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFD-Dh-VTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1161,8 +1203,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Vkj-Yf-GnD"/>
-        <segue reference="Y07-no-kBH"/>
         <segue reference="eIv-dI-ucW"/>
-        <segue reference="vPx-Uq-csh"/>
+        <segue reference="3t8-Fd-Yz0"/>
+        <segue reference="S8n-SR-NG2"/>
     </inferredMetricsTieBreakers>
 </document>

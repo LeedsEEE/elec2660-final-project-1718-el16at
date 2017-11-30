@@ -23,17 +23,17 @@
 
 //this code is from https://www.youtube.com/watch?v=p_INW9noMDI
 
-+ (Task *)addTaskInfoFromDictionary :(NSDictionary *)taskInfo {
++ (NSArray*)searchTaskName :(NSDictionary *)taskname {
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     
     Task *taskEntity = nil; //first tutorial
     NSError *error;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
-    request.predicate = [NSPredicate predicateWithFormat:@"%@", taskName];
+    request.predicate = [NSPredicate predicateWithFormat:@"taskName == %@", taskname];
     NSArray *fetchedTask = [context executeFetchRequest:request error:&error];
     NSMutableArray *results = [[NSMutableArray alloc] init];
-    for (Task *taskEntity in fetchedTask) {
+    for (taskEntity in fetchedTask) {
         [results addObject:[self createObjectFromEntity:taskEntity]];
     }
     return results;
@@ -42,13 +42,12 @@
 {
     NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];
     tempDict[@"taskName"] = taskInfo.taskName;
-    //NSString *
-    tempDict[@"taskID"] = taskInfo.taskID;
+    tempDict[@"taskID"] = [NSString stringWithFormat:@"%D", taskInfo.taskID];
     tempDict[@"dueDate"] = taskInfo.dueDate;
-    tempDict[@"displayColour"] = taskInfo.displayColour;
-    tempDict[@"estimatedTime"] = taskInfo.estimatedTime;
+    tempDict[@"displayColour"] = [NSString stringWithFormat:@"%D", taskInfo.displayColour];
+    tempDict[@"estimatedTime"] = [NSString stringWithFormat:@"%D", taskInfo.estimatedTime];
     tempDict[@"difficulty"] = taskInfo.difficulty;
-    tempDict[@"completed"] = taskInfo.completed;
+    tempDict[@"completed"] = [NSString stringWithFormat:@"%D",taskInfo.completed];
     return tempDict;
 }
 /*

@@ -11,6 +11,9 @@
 #import "AppDelegate.h"
 
 @interface taskMethods : NSObject
+
 + (int)numberOfTasks;
++ (Task *)searchTaskName :(NSDictionary *)taskname;
++ (NSDictionary *)createObjectFromEntity:(Task *)taskInfo;
 
 @end

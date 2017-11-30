@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "taskMethods.h"
 
 @interface DeleteTaskViewViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UITextField *SearchTaskNameText;
+
+@property (weak, nonatomic) IBOutlet UIButton *SearchTaskNameButton;
+
+@property (weak, nonatomic) IBOutlet UITextField *TaskNameField;
+
+@property (weak, nonatomic) IBOutlet UITextView *SelectedTaskOutput;
 
 @end
