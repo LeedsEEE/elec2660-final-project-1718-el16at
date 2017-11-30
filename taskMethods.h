@@ -15,5 +15,6 @@
 + (int)numberOfTasks;
 + (Task *)searchTaskName :(NSDictionary *)taskname;
 + (NSDictionary *)createObjectFromEntity:(Task *)taskInfo;
++ (void) deleteTask :(NSDictionary *)taskname;
 
 @end

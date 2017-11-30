@@ -34,75 +34,13 @@
     
 }
 - (IBAction)DeleteButton:(UIButton*)sender {
-    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
-    NSArray *taskToDelete = [taskMethods searchTaskName:self.SearchTaskNameText.text];
-    //[context deleteObject:taskToDelete];  //https://stackoverflow.com/questions/11039575/delete-object-in-core-data this line deletes the task that was delected
-    
-    /*+ (NSArray*)searchTaskName :(NSDictionary *)taskname {
-        AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-        NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
-        
-        Task *taskEntity = nil; //first tutorial
-        NSError *error;
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
-        request.predicate = [NSPredicate predicateWithFormat:@"taskName == %@", taskname];
-        NSArray *fetchedTask = [context executeFetchRequest:request error:&error];
-        NSMutableArray *results = [[NSMutableArray alloc] init];
-        for (taskEntity in fetchedTask) {
-            [results addObject:[self createObjectFromEntity:taskEntity]];
-        }
-        return results;
-    }
-    + (NSDictionary *)createObjectFromEntity:(Task *)taskInfo
-    {
-        NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];
-        tempDict[@"taskName"] = taskInfo.taskName;
-        tempDict[@"taskID"] = [NSString stringWithFormat:@"%D", taskInfo.taskID];
-        tempDict[@"dueDate"] = taskInfo.dueDate;
-        tempDict[@"displayColour"] = [NSString stringWithFormat:@"%D", taskInfo.displayColour];
-        tempDict[@"estimatedTime"] = [NSString stringWithFormat:@"%D", taskInfo.estimatedTime];
-        tempDict[@"difficulty"] = taskInfo.difficulty;
-        tempDict[@"completed"] = [NSString stringWithFormat:@"%D",taskInfo.completed];
-        return tempDict;
-    }*/
-
-    
-    
-    
-    
-   // NSArray *TaskToDelete =[taskMethods searchTaskName:self.SearchTaskNameText.text];
-    
-    //[[self managedObjectContext] deleteObject:[taskMethods searchTaskName:self.SearchTaskNameText.text]];
-    
-    
-    /*for (NSManagedObject *managedObject in TaskToDelete)
-    {
-        [context deleteObject:managedObject]; //https://stackoverflow.com/questions/38458195/delete-and-update-data-in-core-data-in-ios
-    }*/
-    
-    
-    
-    
-    /*
+    [taskMethods deleteTask:self.SearchTaskNameText.text];
+    //save data permenantly
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-        NSManagedObjectContext * context = appDelegate.persistentContainer.viewContext;
-    NSError *error;
-
-    NSEntityDescription *Task = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:context];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"taskName == %@",taskName];
-    [request setEntity:Task];
-    [request setPredicate:predicate]
-    
-    NSError *error;
-    NSArray *items = [context executeFetchRequest:fetchRequest error:&error];
-    
-    for (NSManagedObject *managedObject in items)
-    {
-        [context deleteObject:managedObject]; //https://stackoverflow.com/questions/38458195/delete-and-update-data-in-core-data-in-ios
-    }*/
-
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
+    NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];
     
 }
 

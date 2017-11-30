@@ -51,14 +51,13 @@
     return tempDict;
 }
 
-//+ (NSArray*)deleteTask:(Task *)taskname
-+ (void) deleteTask
++ (void) deleteTask :(NSDictionary *)taskName
 {
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *Task = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:context];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"taskName like %@",taskName];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"taskName == %@",taskName];
     [request setEntity:Task];
     [request setPredicate:predicate];
     
@@ -71,6 +70,14 @@
     }
 }
 
++ (void) saveData {
+//save data permenantly
+AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
+NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
+NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+[[[appDelegate persistentContainer] viewContext] save:&saveError];
+}
 
 /*
 

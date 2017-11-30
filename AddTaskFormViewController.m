@@ -50,14 +50,14 @@
     
     self.DisplayOutput.text = [Task addTaskInfoFromDictionary:taskInfo].description;
     
-    
-    //save
+    /*
+    //save data permenantly
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
     NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];
-    
+    */
     
     
     
