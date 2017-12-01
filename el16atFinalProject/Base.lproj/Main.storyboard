@@ -538,6 +538,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ub7-BE-gK7">
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="SaveEditButton:" destination="O6n-PA-Lgj" eventType="touchUpInside" id="v7c-zG-7xR"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How long should it take?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cr-gS-VuP">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -601,7 +604,7 @@
                             </textView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-P1-D43">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="222" id="0ew-yk-FLG"/>
+                                    <constraint firstAttribute="width" constant="249" id="0ew-yk-FLG"/>
                                     <constraint firstAttribute="height" constant="157" id="8Z4-ig-4Vg"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="533832438.78333598">
@@ -634,7 +637,7 @@
                             <constraint firstItem="Ohg-Xq-idU" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="511" id="kI6-pb-gPB"/>
                             <constraint firstItem="Szs-cY-nit" firstAttribute="leading" secondItem="6cr-gS-VuP" secondAttribute="leading" id="kLy-LA-c0T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FXk-at-Bta" secondAttribute="trailing" constant="51" id="kal-pb-etl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="U1v-P1-D43" secondAttribute="trailing" constant="17" id="loj-t2-ASz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="U1v-P1-D43" secondAttribute="trailing" constant="-10" id="loj-t2-ASz"/>
                             <constraint firstItem="b4a-ps-y62" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="181" id="tht-ES-GSx"/>
                             <constraint firstItem="U1v-P1-D43" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="238" id="uBq-Sl-Bfd"/>
                             <constraint firstItem="Szs-cY-nit" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="521" id="vKV-rC-YDm"/>
@@ -1239,9 +1242,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3t8-Fd-Yz0"/>
+        <segue reference="74P-KI-X3l"/>
         <segue reference="eIv-dI-ucW"/>
-        <segue reference="bdu-yA-qi1"/>
-        <segue reference="FdV-8r-SAV"/>
+        <segue reference="3t8-Fd-Yz0"/>
+        <segue reference="S8n-SR-NG2"/>
     </inferredMetricsTieBreakers>
 </document>

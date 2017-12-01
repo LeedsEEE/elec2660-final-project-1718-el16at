@@ -17,5 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *EditDifficultyField;
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *EditDueDate;
+@property (nonatomic) int calculatedTaskID;
+
 
 @end
