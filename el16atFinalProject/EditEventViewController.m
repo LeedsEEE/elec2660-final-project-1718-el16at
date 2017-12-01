@@ -37,6 +37,21 @@
     
 }
 
+- (IBAction)SaveEdit:(UIButton *)sender {
+    [eventMethods deleteEvent:self.SearchNameFeild.text]; //deletes old object
+    
+    NSDictionary *eventInfo = @{@"eventName": self.EditNameField.text,
+                               @"eventDate" : self.EditDatePicker.date};
+    [Event addEventInfoFromDictionary:eventInfo];
+    
+    //save data permenantly
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
+    NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];
+    
+}
 
 
 
