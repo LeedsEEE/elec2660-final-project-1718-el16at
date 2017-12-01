@@ -25,6 +25,7 @@
 		A28B7A5C1FD1CE07004FDB62 /* Event+AddEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = A28B7A5B1FD1CE07004FDB62 /* Event+AddEvents.m */; };
 		A28B7A611FD1D00B004FDB62 /* Event+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A28B7A5E1FD1D00B004FDB62 /* Event+CoreDataClass.m */; };
 		A28B7A621FD1D00B004FDB62 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A28B7A601FD1D00B004FDB62 /* Event+CoreDataProperties.m */; };
+		A29DBE4B1FD20DF8008EDA1D /* button_border2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A29DBE4A1FD20DF8008EDA1D /* button_border2.jpg */; };
 		A2C4A2C71FD1DCC60008DC89 /* EditEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C4A2C61FD1DCC60008DC89 /* EditEventViewController.m */; };
 		A2C4A2CA1FD1DCE80008DC89 /* DeleteEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C4A2C91FD1DCE80008DC89 /* DeleteEventViewController.m */; };
 		A2C4A2CD1FD1DF7F0008DC89 /* eventMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C4A2CC1FD1DF7F0008DC89 /* eventMethods.m */; };
@@ -87,6 +88,7 @@
 		A28B7A5E1FD1D00B004FDB62 /* Event+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Event+CoreDataClass.m"; path = "../Event+CoreDataClass.m"; sourceTree = "<group>"; };
 		A28B7A5F1FD1D00B004FDB62 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Event+CoreDataProperties.h"; path = "../Event+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A28B7A601FD1D00B004FDB62 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Event+CoreDataProperties.m"; path = "../Event+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A29DBE4A1FD20DF8008EDA1D /* button_border2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = button_border2.jpg; sourceTree = "<group>"; };
 		A2C4A2C51FD1DCC60008DC89 /* EditEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditEventViewController.h; sourceTree = "<group>"; };
 		A2C4A2C61FD1DCC60008DC89 /* EditEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventViewController.m; sourceTree = "<group>"; };
 		A2C4A2C81FD1DCE80008DC89 /* DeleteEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteEventViewController.h; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		A22B6CC31FC745E9002CC9C8 /* el16atFinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				A29DBE4A1FD20DF8008EDA1D /* button_border2.jpg */,
 				A28B7A5D1FD1D00B004FDB62 /* Event+CoreDataClass.h */,
 				A28B7A5E1FD1D00B004FDB62 /* Event+CoreDataClass.m */,
 				A28B7A5F1FD1D00B004FDB62 /* Event+CoreDataProperties.h */,
@@ -329,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A29DBE4B1FD20DF8008EDA1D /* button_border2.jpg in Resources */,
 				A22B6CD71FC745EA002CC9C8 /* LaunchScreen.storyboard in Resources */,
 				A22B6CD41FC745EA002CC9C8 /* Assets.xcassets in Resources */,
 				A22B6CCF1FC745E9002CC9C8 /* Main.storyboard in Resources */,

@@ -33,7 +33,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXf-bK-Ai7">
-                                <state key="normal" title="Add Activities">
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="69" id="CRY-ba-Esx"/>
+                                    <constraint firstAttribute="height" constant="69" id="KdD-j9-9aB"/>
+                                    <constraint firstAttribute="width" constant="150" id="PYQ-4t-vyg"/>
+                                </constraints>
+                                <state key="normal" title="Add Activities" backgroundImage="button_border2.jpg">
                                     <color key="titleShadowColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -43,7 +48,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hr-VH-org">
-                                <state key="normal" title="View"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="51c-EP-h0m"/>
+                                    <constraint firstAttribute="height" constant="70" id="F42-Ib-Idb"/>
+                                </constraints>
+                                <state key="normal" title="View" backgroundImage="button_border2.jpg"/>
                                 <connections>
                                     <segue destination="QrI-04-eIu" kind="show" id="3t8-Fd-Yz0">
                                         <nil key="action"/>
@@ -52,9 +61,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLc-7K-N8Z">
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="LeS-fD-rAN"/>
                                     <constraint firstAttribute="height" constant="69" id="mBu-az-nZv"/>
                                 </constraints>
-                                <state key="normal" title="Edit or Delete Actvities"/>
+                                <state key="normal" title="Edit or Delete Actvities" backgroundImage="button_border2.jpg"/>
                                 <connections>
                                     <segue destination="bgI-cL-33k" kind="show" id="74P-KI-X3l">
                                         <nil key="action"/>
@@ -65,15 +75,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="QXf-bK-Ai7" firstAttribute="top" secondItem="bLB-1d-NwG" secondAttribute="bottom" constant="94" id="3BA-3A-BPW"/>
+                            <constraint firstItem="4hr-VH-org" firstAttribute="centerX" secondItem="Od1-dk-GW5" secondAttribute="centerX" id="5UO-c5-EID"/>
                             <constraint firstItem="q8C-3Z-KCQ" firstAttribute="centerX" secondItem="Od1-dk-GW5" secondAttribute="centerX" id="9He-fx-Ga3"/>
                             <constraint firstItem="q8C-3Z-KCQ" firstAttribute="top" secondItem="bLB-1d-NwG" secondAttribute="bottom" constant="27" id="Eah-Ib-pO8"/>
-                            <constraint firstItem="4hr-VH-org" firstAttribute="centerX" secondItem="Od1-dk-GW5" secondAttribute="centerX" id="GnK-it-4x2"/>
-                            <constraint firstItem="kLc-7K-N8Z" firstAttribute="centerX" secondItem="Od1-dk-GW5" secondAttribute="centerX" id="J1r-9I-vc3"/>
-                            <constraint firstItem="kLc-7K-N8Z" firstAttribute="top" secondItem="QXf-bK-Ai7" secondAttribute="bottom" constant="29" id="UQJ-pn-GYx"/>
+                            <constraint firstItem="kLc-7K-N8Z" firstAttribute="centerX" secondItem="Od1-dk-GW5" secondAttribute="centerX" id="Ffj-kS-8Hg"/>
+                            <constraint firstItem="kLc-7K-N8Z" firstAttribute="top" secondItem="QXf-bK-Ai7" secondAttribute="bottom" constant="53" id="UQJ-pn-GYx"/>
                             <constraint firstItem="QXf-bK-Ai7" firstAttribute="centerX" secondItem="Od1-dk-GW5" secondAttribute="centerX" id="ZL3-Gg-kdB"/>
-                            <constraint firstItem="4hr-VH-org" firstAttribute="top" secondItem="bLB-1d-NwG" secondAttribute="bottom" constant="247" id="aHh-kK-nb3"/>
-                            <constraint firstItem="kLc-7K-N8Z" firstAttribute="top" secondItem="bLB-1d-NwG" secondAttribute="bottom" constant="153" id="me8-3d-y4J"/>
+                            <constraint firstItem="4hr-VH-org" firstAttribute="top" secondItem="bLB-1d-NwG" secondAttribute="bottom" constant="343" id="aHh-kK-nb3"/>
+                            <constraint firstItem="kLc-7K-N8Z" firstAttribute="top" secondItem="bLB-1d-NwG" secondAttribute="bottom" constant="221" id="me8-3d-y4J"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -207,7 +216,7 @@
         <scene sceneID="Myb-Rd-zA3">
             <objects>
                 <navigationController id="T38-cH-1cn" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="J6e-oW-ecF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J6e-oW-ecF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -889,15 +898,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vOo-Gm-mcp">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="qfO-BH-C8d"/>
-                                    <constraint firstAttribute="width" constant="239" id="zFG-Ov-tGg"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="533854865.215464">
-                                    <!--2017-12-01 21:01:05 +0000-->
-                                </date>
-                            </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nw6-SR-67f">
                                 <frame key="frameInset" minX="-8" minY="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -926,6 +926,15 @@
                                     <action selector="SearchEventNameButton:" destination="dS0-vJ-y53" eventType="touchUpInside" id="pVI-YM-jrh"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vOo-Gm-mcp">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="qfO-BH-C8d"/>
+                                    <constraint firstAttribute="width" constant="239" id="zFG-Ov-tGg"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="533854865.215464">
+                                    <!--2017-12-01 21:01:05 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -933,7 +942,7 @@
                             <constraint firstItem="rME-hS-i8f" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="299" id="9du-Qg-uBi"/>
                             <constraint firstItem="sAV-ZZ-hWl" firstAttribute="centerX" secondItem="PQv-Ag-Z4A" secondAttribute="centerX" id="AX0-4P-ftZ"/>
                             <constraint firstItem="x2e-bR-3bQ" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="-4" id="Auq-p5-iGz"/>
-                            <constraint firstItem="vOo-Gm-mcp" firstAttribute="leading" secondItem="PQv-Ag-Z4A" secondAttribute="leadingMargin" constant="76" id="D1m-2O-ZBo"/>
+                            <constraint firstItem="vOo-Gm-mcp" firstAttribute="leading" secondItem="PQv-Ag-Z4A" secondAttribute="leadingMargin" constant="104" id="D1m-2O-ZBo"/>
                             <constraint firstItem="7wL-zF-sQF" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="303" id="HbW-tz-HcQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oiL-UO-u9B" secondAttribute="trailing" constant="28" id="NSC-WY-rSs"/>
                             <constraint firstItem="7wL-zF-sQF" firstAttribute="leading" secondItem="PQv-Ag-Z4A" secondAttribute="leadingMargin" constant="13" id="RMC-Qt-vDW"/>
@@ -1313,10 +1322,13 @@
             <point key="canvasLocation" x="2560.8000000000002" y="-425.03748125937034"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_border2.jpg" width="524" height="716"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PEe-88-lHP"/>
-        <segue reference="3t8-Fd-Yz0"/>
         <segue reference="eIv-dI-ucW"/>
-        <segue reference="vPx-Uq-csh"/>
+        <segue reference="3t8-Fd-Yz0"/>
+        <segue reference="S8n-SR-NG2"/>
+        <segue reference="74P-KI-X3l"/>
     </inferredMetricsTieBreakers>
 </document>
