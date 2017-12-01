@@ -1121,10 +1121,10 @@
             </objects>
             <point key="canvasLocation" x="1756" y="-425.03748125937034"/>
         </scene>
-        <!--Add Event View-->
+        <!--Add Event View Controller-->
         <scene sceneID="jem-3U-sM5">
             <objects>
-                <viewController id="qGM-Gb-EsO" customClass="AddEventView" sceneMemberID="viewController">
+                <viewController id="qGM-Gb-EsO" customClass="AddEventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bpC-ad-DIQ"/>
                         <viewControllerLayoutGuide type="bottom" id="WwU-07-MFR"/>
@@ -1168,6 +1168,9 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uxz-vx-qM2">
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="SaveEvent:" destination="qGM-Gb-EsO" eventType="touchUpInside" id="cqY-tb-kcV"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rP0-8y-6uC">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1235,6 +1238,12 @@
                             <constraint firstItem="eXq-pf-KmP" firstAttribute="leading" secondItem="rP0-8y-6uC" secondAttribute="leading" id="sov-Xc-Mn9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="AddDueDatePicker" destination="Cao-Po-Fff" id="qTi-ym-qEX"/>
+                        <outlet property="AddEventText" destination="oIP-BM-WDV" id="EM1-ek-SJd"/>
+                        <outlet property="AddTimeHoursText" destination="xPk-lq-gtu" id="y1R-SS-UFN"/>
+                        <outlet property="AddTimeMinutes" destination="hw3-Zi-Gh6" id="4gp-Y5-BMS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4O-U2-HK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1245,6 +1254,6 @@
         <segue reference="74P-KI-X3l"/>
         <segue reference="eIv-dI-ucW"/>
         <segue reference="3t8-Fd-Yz0"/>
-        <segue reference="S8n-SR-NG2"/>
+        <segue reference="vPx-Uq-csh"/>
     </inferredMetricsTieBreakers>
 </document>
