@@ -596,6 +596,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K0G-59-Vpt">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="6iz-WM-7fI"/>
+                                    <constraint firstAttribute="width" constant="60" id="UH3-A8-Cfp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ohg-Xq-idU">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="BaQ-je-7uN"/>
+                                    <constraint firstAttribute="height" constant="40" id="asR-t9-iaJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -605,6 +623,7 @@
                             <constraint firstItem="EHQ-2s-HWi" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" id="7Wm-EM-rjh"/>
                             <constraint firstItem="UjM-uE-mrg" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="278" id="CRZ-Vo-84r"/>
                             <constraint firstItem="FXk-at-Bta" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="130" id="Del-By-bAM"/>
+                            <constraint firstItem="Ohg-Xq-idU" firstAttribute="leading" secondItem="7zd-PU-EE9" secondAttribute="leadingMargin" constant="104" id="GQz-uB-wYm"/>
                             <constraint firstItem="NSC-Ds-9TQ" firstAttribute="leading" secondItem="7zd-PU-EE9" secondAttribute="leadingMargin" constant="40" id="Hma-ue-dwr"/>
                             <constraint firstItem="XOP-HJ-3ut" firstAttribute="centerX" secondItem="7zd-PU-EE9" secondAttribute="centerX" id="IuW-ro-5vG"/>
                             <constraint firstItem="VOf-QY-YFw" firstAttribute="leading" secondItem="NSC-Ds-9TQ" secondAttribute="leading" id="JNw-w2-8C4"/>
@@ -612,6 +631,7 @@
                             <constraint firstItem="UjM-uE-mrg" firstAttribute="leading" secondItem="PlZ-aE-ds2" secondAttribute="trailing" constant="39.5" id="KMU-df-UQf"/>
                             <constraint firstItem="8tc-XW-8Cd" firstAttribute="leading" secondItem="XSk-T2-7EX" secondAttribute="leading" id="N9o-JB-fzk"/>
                             <constraint firstItem="VOf-QY-YFw" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="131" id="Pry-1H-Z2y"/>
+                            <constraint firstItem="K0G-59-Vpt" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="403" id="RoD-PK-ihE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EHQ-2s-HWi" secondAttribute="trailing" constant="6" id="SWg-Yk-8d8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ub7-BE-gK7" secondAttribute="trailing" constant="19" id="Sx1-r2-efH"/>
                             <constraint firstItem="XSk-T2-7EX" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="181" id="UiX-gp-tdc"/>
@@ -622,14 +642,18 @@
                             <constraint firstItem="PlZ-aE-ds2" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="278" id="grQ-Bi-5Uh"/>
                             <constraint firstItem="6cr-gS-VuP" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="409" id="j2B-XN-qGe"/>
                             <constraint firstItem="jUM-YM-9Rh" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="278" id="j7J-j6-jkX"/>
+                            <constraint firstItem="Ohg-Xq-idU" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="511" id="kI6-pb-gPB"/>
                             <constraint firstItem="Szs-cY-nit" firstAttribute="leading" secondItem="6cr-gS-VuP" secondAttribute="leading" id="kLy-LA-c0T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FXk-at-Bta" secondAttribute="trailing" constant="51" id="kal-pb-etl"/>
                             <constraint firstItem="b4a-ps-y62" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="181" id="tht-ES-GSx"/>
                             <constraint firstItem="Szs-cY-nit" firstAttribute="top" secondItem="L5X-VG-edb" secondAttribute="bottom" constant="521" id="vKV-rC-YDm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K0G-59-Vpt" secondAttribute="trailing" constant="54" id="xSO-GO-kn7"/>
                             <constraint firstItem="jUM-YM-9Rh" firstAttribute="leading" secondItem="UjM-uE-mrg" secondAttribute="trailing" constant="43" id="zEy-he-ZoQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="EditDifficultyField" destination="Ohg-Xq-idU" id="Dk8-nd-Af8"/>
+                        <outlet property="EditTimeField" destination="K0G-59-Vpt" id="Rxd-LS-vJG"/>
                         <outlet property="SearchTaskNameField" destination="VOf-QY-YFw" id="1O3-FA-GEP"/>
                         <outlet property="TaskNameField" destination="b4a-ps-y62" id="OK9-pU-fwR"/>
                     </connections>

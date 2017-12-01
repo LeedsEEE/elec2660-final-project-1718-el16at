@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *SearchTaskNameField;
 @property (weak, nonatomic) IBOutlet UIButton *SearchTaskNameButton;
 @property (weak, nonatomic) IBOutlet UITextView *TaskNameField;
+@property (weak, nonatomic) IBOutlet UITextView *EditTimeField;
+@property (weak, nonatomic) IBOutlet UITextView *EditDifficultyField;
 
 
 @end

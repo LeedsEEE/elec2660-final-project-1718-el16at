@@ -26,7 +26,6 @@
 + (NSArray*)searchTaskName :(NSDictionary *)taskname {
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
-    
     Task *taskEntity = nil; //first tutorial
     NSError *error;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
@@ -69,6 +68,79 @@
         [context deleteObject:managedObject];
     }
 }
++ (NSArray *)editTask :(NSDictionary *)taskname {
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+    
+    Task *taskEntity = nil; //first tutorial
+    NSError *error;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
+    request.predicate = [NSPredicate predicateWithFormat:@"taskName == %@", taskname];
+    NSArray *fetchedTask = [context executeFetchRequest:request error:&error];
+    NSLog(@"%@----------------------------------" , fetchedTask);
+    NSMutableArray *results = [[NSMutableArray alloc] init];
+    NSLog(@"%@----------------", results);
+    for (taskEntity in fetchedTask) {
+        [results addObject:[self createObjectFromEntity:taskEntity]];
+        NSLog(@"%@-----------------------------", taskEntity);
+    }
+    return results;
+   
+}
+
+/*
++ (void) editTask :(NSDictionary *)taskname
+{
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    Task *taskEntity = nil;
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *Task = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:context];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"taskName == %@",taskname];
+    [request setEntity:Task];
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *objectToEdit = [context executeFetchRequest:request error:&error];
+    
+    taskEntity *taskToEdit = [objectToEdit objectAtIndex:0];
+    
+    
+    
+    for (NSManagedObject *managedObject in objectToEdit)
+    {
+        [context deleteObject:managedObject];
+    }
+}*/
+/*
++ (NSArray*)editTask :(NSDictionary *)taskname {
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+    
+    Task *taskEntityEdit = nil; //first tutorial
+    NSError *error;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
+    request.predicate = [NSPredicate predicateWithFormat:@"taskName == %@", taskname];
+    NSArray *fetchedTask = [context executeFetchRequest:request error:&error];
+    
+        taskEntityEdit = [fetchedTask objectAtIndex:0]; // https://stackoverflow.com/questions/7314492/how-to-bind-textfields-to-attributes-of-one-core-data-entity-containing-one-row
+    NSMutableArray *results = [[NSMutableArray alloc] init];
+    
+    
+    Task *tempTask = [fetchedTask objectAtIndex:0];
+    
+    //NSString *detail = [NSString stringWithFormat:@"%@ %@ %@", [tempTask valueForKey:@"difficulty"], [tempTask valueForKey:@"dueDate"], [tempTask valueForKey :@"estimatedTime"]];
+    for (taskEntityEdit in fetchedTask) {
+        [results addObject:[self createObjectFromEntity:taskEntityEdit]];
+    }
+    return results;
+    
+}*/
+
+
+
+
+
 
 + (void) saveData {
 //save data permenantly
