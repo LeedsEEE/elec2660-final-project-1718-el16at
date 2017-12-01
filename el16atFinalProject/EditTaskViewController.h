@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *EditTimeField;
 @property (weak, nonatomic) IBOutlet UITextView *EditDifficultyField;
 
+@property (weak, nonatomic) IBOutlet UIDatePicker *EditDueDate;
 
 @end

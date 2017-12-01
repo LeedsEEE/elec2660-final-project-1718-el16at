@@ -61,36 +61,12 @@
     NSDictionary* task = [taskArray objectAtIndex:0];
     NSLog(@">>FOUND TASK: %@", task);
     
-//    NSLog(@"%@---------------------------------", self.SearchTaskNameField.text);
-//    NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];
-//   
-//    tempDict[@"Temp"] = self.SearchTaskNameField.text;
     self.TaskNameField.text = [task objectForKey:@"taskName"];
     self.EditTimeField.text = [task objectForKey:@"estimatedTime"];
-
-    //Task *taskEntity = [taskMethods editTask:tempDict];
+    self.EditDifficultyField.text = [task objectForKey:@"difficulty"];
+    self.EditDueDate.date = [task objectForKey:@"dueDate"];
     
     
-    
-     //Task *taskEntity = [taskMethods editTask:self.SearchTaskNameField.text];
-    
-    //self.TaskNameField.text = taskEntity.taskName;
-    
-    
-    
-    
-    
-    
-    //NSString *estimatedTimeString = [[NSNumber [editEntity.estimatedTime]]stringValue];
-    //self.EditTimeField.text = editEntity.estimatedTime;
-    //self.EditTimeField.text = [NSString stringWithFormat:@"%D", editEntity.estimatedTime];
-    
-    
-    
-    
-    
-    
-    //self.TaskNameField.text = [taskMethods searchTaskName:self.SearchTaskNameField.text];
     
 }
 
