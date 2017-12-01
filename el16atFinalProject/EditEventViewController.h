@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "eventMethods.h"
 
 @interface EditEventViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *EditNameField;
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *EditDatePicker;
 
-@property (weak, nonatomic) IBOutlet UITextField *SeachNameFeild;
+@property (weak, nonatomic) IBOutlet UITextField *SearchNameFeild;
 
 @end

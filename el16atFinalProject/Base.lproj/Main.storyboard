@@ -919,6 +919,9 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbK-pG-sJ9">
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="SearchEventNameButton:" destination="dS0-vJ-y53" eventType="touchUpInside" id="pVI-YM-jrh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -946,7 +949,7 @@
                     <connections>
                         <outlet property="EditDatePicker" destination="vOo-Gm-mcp" id="spj-rL-qBN"/>
                         <outlet property="EditNameField" destination="rME-hS-i8f" id="Fhx-hN-VGP"/>
-                        <outlet property="SeachNameFeild" destination="DWg-nd-sCj" id="nHq-L8-C3o"/>
+                        <outlet property="SearchNameFeild" destination="DWg-nd-sCj" id="Wir-XO-eOg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FpB-dz-Un3" userLabel="First Responder" sceneMemberID="firstResponder"/>

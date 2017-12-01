@@ -24,6 +24,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)SearchEventNameButton:(UIButton *)sender {
+    NSArray* eventArray = [eventMethods searchEventName:self.SearchNameFeild.text];
+    NSDictionary* event = [eventArray objectAtIndex:0];
+    NSLog(@">>FOUND TASK: %@", event);
+    
+    self.EditNameField.text = [event objectForKey:@"eventName"];
+    //self.EditTimeField.text = [task objectForKey:@"estimatedTime"];
+    //self.EditDifficultyField.text = [task objectForKey:@"difficulty"];
+    self.EditDatePicker.date = [event objectForKey:@"eventDate"];
+    
+}
+
+
+
+
 /*
 #pragma mark - Navigation
 
