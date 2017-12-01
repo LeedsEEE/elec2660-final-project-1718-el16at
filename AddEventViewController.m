@@ -26,7 +26,16 @@
 
 - (IBAction)SaveEvent:(UIButton *)sender {
     NSDictionary *eventInfo = @{@"eventName": self.AddEventText.text, @"eventTimeHours": self.AddTimeHoursText.text, @"eventTimeMinutes": self.AddTimeMinutes.text, @"eventDate": self.AddDatePicker.date};
-     self.OutputText.text = [Event addEventInfoFromDictionary:eventInfo].description;
+     self.OutputText.text =[Event addEventInfoFromDictionary:eventInfo].description;
+    
+    
+    //save data permenantly
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
+    NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];
+
 }
 
 

@@ -753,10 +753,10 @@
             </objects>
             <point key="canvasLocation" x="1597.5999999999999" y="1124.8875562218891"/>
         </scene>
-        <!--View Controller-->
+        <!--Delete Event View Controller-->
         <scene sceneID="IuD-GF-fIx">
             <objects>
-                <viewController id="APY-5c-Kxr" sceneMemberID="viewController">
+                <viewController id="APY-5c-Kxr" customClass="DeleteEventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0de-J1-JS9"/>
                         <viewControllerLayoutGuide type="bottom" id="hDD-8g-wOY"/>
@@ -788,21 +788,54 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84s-W6-MLO">
                                 <state key="normal" title="Delete"/>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search event name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JfO-Jf-hkq">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="q0R-t2-bnZ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Output" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="okf-zh-hqc">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Jl3-rc-0ad"/>
+                                    <constraint firstAttribute="height" constant="274" id="oAf-xc-2gR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dat-5m-UcJ">
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="SearchEventButton:" destination="APY-5c-Kxr" eventType="touchUpInside" id="L2T-02-dWe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bJ5-w3-x5d" firstAttribute="centerX" secondItem="r3h-4s-vXq" secondAttribute="centerX" id="3Ku-FK-s7H"/>
+                            <constraint firstItem="okf-zh-hqc" firstAttribute="leading" secondItem="r3h-4s-vXq" secondAttribute="leadingMargin" constant="82" id="4WH-KQ-v8t"/>
                             <constraint firstItem="84s-W6-MLO" firstAttribute="centerX" secondItem="r3h-4s-vXq" secondAttribute="centerX" id="864-sm-60d"/>
+                            <constraint firstItem="dat-5m-UcJ" firstAttribute="top" secondItem="0de-J1-JS9" secondAttribute="bottom" constant="128" id="Brk-sX-nFg"/>
+                            <constraint firstItem="okf-zh-hqc" firstAttribute="top" secondItem="0de-J1-JS9" secondAttribute="bottom" constant="227" id="IH7-6t-lvi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dat-5m-UcJ" secondAttribute="trailing" constant="28" id="K8C-9F-Kxi"/>
                             <constraint firstItem="84s-W6-MLO" firstAttribute="top" secondItem="0de-J1-JS9" secondAttribute="bottom" constant="579" id="Vqg-86-KKB"/>
                             <constraint firstItem="rnL-PD-Zp9" firstAttribute="top" secondItem="0de-J1-JS9" secondAttribute="bottom" constant="3" id="XgP-AG-aiK"/>
                             <constraint firstItem="bJ5-w3-x5d" firstAttribute="top" secondItem="0de-J1-JS9" secondAttribute="bottom" constant="8" id="a0Y-fm-7TW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JfO-Jf-hkq" secondAttribute="trailing" constant="123" id="gXb-FD-u4e"/>
                             <constraint firstItem="rnL-PD-Zp9" firstAttribute="leading" secondItem="r3h-4s-vXq" secondAttribute="leadingMargin" constant="303" id="oRs-vj-d8T"/>
+                            <constraint firstItem="JfO-Jf-hkq" firstAttribute="top" secondItem="0de-J1-JS9" secondAttribute="bottom" constant="129" id="vy0-5n-dIP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="OutputEventField" destination="okf-zh-hqc" id="vzf-P2-qyF"/>
+                        <outlet property="SearchEventField" destination="JfO-Jf-hkq" id="tiI-m0-jcH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLK-n9-YGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2236" y="1125"/>
+            <point key="canvasLocation" x="2236" y="1124.8875562218891"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rUf-Gs-ZlT">
@@ -1259,9 +1292,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="74P-KI-X3l"/>
-        <segue reference="eIv-dI-ucW"/>
         <segue reference="3t8-Fd-Yz0"/>
+        <segue reference="eIv-dI-ucW"/>
+        <segue reference="xEN-Zq-DTa"/>
         <segue reference="vPx-Uq-csh"/>
     </inferredMetricsTieBreakers>
 </document>
