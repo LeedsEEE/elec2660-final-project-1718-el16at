@@ -25,6 +25,8 @@
 }
 
 - (IBAction)SaveEvent:(UIButton *)sender {
+    NSDictionary *eventInfo = @{@"eventName": self.AddEventText.text, @"eventTimeHours": self.AddTimeHoursText.text, @"eventTimeMinutes": self.AddTimeMinutes.text, @"eventDate": self.AddDatePicker.date};
+     self.OutputText.text = [Event addEventInfoFromDictionary:eventInfo].description;
 }
 
 

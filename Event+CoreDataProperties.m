@@ -19,5 +19,6 @@
 @dynamic eventTimeMinutes;
 @dynamic eventID;
 @dynamic eventDate;
+@dynamic completed;
 
 @end

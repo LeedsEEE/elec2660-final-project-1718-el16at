@@ -10,4 +10,28 @@
 
 @implementation Event (AddEvents)
 
+
++ (Event *)addEventInfoFromDictionary :(NSDictionary *)eventInfo
+{
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+    
+    Event *eventEntity = nil; //first tutorial
+    //Create new object
+    
+    //First tutorial
+    
+    eventEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:context];
+    
+    eventEntity.eventID = (int)[(NSNumber *)[eventInfo valueForKey:@"eventID"] integerValue];
+    eventEntity.eventName = [eventInfo valueForKey:@"eventName"];
+    eventEntity.eventDate =  [eventInfo valueForKey:@"eventDate"];
+    eventEntity.eventTimeHours = (int)[(NSNumber *)[eventInfo valueForKey:@"eventTimeHours"] integerValue];
+    eventEntity.eventTimeMinutes = (int)[(NSNumber *)[eventInfo valueForKey:@"eventTimeMinutes"] integerValue];
+    eventEntity.completed = [eventInfo valueForKey:@"completed"];
+    
+    
+    return eventEntity;
+}
+
 @end

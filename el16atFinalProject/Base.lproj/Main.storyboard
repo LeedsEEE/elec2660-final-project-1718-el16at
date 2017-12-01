@@ -1209,6 +1209,13 @@
                                     <!--2017-11-28 19:43:45 +0000-->
                                 </date>
                             </datePicker>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Output" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7mb-Wj-XjF">
+                                <frame key="frameInset" minY="352" width="148" height="315"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1239,10 +1246,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="AddDueDatePicker" destination="Cao-Po-Fff" id="qTi-ym-qEX"/>
+                        <outlet property="AddDatePicker" destination="Cao-Po-Fff" id="O85-J8-uuZ"/>
                         <outlet property="AddEventText" destination="oIP-BM-WDV" id="EM1-ek-SJd"/>
                         <outlet property="AddTimeHoursText" destination="xPk-lq-gtu" id="y1R-SS-UFN"/>
                         <outlet property="AddTimeMinutes" destination="hw3-Zi-Gh6" id="4gp-Y5-BMS"/>
+                        <outlet property="OutputText" destination="7mb-Wj-XjF" id="QOh-0h-eIf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4O-U2-HK8" userLabel="First Responder" sceneMemberID="firstResponder"/>

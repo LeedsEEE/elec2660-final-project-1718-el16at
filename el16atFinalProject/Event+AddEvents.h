@@ -7,7 +7,9 @@
 //
 
 #import "Event+CoreDataClass.h"
+#import "AppDelegate.h"
 
 @interface Event (AddEvents)
++ (Event *)addEventInfoFromDictionary :(NSDictionary *)eventInfo;
 
 @end

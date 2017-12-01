@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int16_t eventTimeMinutes;
 @property (nonatomic) int16_t eventID;
 @property (nullable, nonatomic, copy) NSDate *eventDate;
+@property (nonatomic) BOOL completed;
 
 @end
 
