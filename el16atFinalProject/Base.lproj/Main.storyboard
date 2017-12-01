@@ -108,21 +108,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRi-KB-RC7">
-                                <state key="normal" title="View Tasks"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="3ZV-s0-FIp"/>
+                                    <constraint firstAttribute="height" constant="69" id="hpz-LT-dOg"/>
+                                </constraints>
+                                <state key="normal" title="View Tasks" backgroundImage="button_border2.jpg">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="T38-cH-1cn" kind="show" id="fJ0-jW-nuU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1V-nB-NCM">
-                                <state key="normal" title="View Events"/>
-                                <connections>
-                                    <segue destination="xdd-cN-uzm" kind="show" id="h2e-ep-SdM">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-Kh-aS7">
-                                <state key="normal" title="View Tasks and Events"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="2Lg-cX-qKo"/>
+                                    <constraint firstAttribute="height" constant="69" id="uDD-Cj-WFq"/>
+                                </constraints>
+                                <state key="normal" title="View Tasks and Events" backgroundImage="button_border2.jpg">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="fwe-Bb-ccm" kind="show" id="b7S-Eg-AY1">
                                         <nil key="action"/>
@@ -138,9 +142,30 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtU-Aw-6eW">
-                                <state key="normal" title="View Weeks"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="0MB-Zj-3ig"/>
+                                    <constraint firstAttribute="height" constant="69" id="gBC-5o-RZ7"/>
+                                </constraints>
+                                <state key="normal" title="View Weeks" backgroundImage="button_border2.jpg">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="zSc-2d-F5T" kind="show" id="Mg5-Jw-vEK">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1V-nB-NCM">
+                                <frame key="frameInset" minX="112" minY="239" width="150" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="TKv-14-8Dn"/>
+                                    <constraint firstAttribute="width" constant="150" id="VPg-nB-Qfc"/>
+                                </constraints>
+                                <state key="normal" title="View Events" backgroundImage="button_border2.jpg">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xdd-cN-uzm" kind="show" id="h2e-ep-SdM">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
@@ -150,16 +175,16 @@
                         <constraints>
                             <constraint firstItem="6pd-6U-u8z" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="30" id="5PN-uu-zoi"/>
                             <constraint firstItem="bRi-KB-RC7" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="110" id="5lc-Dr-7Ts"/>
-                            <constraint firstItem="PtU-Aw-6eW" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="298" id="AGt-Ij-rfy"/>
+                            <constraint firstItem="PtU-Aw-6eW" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="468" id="AGt-Ij-rfy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4H2-8u-jIg" secondAttribute="trailing" constant="7" id="H5P-ce-Bj5"/>
                             <constraint firstItem="4H2-8u-jIg" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="25" id="Hf8-F3-2dt"/>
                             <constraint firstItem="r1V-nB-NCM" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="Tic-3f-Lb9"/>
                             <constraint firstItem="6pd-6U-u8z" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="dTd-iT-Kd4"/>
                             <constraint firstItem="PtU-Aw-6eW" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="g8S-3D-RVv"/>
-                            <constraint firstItem="cVB-Kh-aS7" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="236" id="lZb-io-TJb"/>
+                            <constraint firstItem="cVB-Kh-aS7" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="340" id="lZb-io-TJb"/>
                             <constraint firstItem="bRi-KB-RC7" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="rA2-m2-JwL"/>
                             <constraint firstItem="cVB-Kh-aS7" firstAttribute="centerX" secondItem="8Fn-Qo-Qrt" secondAttribute="centerX" id="rBh-3J-oO1"/>
-                            <constraint firstItem="r1V-nB-NCM" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="176" id="xmb-Hn-xQu"/>
+                            <constraint firstItem="r1V-nB-NCM" firstAttribute="top" secondItem="hQj-zS-ozI" secondAttribute="bottom" constant="226" id="xmb-Hn-xQu"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -447,7 +472,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLY-5V-e3c">
-                                <state key="normal" title="Edit Task"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="NeN-UN-ik3"/>
+                                    <constraint firstAttribute="width" constant="150" id="wNA-nB-vMC"/>
+                                </constraints>
+                                <state key="normal" title="Edit Task" backgroundImage="button_border2.jpg">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="O6n-PA-Lgj" kind="show" id="UBz-zr-N8W">
                                         <nil key="action"/>
@@ -455,17 +486,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLp-NH-7Ry">
-                                <state key="normal" title="Delete Task"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="KLN-gs-SmT"/>
+                                    <constraint firstAttribute="width" constant="150" id="lQC-Sm-3B6"/>
+                                </constraints>
+                                <state key="normal" title="Delete Task" backgroundImage="button_border2.jpg">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="dBM-rY-yWv" kind="show" id="MWM-9Q-EV0">
-                                        <nil key="action"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTe-yt-hiM">
-                                <state key="normal" title="Delete Event"/>
-                                <connections>
-                                    <segue destination="APY-5c-Kxr" kind="show" id="nYi-MK-I0l">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
@@ -479,9 +508,27 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xme-96-mVS">
-                                <state key="normal" title="Edit Event"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Zbd-iy-B5g"/>
+                                </constraints>
+                                <state key="normal" title="Edit Event" backgroundImage="button_border2.jpg">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="dS0-vJ-y53" kind="show" id="sbB-Ti-wwj">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTe-yt-hiM">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="aay-qY-iMx"/>
+                                </constraints>
+                                <state key="normal" title="Delete Event" backgroundImage="button_border2.jpg">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="APY-5c-Kxr" kind="show" id="nYi-MK-I0l">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
@@ -490,19 +537,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HVQ-1T-one" firstAttribute="top" secondItem="ejX-ES-Ycj" secondAttribute="bottom" constant="4" id="96j-CH-4jl"/>
-                            <constraint firstItem="eTe-yt-hiM" firstAttribute="top" secondItem="xme-96-mVS" secondAttribute="bottom" constant="100" id="Cji-bD-yUE"/>
+                            <constraint firstItem="eTe-yt-hiM" firstAttribute="top" secondItem="xme-96-mVS" secondAttribute="bottom" constant="171" id="Cji-bD-yUE"/>
                             <constraint firstItem="KLY-5V-e3c" firstAttribute="height" secondItem="xme-96-mVS" secondAttribute="height" id="EV0-RO-jOL"/>
                             <constraint firstItem="dq3-Jy-Flf" firstAttribute="centerX" secondItem="4ux-uP-kgJ" secondAttribute="centerX" id="J2r-3I-FSV"/>
-                            <constraint firstItem="aLp-NH-7Ry" firstAttribute="top" secondItem="KLY-5V-e3c" secondAttribute="bottom" constant="100" id="MwN-jN-DI9"/>
-                            <constraint firstItem="KLY-5V-e3c" firstAttribute="leading" secondItem="4ux-uP-kgJ" secondAttribute="leadingMargin" constant="53" id="YoG-ld-85p"/>
+                            <constraint firstItem="aLp-NH-7Ry" firstAttribute="top" secondItem="KLY-5V-e3c" secondAttribute="bottom" constant="175" id="MwN-jN-DI9"/>
+                            <constraint firstItem="KLY-5V-e3c" firstAttribute="leading" secondItem="4ux-uP-kgJ" secondAttribute="leadingMargin" constant="96" id="YoG-ld-85p"/>
                             <constraint firstItem="aLp-NH-7Ry" firstAttribute="height" secondItem="eTe-yt-hiM" secondAttribute="height" id="aWw-wS-yUE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HVQ-1T-one" secondAttribute="trailing" id="eBr-Yh-SBV"/>
-                            <constraint firstItem="KLY-5V-e3c" firstAttribute="top" secondItem="ejX-ES-Ycj" secondAttribute="bottom" constant="135" id="kPm-Ap-GCS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xme-96-mVS" secondAttribute="trailing" constant="65" id="kQK-EQ-ITM"/>
-                            <constraint firstItem="xme-96-mVS" firstAttribute="top" secondItem="ejX-ES-Ycj" secondAttribute="bottom" constant="135" id="kXJ-gl-UOh"/>
+                            <constraint firstItem="KLY-5V-e3c" firstAttribute="top" secondItem="ejX-ES-Ycj" secondAttribute="bottom" constant="104" id="kPm-Ap-GCS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xme-96-mVS" secondAttribute="trailing" constant="97" id="kQK-EQ-ITM"/>
+                            <constraint firstItem="xme-96-mVS" firstAttribute="top" secondItem="ejX-ES-Ycj" secondAttribute="bottom" constant="220" id="kXJ-gl-UOh"/>
                             <constraint firstItem="dq3-Jy-Flf" firstAttribute="top" secondItem="ejX-ES-Ycj" secondAttribute="bottom" constant="8" id="rPQ-hv-8oe"/>
-                            <constraint firstItem="aLp-NH-7Ry" firstAttribute="centerX" secondItem="KLY-5V-e3c" secondAttribute="centerX" id="vEe-me-k8t"/>
-                            <constraint firstItem="eTe-yt-hiM" firstAttribute="centerX" secondItem="xme-96-mVS" secondAttribute="centerX" id="vcp-vz-3BF"/>
+                            <constraint firstItem="aLp-NH-7Ry" firstAttribute="centerX" secondItem="KLY-5V-e3c" secondAttribute="centerX" constant="1.5" id="vEe-me-k8t"/>
+                            <constraint firstItem="eTe-yt-hiM" firstAttribute="centerX" secondItem="xme-96-mVS" secondAttribute="centerX" constant="0.5" id="vcp-vz-3BF"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -986,19 +1033,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWn-LY-nXT">
-                                <state key="normal" title="Add Task"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="UuM-ud-oU2"/>
+                                    <constraint firstAttribute="width" constant="150" id="syV-zL-Acb"/>
+                                </constraints>
+                                <state key="normal" title="Add Task" backgroundImage="button_border2.jpg">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="xaz-tC-grg" kind="show" id="4Y3-m2-xad"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oio-B3-Zjr">
-                                <state key="normal" title="Add Event"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="EiW-E6-2b2"/>
+                                    <constraint firstAttribute="height" constant="69" id="tq7-Of-zVx"/>
+                                </constraints>
+                                <state key="normal" title="Add Event" backgroundImage="button_border2.jpg">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="qGM-Gb-EsO" kind="show" id="9b0-l4-Ajv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YK0-Dm-2qw">
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="yRz-mW-GDQ" kind="show" id="8Nt-yl-h3i"/>
+                                </connections>
+                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OLc-KH-1MY">
-                                <color key="backgroundColor" red="1" green="0.85602520910000002" blue="0.4763424993" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="251" id="5G0-9I-VNz"/>
                                     <constraint firstAttribute="height" constant="105" id="hNh-io-bXu"/>
@@ -1007,24 +1072,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YK0-Dm-2qw">
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="yRz-mW-GDQ" kind="show" id="8Nt-yl-h3i"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yI2-tp-PgH" firstAttribute="top" secondItem="71v-Jv-MVu" secondAttribute="bottom" constant="24" id="0Jy-SQ-0mu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YK0-Dm-2qw" secondAttribute="trailing" constant="19" id="1fL-VD-vjN"/>
                             <constraint firstItem="yI2-tp-PgH" firstAttribute="centerX" secondItem="hoX-aa-wp4" secondAttribute="centerX" id="8rE-Fn-DNG"/>
-                            <constraint firstItem="OLc-KH-1MY" firstAttribute="centerX" secondItem="hoX-aa-wp4" secondAttribute="centerX" id="8tD-QJ-nOV"/>
+                            <constraint firstItem="OLc-KH-1MY" firstAttribute="centerX" secondItem="hoX-aa-wp4" secondAttribute="centerX" constant="1" id="8tD-QJ-nOV"/>
                             <constraint firstItem="oio-B3-Zjr" firstAttribute="centerX" secondItem="hoX-aa-wp4" secondAttribute="centerX" id="EGQ-3l-rjr"/>
-                            <constraint firstItem="OLc-KH-1MY" firstAttribute="top" secondItem="71v-Jv-MVu" secondAttribute="bottom" constant="311" id="Nqb-cB-IvC"/>
+                            <constraint firstItem="OLc-KH-1MY" firstAttribute="top" secondItem="71v-Jv-MVu" secondAttribute="bottom" constant="359" id="Nqb-cB-IvC"/>
+                            <constraint firstItem="eWn-LY-nXT" firstAttribute="leading" secondItem="hoX-aa-wp4" secondAttribute="leading" constant="113" id="TQ7-Qd-r9k"/>
                             <constraint firstItem="YK0-Dm-2qw" firstAttribute="top" secondItem="71v-Jv-MVu" secondAttribute="bottom" constant="14" id="asZ-w1-Q3h"/>
-                            <constraint firstItem="eWn-LY-nXT" firstAttribute="top" secondItem="71v-Jv-MVu" secondAttribute="bottom" constant="114" id="grj-w1-Gch"/>
-                            <constraint firstItem="oio-B3-Zjr" firstAttribute="top" secondItem="71v-Jv-MVu" secondAttribute="bottom" constant="190" id="nWL-8F-FVW"/>
+                            <constraint firstItem="eWn-LY-nXT" firstAttribute="top" secondItem="71v-Jv-MVu" secondAttribute="bottom" constant="113" id="grj-w1-Gch"/>
+                            <constraint firstItem="oio-B3-Zjr" firstAttribute="top" secondItem="71v-Jv-MVu" secondAttribute="bottom" constant="233" id="nWL-8F-FVW"/>
                             <constraint firstItem="eWn-LY-nXT" firstAttribute="centerX" secondItem="hoX-aa-wp4" secondAttribute="centerX" id="o8B-rn-eKY"/>
                         </constraints>
                     </view>
@@ -1326,8 +1386,8 @@
         <image name="button_border2.jpg" width="524" height="716"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eIv-dI-ucW"/>
         <segue reference="3t8-Fd-Yz0"/>
+        <segue reference="eIv-dI-ucW"/>
         <segue reference="S8n-SR-NG2"/>
         <segue reference="74P-KI-X3l"/>
     </inferredMetricsTieBreakers>
