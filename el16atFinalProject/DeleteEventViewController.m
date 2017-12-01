@@ -29,11 +29,13 @@
     self.OutputEventField.text= [eventMethods searchEventName:self.SearchEventField.text].description;
     
     
-    
-    
 }
 
 
+- (IBAction)DeleteButton:(UIButton *)sender {
+    [eventMethods deleteEvent:self.SearchEventField.text];
+    
+}
 
 
 

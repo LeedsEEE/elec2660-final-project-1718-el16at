@@ -12,4 +12,7 @@
 
 @interface eventMethods : NSObject
 + (NSArray*)searchEventName :(NSDictionary *)eventname;
++ (NSDictionary *)createObjectFromEntity:(Event *)eventInfo;
++ (void) deleteEvent :(NSDictionary *)eventname;
+
 @end

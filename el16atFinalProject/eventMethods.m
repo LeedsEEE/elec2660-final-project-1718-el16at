@@ -36,4 +36,23 @@
     return tempDict;
 }
 
++ (void) deleteEvent :(NSDictionary *)eventname
+{
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *Event = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:context];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"eventName == %@",eventname];
+    [request setEntity:Event];
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *objectToDelete = [context executeFetchRequest:request error:&error];
+    
+    for (NSManagedObject *managedObject in objectToDelete)
+    {
+        [context deleteObject:managedObject];
+    }
+}
+
 @end

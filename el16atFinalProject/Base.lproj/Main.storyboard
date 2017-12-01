@@ -787,6 +787,9 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84s-W6-MLO">
                                 <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="DeleteButton:" destination="APY-5c-Kxr" eventType="touchUpInside" id="SMc-Lx-73D"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search event name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JfO-Jf-hkq">
                                 <constraints>
