@@ -24,7 +24,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     
-    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate]; //code is from https://stackoverflow.com/questions/10297542/how-to-get-all-records-from-coredata-base-using-nsmanagedobjectsubclass
+    
+    Task *taskEntity;
+    self.TaskNameLabel.text = taskEntity.taskName;
+    self.DueDateLabel.text = [NSString stringWithFormat:@"%@", taskEntity.dueDate];
+    self.EstimatedTimeLabel.text = [NSString stringWithFormat:@"%hd",taskEntity.estimatedTime];
+    self.DifficutyLabel.text = taskEntity.difficulty;
+    
+    
+    
+    
+    
+    /*AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate]; //code is from https://stackoverflow.com/questions/10297542/how-to-get-all-records-from-coredata-base-using-nsmanagedobjectsubclass
     
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     
@@ -33,16 +44,16 @@
     
     NSError *error = nil;
     
-    NSArray *results = [context executeFetchRequest:request error:&error];
+    NSArray *results = [context executeFetchRequest:request error:&error];*/
     
     
     
   
     
-    if (error == nil) {
+    //if (error == nil) {
         
         //Deal with failure
-    }
+    //}
    
     
     //[request release];

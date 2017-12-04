@@ -11,6 +11,14 @@
 #import "Task+AddTheTasks.h"
 
 @interface DisplayTasksViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *TaskNameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *DueDateLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *EstimatedTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *DifficutyLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *CompletedSwitch;
+
 
 
 
