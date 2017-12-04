@@ -17,13 +17,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [_CompletedSwitch setOn:NO animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/*
+-(void) switchMove:(id)sender {
+    _CompletedSwitch = (UISwitch *)sender;
+    //setCompletedSwitch:(UISwitch *)_CompletedSwitch;
+    if ([_CompletedSwitch isOn]){
+        NSLog(@"switch is on");
+        _taskCompleted = 1;
+    }
+    else {
+        NSLog(@"switch is off");
+        _taskCompleted = 0;
+    }
+
+}*/
+/*
+- (void)setOn:(BOOL)on animated:(BOOL)animated {
+    [_CompletedSwitch setOn:NO animated:YES];
+}*/
 
 - (IBAction)SearchTaskNameButton:(UIButton *)sender {
     /*
@@ -41,7 +61,8 @@
     self.EditTimeField.text = [task objectForKey:@"estimatedTime"];
     self.EditDifficultyField.text = [task objectForKey:@"difficulty"];
     self.EditDueDate.date = [task objectForKey:@"dueDate"];
-    
+
+
     
     
 }
@@ -51,11 +72,21 @@
 - (IBAction)SaveEditButton:(UIButton *)sender {
     
     [taskMethods deleteTask:self.SearchTaskNameField.text]; //deletes old object
+    
+    /*if ([_CompletedSwitch isOn]){
+        NSLog(@"switch is on");
+        _taskCompleted = 1;
+    }
+    else {
+        NSLog(@"switch is off");
+        _taskCompleted = 0;
+    }*/
 
     NSDictionary *taskInfo = @{@"taskName": self.TaskNameField.text,
                                @"dueDate" : self.EditDueDate.date,
                                @"estimatedTime" : self.EditTimeField.text,
-                               @"difficulty": self.EditDifficultyField.text};
+                               @"difficulty": self.EditDifficultyField.text,
+                               @"completed": [NSNumber numberWithBool:self.CompletedSwitch.on]};
     [Task addTaskInfoFromDictionary:taskInfo];
     
     //save data permenantly

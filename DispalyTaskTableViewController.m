@@ -11,14 +11,17 @@
 @interface DispalyTaskTableViewController ()
 {
     NSArray *fetchedTasks;
+    NSArray *data;
 }
 @property (nonatomic, strong) NSArray *fetchedTasks;
+@property (strong, nonatomic) NSArray *data;
 
 @end
 
 @implementation DispalyTaskTableViewController
 
 @synthesize fetchedTasks;
+@synthesize data;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,36 +55,92 @@
     return numberOfRows;
 }
 
+/*
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ - %@",
+            [super description], Task.dueDate];
+}*/
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
     
 
-
-      if (indexPath.section == 0) {
+    if (indexPath.section == 0) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         NSManagedObjectContext * context = appDelegate.persistentContainer.viewContext;
-        NSEntityDescription *entity = [NSEntityDescription
-                                         entityForName:@"Task" inManagedObjectContext:context];
-          NSError *error = nil;
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:context];
+        
+        NSError *error = nil;
+        [request setEntity:entity];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dueDate"
+                                                                       ascending:YES];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        [request setSortDescriptors:sortDescriptors];
+        
+        fetchedTasks = [context executeFetchRequest:request error:&error];
+        
+        
+        
+        for(Task *t in fetchedTasks){ //////////
+            NSLog(@" %@", t.dueDate);
+        }
+        
+        
+      //  [fetchedTasks objectAtIndex:0];
         [request setEntity:entity];
         fetchedTasks = [context executeFetchRequest:request error:&error];//https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
-          
+
 
         Task *tempTask = [fetchedTasks objectAtIndex: indexPath.row];
-          
-          NSString *detail = [NSString stringWithFormat:@"%@ %@ %@", [tempTask valueForKey:@"difficulty"], [tempTask valueForKey:@"dueDate"], [tempTask valueForKey :@"estimatedTime"]];
-          
-          //_TaskString = [NSString stringWithFormat:@"%@", [fetchedTasks objectAtIndex:indexPath.row]]; //currently is just outputing raw data
-        cell.textLabel.text = tempTask.taskName;
-        cell.detailTextLabel.text = detail; //will be dome to test will later format all other data as string and load it into detail
         
+       // NSDate *theDate =[tempTask valueForKey:@"dueDate"];
+        //NSString *formattedDate = [taskMethods formatDate: theDate];
+        //NSString *detail = [NSString stringWithFormat:@"%@", formattedDate];
+    
+        
+        
+        NSString *detail = [NSString stringWithFormat:@"%@", [tempTask valueForKey:@"dueDate"]];
+        cell.textLabel.text = tempTask.taskName;
+        cell.detailTextLabel.text = detail;
+
     }
     
     return cell;
 }
+
+
+// NSError *error = nil;
+//[request setEntity:entity];
+//fetchedTasks = [context executeFetchRequest:request error:&error];
+
+//NSArray *arrayForAllAlarms = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+
+//  [taskMethods datesToOrder:]
+
+
+//NSDateFormatter *format = [[NSDateFormatter alloc] init];
+//[format setDateFormat:@"MMMM dd, yyyy (EEEE) HH:mm:ss z Z"];
+//NSDate *now = [NSDate date];
+//NSString *nsstr = [format stringFromDate:now];
+
+/*
+ NSArray *sortedTaskArray = [tempTask sortedArrayUsingComparator:^NSComparisonResult(tempTask *tempTask1, tempTask *tempTask2) {
+ return [[tempTask1.dueDate compare:tempTask2.dueDate];
+ }];*/
+/* NSLog(@"nodeEventArray == %@", tempTask);
+ NSSortDescriptor *dateDescriptor = [NSSortDescriptor
+ sortDescriptorWithKey:@"dueDate"
+ ascending:YES];
+ NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+ NSArray *sortedtaskArray = [tempTask
+ sortedArrayUsingDescriptors:sortDescriptors];
+ NSLog(@"sortedEventArray == %@", tempTask);*/ //https://stackoverflow.com/questions/6083408/sort-nsarray-of-custom-objects-by-their-nsdate-properties
+
+//NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"dueDate" ascending:YES selector:@selector(compare:)];  //https://stackoverflow.com/questions/6083408/sort-nsarray-of-custom-objects-by-their-nsdate-properties
+
 
 
 /*

@@ -11,13 +11,14 @@
 
 @interface EditTaskViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *SearchTaskNameField;
-@property (weak, nonatomic) IBOutlet UIButton *SearchTaskNameButton;
+//@property (weak, nonatomic) IBOutlet UIButton *SearchTaskNameButton;
 @property (weak, nonatomic) IBOutlet UITextView *TaskNameField;
 @property (weak, nonatomic) IBOutlet UITextView *EditTimeField;
 @property (weak, nonatomic) IBOutlet UITextView *EditDifficultyField;
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *EditDueDate;
 @property (nonatomic) int calculatedTaskID;
-
+@property (weak, nonatomic) IBOutlet UISwitch *CompletedSwitch;
+@property (nonatomic, assign) BOOL taskCompleted;
 
 @end

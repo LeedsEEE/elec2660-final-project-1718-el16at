@@ -17,5 +17,8 @@
 + (NSDictionary *)createObjectFromEntity:(Task *)taskInfo;
 + (void) deleteTask :(NSDictionary *)taskname;
 + (Task *)editTask :(NSDictionary *)taskname;
++ (NSString *)formatDate;
+//+ (NSArray *)datesToOrder;//:(NSDictionary *)taskDueDate;
++ (NSString *)formatDate:(NSDate *)taskDate;
 
 @end
