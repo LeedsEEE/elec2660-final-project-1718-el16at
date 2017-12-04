@@ -55,12 +55,6 @@
     return numberOfRows;
 }
 
-/*
-- (NSString *)description {
-    return [NSString stringWithFormat:@"%@ - %@",
-            [super description], Task.dueDate];
-}*/
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
@@ -78,8 +72,7 @@
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dueDate"
                                                                        ascending:YES];
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-        [request setSortDescriptors:sortDescriptors];
-        
+        [request setSortDescriptors:sortDescriptors];       //https://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
         fetchedTasks = [context executeFetchRequest:request error:&error];
         
         
@@ -96,13 +89,11 @@
 
         Task *tempTask = [fetchedTasks objectAtIndex: indexPath.row];
         
-       // NSDate *theDate =[tempTask valueForKey:@"dueDate"];
-        //NSString *formattedDate = [taskMethods formatDate: theDate];
-        //NSString *detail = [NSString stringWithFormat:@"%@", formattedDate];
-    
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+        [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
+        NSString *detail = [format stringFromDate:[tempTask valueForKey:@"dueDate"]];
         
-        
-        NSString *detail = [NSString stringWithFormat:@"%@", [tempTask valueForKey:@"dueDate"]];
+        //NSString *detail = [NSString stringWithFormat:@"%@", [tempTask valueForKey:@"dueDate"]];
         cell.textLabel.text = tempTask.taskName;
         cell.detailTextLabel.text = detail;
 
@@ -112,19 +103,9 @@
 }
 
 
-// NSError *error = nil;
-//[request setEntity:entity];
-//fetchedTasks = [context executeFetchRequest:request error:&error];
-
-//NSArray *arrayForAllAlarms = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
-
-//  [taskMethods datesToOrder:]
 
 
-//NSDateFormatter *format = [[NSDateFormatter alloc] init];
-//[format setDateFormat:@"MMMM dd, yyyy (EEEE) HH:mm:ss z Z"];
-//NSDate *now = [NSDate date];
-//NSString *nsstr = [format stringFromDate:now];
+
 
 /*
  NSArray *sortedTaskArray = [tempTask sortedArrayUsingComparator:^NSComparisonResult(tempTask *tempTask1, tempTask *tempTask2) {
