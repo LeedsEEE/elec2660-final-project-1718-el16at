@@ -11,6 +11,7 @@
 #import "Event+AddEvents.h"
 
 @interface eventMethods : NSObject
++ (int)numberOfEvents;
 + (NSArray*)searchEventName :(NSDictionary *)eventname;
 + (NSDictionary *)createObjectFromEntity:(Event *)eventInfo;
 + (void) deleteEvent :(NSDictionary *)eventname;

@@ -10,6 +10,18 @@
 
 @implementation eventMethods
 
+
++ (int)numberOfEvents {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
+    NSManagedObjectContext * context = appDelegate.persistentContainer.viewContext;
+    NSError *error;
+    NSUInteger eventCount = [context countForFetchRequest:request error:&error]; //Oran Deutsch (student) this line counts the number of tasks in the entity task
+    return (int)eventCount;
+}
+
 + (NSArray*)searchEventName :(NSDictionary *)eventname {
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];

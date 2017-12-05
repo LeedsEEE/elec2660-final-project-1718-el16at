@@ -157,9 +157,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xdd-cN-uzm" kind="show" id="h2e-ep-SdM">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="AJ8-UZ-Wuz" kind="show" id="Ajt-Nv-bh4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -194,10 +192,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationLevel="3" indentationWidth="15" reuseIdentifier="TaskCell" textLabel="gts-V5-KSP" detailTextLabel="H7R-fR-Waa" style="IBUITableViewCellStyleValue2" id="ynF-dx-sO1">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" semanticContentAttribute="spatial" tableViewCell="ynF-dx-sO1" id="DtP-2C-lS7">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gts-V5-KSP">
@@ -365,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ltd-16-F7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-402" y="2157"/>
+            <point key="canvasLocation" x="-654" y="2857"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4ij-wD-w9l">
@@ -421,7 +419,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQz-B3-5YS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260" y="2157"/>
+            <point key="canvasLocation" x="42" y="2857"/>
+        </scene>
+        <!--Event Table View Controller-->
+        <scene sceneID="yxz-5A-Kjw">
+            <objects>
+                <tableViewController id="AJ8-UZ-Wuz" customClass="EventTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WHj-RI-8ZL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" textLabel="ccg-gY-bTM" detailTextLabel="hn4-t6-DGq" style="IBUITableViewCellStyleValue2" id="E7R-Td-0rP">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E7R-Td-0rP" id="WiU-4a-Oe4">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ccg-gY-bTM">
+                                            <frame key="frameInset" minX="15" minY="14" width="91" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hn4-t6-DGq">
+                                            <frame key="frameInset" minX="112" minY="14" width="35" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AJ8-UZ-Wuz" id="ZTn-fH-hSe"/>
+                            <outlet property="delegate" destination="AJ8-UZ-Wuz" id="iQK-2J-vkL"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIt-ab-eIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1226" y="2176"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6PL-5I-R7O">
@@ -460,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOk-FS-v2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260" y="1499"/>
+            <point key="canvasLocation" x="-414" y="2176"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kfN-Ya-ywJ">
@@ -1426,9 +1468,9 @@
         <image name="button_border2.jpg" width="524" height="716"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="74P-KI-X3l"/>
-        <segue reference="eIv-dI-ucW"/>
-        <segue reference="i8H-wt-854"/>
         <segue reference="S8n-SR-NG2"/>
+        <segue reference="eIv-dI-ucW"/>
+        <segue reference="n2g-SJ-eJr"/>
+        <segue reference="74P-KI-X3l"/>
     </inferredMetricsTieBreakers>
 </document>

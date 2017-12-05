@@ -12,7 +12,7 @@
 // #import "DisplayTasksViewController.h"
 
 @interface DispalyTaskTableViewController : UITableViewController
-@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 
 
 
