@@ -1,5 +1,5 @@
 //
-//  EventTableViewController.h
+//  TaskEventTableViewController.h
 //  el16atFinalProject
 //
 //  Created by Alice Tiler [el16at] on 05/12/2017.
@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
-#import "Event+AddEvents.h"
+#import "taskMethods.h"
 #import "eventMethods.h"
-#import "EventViewController.h"
 
-@interface EventTableViewController : UITableViewController
+@interface TaskEventTableViewController : UITableViewController
 
 @end

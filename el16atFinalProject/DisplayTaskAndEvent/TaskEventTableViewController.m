@@ -1,24 +1,28 @@
 //
-//  EventTableViewController.m
+//  TaskEventTableViewController.m
 //  el16atFinalProject
 //
 //  Created by Alice Tiler [el16at] on 05/12/2017.
 //  Copyright © 2017 University of Leeds. All rights reserved.
 //
 
-#import "EventTableViewController.h"
+#import "TaskEventTableViewController.h"
 
-@interface EventTableViewController ()
+@interface TaskEventTableViewController ()
 {
+    NSArray *fetchedTasks;
     NSArray *fetchedEvents;
     
 }
+@property (nonatomic, strong) NSArray *fetchedTasks;
 @property (nonatomic, strong) NSArray *fetchedEvents;
 
 @end
 
-@implementation EventTableViewController
 
+@implementation TaskEventTableViewController
+
+@synthesize fetchedTasks;
 @synthesize fetchedEvents;
 
 - (void)viewDidLoad {
@@ -46,54 +50,52 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete implementation, return the number of rows
     NSInteger numberOfRows;
+    [taskMethods numberOfTasks];
     [eventMethods numberOfEvents];
     if (section == 0) {
-        numberOfRows = eventMethods.numberOfEvents;
+        numberOfRows = taskMethods.numberOfTasks + eventMethods.numberOfEvents;
     }
     return numberOfRows;
 }
 
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EventCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskEventCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    
     if (indexPath.section == 0) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         NSManagedObjectContext * context = appDelegate.persistentContainer.viewContext;
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:context];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:context];
         
         NSError *error = nil;
         [request setEntity:entity];
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"eventDate"
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dueDate"
                                                                        ascending:YES];
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
         [request setSortDescriptors:sortDescriptors];       //https://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
-        fetchedEvents = [context executeFetchRequest:request error:&error];
-        
-        
+        fetchedTasks = [context executeFetchRequest:request error:&error];
         [request setEntity:entity];
-        fetchedEvents = [context executeFetchRequest:request error:&error];//https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
+        fetchedTasks = [context executeFetchRequest:request error:&error];//https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
         
         
-        Event *tempEvent = [fetchedEvents objectAtIndex: indexPath.row];
+        Task *tempTask = [fetchedTasks objectAtIndex: indexPath.row];
         
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
-        NSString *detail = [format stringFromDate:[tempEvent valueForKey:@"eventDate"]];
-        
-        //NSString *detail = [NSString stringWithFormat:@"%@", [tempTask valueForKey:@"dueDate"]];
-        cell.textLabel.text = tempEvent.eventName;
+        NSString *detail = [format stringFromDate:[tempTask valueForKey:@"dueDate"]];
+
+        cell.textLabel.text = tempTask.taskName;
         cell.detailTextLabel.text = detail;
         
     }
-    
+        
     return cell;
 }
-    
-
 
 
 /*
@@ -130,33 +132,14 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([[segue identifier] isEqualToString:@"ShowEvent"]) {
-        
-        EventViewController *dvc = [segue destinationViewController];
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-       
-        
-
-        if (indexPath.section == 0) {
-            //Task *temporaryTask = [tempTask.taskName objectAtIndex: indexPath.row];
-            Event *tempEvent = [fetchedEvents objectAtIndex:indexPath.row];        //just gets the task name from the text label
-            
-            
-            NSLog(@"Test event name is: %@",tempEvent.eventName);
-            dvc.eventNameString = tempEvent.eventName;
-            dvc.eventDateString = [NSString stringWithFormat:@"%@",tempEvent.eventDate];
-            //dvc.diffcString = tempTask.difficulty;
-            //dvc.timeString = [NSString stringWithFormat:@"%hd" ,tempTask.estimatedTime];
-        }
-    }
 }
-
+*/
 
 @end

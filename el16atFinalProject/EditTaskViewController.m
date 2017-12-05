@@ -10,10 +10,18 @@
 
 
 @interface EditTaskViewController ()
+{
+    NSArray *fetchedTasks;
+    
+}
+@property (nonatomic, strong) NSArray *fetchedTasks;
+
 
 @end
 
 @implementation EditTaskViewController
+
+@synthesize fetchedTasks;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,45 +34,35 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
--(void) switchMove:(id)sender {
-    _CompletedSwitch = (UISwitch *)sender;
-    //setCompletedSwitch:(UISwitch *)_CompletedSwitch;
-    if ([_CompletedSwitch isOn]){
-        NSLog(@"switch is on");
-        _taskCompleted = 1;
-    }
-    else {
-        NSLog(@"switch is off");
-        _taskCompleted = 0;
-    }
 
-}*/
-/*
-- (void)setOn:(BOOL)on animated:(BOOL)animated {
-    [_CompletedSwitch setOn:NO animated:YES];
-}*/
 
 - (IBAction)SearchTaskNameButton:(UIButton *)sender {
-    /*
-    //NSArray *taskToEdit = [taskMethods editTask:self.SearchTaskNameField.text];
     
-   // Task *taskdata = [taskToEdit objectAtIndex:0]; //https://stackoverflow.com/questions/7314492/how-to-bind-textfields-to-attributes-of-one-core-data-entity-containing-one-row
     
-    NSString *detail = [NSString stringWithFormat:@"%@ %@ %@", [tempTask valueForKey:@"difficulty"], [tempTask valueForKey:@"dueDate"], [tempTask valueForKey :@"estimatedTime"]];*/
+    @try{
+        NSArray* taskArray = [taskMethods searchTaskName:self.SearchTaskNameField.text];
+        NSDictionary* task = [taskArray objectAtIndex:0];
+        NSLog(@">>FOUND TASK: %@", task);
+        self.TaskNameField.text = [task objectForKey:@"taskName"];
+        self.EditTimeField.text = [task objectForKey:@"estimatedTime"];
+        self.EditDifficultyField.text = [task objectForKey:@"difficulty"];
+        self.EditDueDate.date = [task objectForKey:@"dueDate"];
+        
+    }
+    @catch (NSException *exception) {
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error 404"
+                                                                       message:@"File not found"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+        // [alert show];
+    }
     
-    NSArray* taskArray = [taskMethods searchTaskName:self.SearchTaskNameField.text];
-    NSDictionary* task = [taskArray objectAtIndex:0];
-    NSLog(@">>FOUND TASK: %@", task);
-    
-    self.TaskNameField.text = [task objectForKey:@"taskName"];
-    self.EditTimeField.text = [task objectForKey:@"estimatedTime"];
-    self.EditDifficultyField.text = [task objectForKey:@"difficulty"];
-    self.EditDueDate.date = [task objectForKey:@"dueDate"];
 
-
-    
-    
 }
 
 

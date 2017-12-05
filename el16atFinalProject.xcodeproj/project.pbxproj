@@ -35,6 +35,8 @@
 		A2EAA96E1FCD716E00485B01 /* taskMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EAA96D1FCD716E00485B01 /* taskMethods.m */; };
 		A2EAA9711FCD963C00485B01 /* DeleteTaskViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EAA9701FCD963C00485B01 /* DeleteTaskViewViewController.m */; };
 		A2EAA9741FCD9BA000485B01 /* DispalyTaskTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EAA9731FCD9BA000485B01 /* DispalyTaskTableViewController.m */; };
+		A2FD96EE1FD7172D007F02CB /* TaskEventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FD96ED1FD7172D007F02CB /* TaskEventTableViewController.m */; };
+		A2FD96F11FD71790007F02CB /* TaskEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FD96F01FD71790007F02CB /* TaskEventViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,10 @@
 		A2EAA9701FCD963C00485B01 /* DeleteTaskViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteTaskViewViewController.m; sourceTree = SOURCE_ROOT; };
 		A2EAA9721FCD9BA000485B01 /* DispalyTaskTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispalyTaskTableViewController.h; sourceTree = SOURCE_ROOT; };
 		A2EAA9731FCD9BA000485B01 /* DispalyTaskTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispalyTaskTableViewController.m; sourceTree = SOURCE_ROOT; };
+		A2FD96EC1FD7172D007F02CB /* TaskEventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskEventTableViewController.h; sourceTree = "<group>"; };
+		A2FD96ED1FD7172D007F02CB /* TaskEventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskEventTableViewController.m; sourceTree = "<group>"; };
+		A2FD96EF1FD7178F007F02CB /* TaskEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskEventViewController.h; path = ../TaskEventViewController.h; sourceTree = "<group>"; };
+		A2FD96F01FD71790007F02CB /* TaskEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskEventViewController.m; path = ../TaskEventViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,7 @@
 				A22B6CC81FC745E9002CC9C8 /* AppDelegate.m */,
 				A22B6CCA1FC745E9002CC9C8 /* ViewController.h */,
 				A22B6CCB1FC745E9002CC9C8 /* ViewController.m */,
+				A2FD96EB1FD71696007F02CB /* DisplayTaskAndEvent */,
 				A22B6CCD1FC745E9002CC9C8 /* Main.storyboard */,
 				A2D7C49B1FD6D272005F7B76 /* DisplayEvent */,
 				A2D7C49A1FD6D219005F7B76 /* DisplayTask */,
@@ -282,6 +289,17 @@
 				A2C4A2C61FD1DCC60008DC89 /* EditEventViewController.m */,
 			);
 			path = Edit;
+			sourceTree = "<group>";
+		};
+		A2FD96EB1FD71696007F02CB /* DisplayTaskAndEvent */ = {
+			isa = PBXGroup;
+			children = (
+				A2FD96EC1FD7172D007F02CB /* TaskEventTableViewController.h */,
+				A2FD96ED1FD7172D007F02CB /* TaskEventTableViewController.m */,
+				A2FD96EF1FD7178F007F02CB /* TaskEventViewController.h */,
+				A2FD96F01FD71790007F02CB /* TaskEventViewController.m */,
+			);
+			path = DisplayTaskAndEvent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,11 +436,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2FD96F11FD71790007F02CB /* TaskEventViewController.m in Sources */,
 				A2C4A2CA1FD1DCE80008DC89 /* DeleteEventViewController.m in Sources */,
 				A22B6CFC1FC74CFE002CC9C8 /* AddTaskFormViewController.m in Sources */,
 				A28B7A531FD1C8F0004FDB62 /* AddEventViewController.m in Sources */,
 				A22B6CCC1FC745E9002CC9C8 /* ViewController.m in Sources */,
 				A2C4A2C71FD1DCC60008DC89 /* EditEventViewController.m in Sources */,
+				A2FD96EE1FD7172D007F02CB /* TaskEventTableViewController.m in Sources */,
 				A28B7A621FD1D00B004FDB62 /* Event+CoreDataProperties.m in Sources */,
 				A22B6D081FC755D3002CC9C8 /* Task+AddTheTasks.m in Sources */,
 				A2EAA96E1FCD716E00485B01 /* taskMethods.m in Sources */,

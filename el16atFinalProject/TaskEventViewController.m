@@ -1,30 +1,22 @@
 //
-//  EventViewController.m
+//  TaskEventViewController.m
 //  el16atFinalProject
 //
 //  Created by Alice Tiler [el16at] on 05/12/2017.
 //  Copyright © 2017 University of Leeds. All rights reserved.
 //
 
-#import "EventViewController.h"
+#import "TaskEventViewController.h"
 
-@interface EventViewController ()
+@interface TaskEventViewController ()
 
 @end
 
-@implementation EventViewController
+@implementation TaskEventViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-}
-
-
-- (void) viewDidAppear:(BOOL)animated {
-    
-    [super viewDidAppear:animated];
-    self.eventNameLabel.text = self.eventNameString;
-    self.timeLabel.text = self.eventDateString;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -121,9 +121,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fwe-Bb-ccm" kind="show" id="b7S-Eg-AY1">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="KXJ-xI-cB4" kind="show" id="8Jk-JW-eYc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4H2-8u-jIg">
@@ -326,10 +324,57 @@
             </objects>
             <point key="canvasLocation" x="-391.19999999999999" y="1497.3013493253375"/>
         </scene>
-        <!--View Controller-->
+        <!--Task Event Table View Controller-->
+        <scene sceneID="JDP-TM-38z">
+            <objects>
+                <tableViewController id="KXJ-xI-cB4" customClass="TaskEventTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fTn-y9-BFJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskEventCell" textLabel="QDf-Im-o0J" detailTextLabel="YxV-SX-aGH" style="IBUITableViewCellStyleValue2" id="38a-jo-3Wo">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="38a-jo-3Wo" id="OYY-Wu-IVF">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QDf-Im-o0J">
+                                            <frame key="frameInset" minX="15" minY="14" width="91" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YxV-SX-aGH">
+                                            <frame key="frameInset" minX="112" minY="14" width="35" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="fwe-Bb-ccm" kind="show" action="showDetailViewController:sender:" id="GTQ-GT-chx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KXJ-xI-cB4" id="Jao-IM-mon"/>
+                            <outlet property="delegate" destination="KXJ-xI-cB4" id="oxN-bM-O8n"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rf5-ts-f30" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1226" y="2868"/>
+        </scene>
+        <!--Task Event View Controller-->
         <scene sceneID="hWi-uY-XOH">
             <objects>
-                <viewController id="fwe-Bb-ccm" sceneMemberID="viewController">
+                <viewController id="fwe-Bb-ccm" customClass="TaskEventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KEN-ey-fCL"/>
                         <viewControllerLayoutGuide type="bottom" id="Gdw-bU-hj5"/>
@@ -363,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ltd-16-F7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-654" y="2857"/>
+            <point key="canvasLocation" x="-415" y="2869"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4ij-wD-w9l">
@@ -419,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQz-B3-5YS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="2857"/>
+            <point key="canvasLocation" x="585" y="2870"/>
         </scene>
         <!--Event Table View Controller-->
         <scene sceneID="yxz-5A-Kjw">
@@ -434,7 +479,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E7R-Td-0rP" id="WiU-4a-Oe4">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ccg-gY-bTM">
@@ -453,6 +498,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="xdd-cN-uzm" kind="show" identifier="ShowEvent" action="showDetailViewController:sender:" id="czy-dd-o1j"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -465,10 +513,10 @@
             </objects>
             <point key="canvasLocation" x="-1226" y="2176"/>
         </scene>
-        <!--View Controller-->
+        <!--Event View Controller-->
         <scene sceneID="6PL-5I-R7O">
             <objects>
-                <viewController id="xdd-cN-uzm" sceneMemberID="viewController">
+                <viewController id="xdd-cN-uzm" customClass="EventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dgn-DS-Wub"/>
                         <viewControllerLayoutGuide type="bottom" id="1gE-EU-vhh"/>
@@ -490,15 +538,43 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZf-4D-4nD">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxJ-lu-8NW">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9R-FA-Kd9">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OYq-fL-MPI"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ei1-QI-WVl" secondAttribute="trailing" constant="10" id="3CP-s5-X83"/>
+                            <constraint firstItem="JZf-4D-4nD" firstAttribute="top" secondItem="Dgn-DS-Wub" secondAttribute="bottom" constant="88" id="4NR-I6-Lck"/>
                             <constraint firstItem="cHU-dV-Y8w" firstAttribute="centerX" secondItem="oEf-QX-2Lc" secondAttribute="centerX" id="7aA-hr-P2f"/>
+                            <constraint firstItem="F9R-FA-Kd9" firstAttribute="leading" secondItem="oEf-QX-2Lc" secondAttribute="leadingMargin" constant="30" id="CB5-59-4yC"/>
+                            <constraint firstItem="OYq-fL-MPI" firstAttribute="top" secondItem="Dgn-DS-Wub" secondAttribute="bottom" constant="265" id="HL2-r0-sJO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OYq-fL-MPI" secondAttribute="trailing" constant="135" id="I4l-Oo-eFi"/>
+                            <constraint firstItem="ZxJ-lu-8NW" firstAttribute="top" secondItem="Dgn-DS-Wub" secondAttribute="bottom" constant="182" id="NHL-FW-soy"/>
                             <constraint firstItem="cHU-dV-Y8w" firstAttribute="top" secondItem="Dgn-DS-Wub" secondAttribute="bottom" constant="8" id="c15-0H-JxC"/>
+                            <constraint firstItem="ZxJ-lu-8NW" firstAttribute="leading" secondItem="oEf-QX-2Lc" secondAttribute="leadingMargin" constant="30" id="d0X-LZ-bnJ"/>
                             <constraint firstItem="ei1-QI-WVl" firstAttribute="top" secondItem="Dgn-DS-Wub" secondAttribute="bottom" constant="3" id="kE3-Ey-gMJ"/>
+                            <constraint firstItem="F9R-FA-Kd9" firstAttribute="top" secondItem="Dgn-DS-Wub" secondAttribute="bottom" constant="270" id="q9J-g8-Tcy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JZf-4D-4nD" secondAttribute="trailing" constant="220" id="xCl-0o-E8F"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="eventNameLabel" destination="JZf-4D-4nD" id="oaA-wm-kgo"/>
+                        <outlet property="timeLabel" destination="ZxJ-lu-8NW" id="Ju9-cX-6ri"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOk-FS-v2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1468,9 +1544,9 @@
         <image name="button_border2.jpg" width="524" height="716"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="S8n-SR-NG2"/>
-        <segue reference="eIv-dI-ucW"/>
-        <segue reference="n2g-SJ-eJr"/>
         <segue reference="74P-KI-X3l"/>
+        <segue reference="eIv-dI-ucW"/>
+        <segue reference="NoS-dq-tlM"/>
+        <segue reference="S8n-SR-NG2"/>
     </inferredMetricsTieBreakers>
 </document>

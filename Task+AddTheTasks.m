@@ -17,11 +17,6 @@
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     
     Task *taskEntity = nil; //first tutorial
-    
- 
-        
-    
-    
     //Create new object
     
     //First tutorial

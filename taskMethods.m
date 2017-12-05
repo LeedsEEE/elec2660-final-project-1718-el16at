@@ -32,6 +32,10 @@
     request.predicate = [NSPredicate predicateWithFormat:@"taskName == %@", taskname];
     NSArray *fetchedTask = [context executeFetchRequest:request error:&error];
     NSMutableArray *results = [[NSMutableArray alloc] init];
+    if (fetchedTask == 0) {
+        return 0;
+    }
+
     for (taskEntity in fetchedTask) {
         [results addObject:[self createObjectFromEntity:taskEntity]];
     }
@@ -68,29 +72,6 @@
         [context deleteObject:managedObject];
     }
 }
-+ (NSArray *)editTask :(NSDictionary *)taskname {
-    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
-    
-    Task *taskEntity = nil; //first tutorial
-    NSError *error;
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
-    request.predicate = [NSPredicate predicateWithFormat:@"taskName == %@", taskname];
-    NSArray *fetchedTask = [context executeFetchRequest:request error:&error];
-    NSLog(@"%@----------------------------------" , fetchedTask);
-    NSMutableArray *results = [[NSMutableArray alloc] init];
-    NSLog(@"%@----------------", results);
-    for (taskEntity in fetchedTask) {
-        [results addObject:[self createObjectFromEntity:taskEntity]];
-        NSLog(@"%@-----------------------------", taskEntity);
-    }
-    return results;
-   
-}
-
-
-
-
 
 
 
@@ -121,29 +102,6 @@ NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext
 NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
 [[[appDelegate persistentContainer] viewContext] save:&saveError];
 }
-
-
-/*
-+ (NSDictionary *)convertToString:(Task *)taskInfo
-{
-    NSString *taskIDAsString = [NSNumber stringValue];
-    
-    
-}*/
-
-/*+
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = appDelegate.persistentContainer>ViewContext;
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
-    NSError *error = nil;
-    NSError *saveError = nil;
-    NSArray *taskArray = [context executeFetchRequest:request error:&error];
-    [[AppDelegate managedObjectContext] save:&saveError];*/
-
-
-
-
-
 
 
 

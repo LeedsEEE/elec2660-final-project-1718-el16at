@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface EventViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *eventNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+
+@property (strong, nonatomic) NSString *eventNameString;
+@property (strong, nonatomic) NSString *eventDateString;
+
+
 
 @end
