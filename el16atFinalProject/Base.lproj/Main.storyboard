@@ -1072,12 +1072,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiL-UO-u9B">
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="SaveEdit:" destination="dS0-vJ-y53" eventType="touchUpInside" id="6hk-5k-qiC"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rME-hS-i8f">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="154" id="zTS-0l-c5K"/>
@@ -1123,26 +1117,42 @@
                                     <!--2017-12-01 21:01:05 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Has Event been attended?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43z-9e-FBd">
+                                <frame key="frameInset" minX="29" minY="570" width="202" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9mt-Xq-67O"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiL-UO-u9B">
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="SaveEdit:" destination="dS0-vJ-y53" eventType="touchUpInside" id="6hk-5k-qiC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="x2e-bR-3bQ" secondAttribute="trailing" constant="6" id="1An-3z-ZtN"/>
-                            <constraint firstItem="rME-hS-i8f" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="299" id="9du-Qg-uBi"/>
+                            <constraint firstItem="rME-hS-i8f" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="255" id="9du-Qg-uBi"/>
                             <constraint firstItem="sAV-ZZ-hWl" firstAttribute="centerX" secondItem="PQv-Ag-Z4A" secondAttribute="centerX" id="AX0-4P-ftZ"/>
                             <constraint firstItem="x2e-bR-3bQ" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="-4" id="Auq-p5-iGz"/>
-                            <constraint firstItem="vOo-Gm-mcp" firstAttribute="leading" secondItem="PQv-Ag-Z4A" secondAttribute="leadingMargin" constant="104" id="D1m-2O-ZBo"/>
-                            <constraint firstItem="7wL-zF-sQF" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="303" id="HbW-tz-HcQ"/>
+                            <constraint firstItem="vOo-Gm-mcp" firstAttribute="leading" secondItem="PQv-Ag-Z4A" secondAttribute="leadingMargin" constant="102" id="D1m-2O-ZBo"/>
+                            <constraint firstItem="7wL-zF-sQF" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="259" id="HbW-tz-HcQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oiL-UO-u9B" secondAttribute="trailing" constant="28" id="NSC-WY-rSs"/>
                             <constraint firstItem="7wL-zF-sQF" firstAttribute="leading" secondItem="PQv-Ag-Z4A" secondAttribute="leadingMargin" constant="13" id="RMC-Qt-vDW"/>
                             <constraint firstItem="sbK-pG-sJ9" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="132" id="ReG-bB-1aT"/>
                             <constraint firstItem="rME-hS-i8f" firstAttribute="leading" secondItem="PQv-Ag-Z4A" secondAttribute="leadingMargin" constant="102" id="THj-qw-PXD"/>
-                            <constraint firstItem="oE5-Az-qlj" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="417" id="Tqa-Sw-qcl"/>
-                            <constraint firstItem="vOo-Gm-mcp" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="363" id="ceA-nb-HZN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oE5-Az-qlj" secondAttribute="trailing" constant="290" id="f1Y-TZ-Vxz"/>
-                            <constraint firstItem="oiL-UO-u9B" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="590" id="nQv-yb-dDb"/>
+                            <constraint firstItem="oE5-Az-qlj" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="370" id="Tqa-Sw-qcl"/>
+                            <constraint firstItem="9mt-Xq-67O" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="501" id="X4P-1e-wsk"/>
+                            <constraint firstItem="vOo-Gm-mcp" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="316" id="ceA-nb-HZN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oE5-Az-qlj" secondAttribute="trailing" constant="294" id="f1Y-TZ-Vxz"/>
+                            <constraint firstItem="oiL-UO-u9B" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="565" id="nQv-yb-dDb"/>
                             <constraint firstItem="sAV-ZZ-hWl" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" id="qhZ-cT-eLp"/>
                             <constraint firstItem="DWg-nd-sCj" firstAttribute="centerX" secondItem="PQv-Ag-Z4A" secondAttribute="centerX" id="rlr-SK-E0e"/>
                             <constraint firstItem="DWg-nd-sCj" firstAttribute="top" secondItem="kM5-Es-cbF" secondAttribute="bottom" constant="132" id="rp2-UM-uOs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9mt-Xq-67O" secondAttribute="trailing" constant="44" id="yRZ-lF-vGx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sbK-pG-sJ9" secondAttribute="trailing" constant="14" id="zDb-Os-jDS"/>
                         </constraints>
                     </view>
@@ -1150,6 +1160,7 @@
                         <outlet property="EditDatePicker" destination="vOo-Gm-mcp" id="spj-rL-qBN"/>
                         <outlet property="EditNameField" destination="rME-hS-i8f" id="Fhx-hN-VGP"/>
                         <outlet property="SearchNameFeild" destination="DWg-nd-sCj" id="Wir-XO-eOg"/>
+                        <outlet property="completedSwitch" destination="9mt-Xq-67O" id="nzu-uS-ZP1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FpB-dz-Un3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1544,9 +1555,9 @@
         <image name="button_border2.jpg" width="524" height="716"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="74P-KI-X3l"/>
-        <segue reference="eIv-dI-ucW"/>
+        <segue reference="PEe-88-lHP"/>
         <segue reference="NoS-dq-tlM"/>
+        <segue reference="eIv-dI-ucW"/>
         <segue reference="S8n-SR-NG2"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -35,8 +35,6 @@
     NSLog(@">>FOUND TASK: %@", event);
     
     self.EditNameField.text = [event objectForKey:@"eventName"];
-    //self.EditTimeField.text = [task objectForKey:@"estimatedTime"];
-    //self.EditDifficultyField.text = [task objectForKey:@"difficulty"];
     self.EditDatePicker.date = [event objectForKey:@"eventDate"];
 
         
@@ -58,6 +56,9 @@
 - (IBAction)SaveEdit:(UIButton *)sender {
     [eventMethods deleteEvent:self.SearchNameFeild.text]; //deletes old object
     
+    if ([_completedSwitch isOn]){
+        NSLog(@"switch is on");
+    } else {
     NSDictionary *eventInfo = @{@"eventName": self.EditNameField.text,
                                @"eventDate" : self.EditDatePicker.date};
     [Event addEventInfoFromDictionary:eventInfo];
@@ -68,6 +69,16 @@
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
     NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Saved"
+                                                                       message:@"Event saved"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    }
     
 }
 

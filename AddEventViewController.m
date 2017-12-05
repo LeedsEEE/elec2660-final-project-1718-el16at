@@ -28,14 +28,21 @@
     NSDictionary *eventInfo = @{@"eventName": self.AddEventText.text, @"eventTimeHours": self.AddTimeHoursText.text, @"eventTimeMinutes": self.AddTimeMinutes.text, @"eventDate": self.AddDatePicker.date};
      self.OutputText.text =[Event addEventInfoFromDictionary:eventInfo].description;
     
-    
     //save data permenantly
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
     NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];
-
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Saved"
+                                                                   message:@"Event saved"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
 }
 
 

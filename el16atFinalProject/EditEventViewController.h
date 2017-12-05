@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *EditDatePicker;
 
 @property (weak, nonatomic) IBOutlet UITextField *SearchNameFeild;
+@property (weak, nonatomic) IBOutlet UISwitch *completedSwitch;
 
 @end
