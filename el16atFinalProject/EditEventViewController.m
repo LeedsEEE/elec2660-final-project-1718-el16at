@@ -26,6 +26,10 @@
 
 
 - (IBAction)SearchEventNameButton:(UIButton *)sender {
+    
+    
+    
+    @try{
     NSArray* eventArray = [eventMethods searchEventName:self.SearchNameFeild.text];
     NSDictionary* event = [eventArray objectAtIndex:0];
     NSLog(@">>FOUND TASK: %@", event);
@@ -34,7 +38,21 @@
     //self.EditTimeField.text = [task objectForKey:@"estimatedTime"];
     //self.EditDifficultyField.text = [task objectForKey:@"difficulty"];
     self.EditDatePicker.date = [event objectForKey:@"eventDate"];
-    
+
+        
+    }
+    @catch (NSException *exception) { //if no event is found it runs the code below showing an error mesage
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error 404"
+                                                                       message:@"File not found"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    }
+        
 }
 
 - (IBAction)SaveEdit:(UIButton *)sender {

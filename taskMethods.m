@@ -32,10 +32,6 @@
     request.predicate = [NSPredicate predicateWithFormat:@"taskName == %@", taskname];
     NSArray *fetchedTask = [context executeFetchRequest:request error:&error];
     NSMutableArray *results = [[NSMutableArray alloc] init];
-    if (fetchedTask == 0) {
-        return 0;
-    }
-
     for (taskEntity in fetchedTask) {
         [results addObject:[self createObjectFromEntity:taskEntity]];
     }

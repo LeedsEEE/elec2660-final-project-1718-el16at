@@ -59,7 +59,7 @@
         
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
-        // [alert show];
+        
     }
     
 
@@ -71,14 +71,11 @@
     
     [taskMethods deleteTask:self.SearchTaskNameField.text]; //deletes old object
     
-    /*if ([_CompletedSwitch isOn]){
+    if ([_CompletedSwitch isOn]){
         NSLog(@"switch is on");
-        _taskCompleted = 1;
-    }
-    else {
-        NSLog(@"switch is off");
-        _taskCompleted = 0;
-    }*/
+        //[taskMethods deleteTask:self.SearchTaskNameField.text];
+    } else {
+
 
     NSDictionary *taskInfo = @{@"taskName": self.TaskNameField.text,
                                @"dueDate" : self.EditDueDate.date,
@@ -93,7 +90,7 @@
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
     NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];
-    
+    }
 }
 
 
