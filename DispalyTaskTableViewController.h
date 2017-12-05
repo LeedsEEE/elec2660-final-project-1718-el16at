@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "taskMethods.h"
 #import "Task+AddTheTasks.h"
+// #import "DisplayTasksViewController.h"
 
 @interface DispalyTaskTableViewController : UITableViewController
-
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 
 
 

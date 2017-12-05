@@ -20,18 +20,28 @@
     
 }
 
+- (void) viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    self.TaskNameLabel.text = self.taskString;
+    self.EstimatedTimeLabel.text = self.timeString;
+    self.DueDateLabel.text = self.dateString;
+    self.DifficutyLabel.text = self.diffcString;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    //etchedTasks.predicate = [NSPredicate predicateWithFormat:@"taskName = %@", self.taskEntity];
+   // 
+    //Task *taskEntity;
+    /*
+    self.TaskNameLabel.text = _taskEntity.taskName;
+    self.DueDateLabel.text = [NSString stringWithFormat:@"%@", _taskEntity.dueDate];
+    self.EstimatedTimeLabel.text = [NSString stringWithFormat:@"%hd",_taskEntity.estimatedTime];
+    self.DifficutyLabel.text = _taskEntity.difficulty;
     
-    
-    Task *taskEntity;
-    self.TaskNameLabel.text = taskEntity.taskName;
-    self.DueDateLabel.text = [NSString stringWithFormat:@"%@", taskEntity.dueDate];
-    self.EstimatedTimeLabel.text = [NSString stringWithFormat:@"%hd",taskEntity.estimatedTime];
-    self.DifficutyLabel.text = taskEntity.difficulty;
-    
-    
+    */
     
     
     

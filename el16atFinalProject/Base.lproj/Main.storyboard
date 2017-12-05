@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yRz-mW-GDQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gfk-2i-VaV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -77,10 +77,11 @@
                             <constraint firstItem="kLc-7K-N8Z" firstAttribute="top" secondItem="bLB-1d-NwG" secondAttribute="bottom" constant="221" id="me8-3d-y4J"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="R6v-gq-uqN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oe1-Ae-Za2" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="quG-kW-QaU">
@@ -108,7 +109,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="T38-cH-1cn" kind="show" id="fJ0-jW-nuU"/>
+                                    <segue destination="XpN-YQ-i1m" kind="show" id="SdG-Yz-olx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVB-Kh-aS7">
@@ -128,7 +129,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4H2-8u-jIg">
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="yRz-mW-GDQ" kind="show" id="eIv-dI-ucW">
+                                    <segue destination="gfk-2i-VaV" kind="show" id="eIv-dI-ucW">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
@@ -196,7 +197,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" semanticContentAttribute="spatial" tableViewCell="ynF-dx-sO1" id="DtP-2C-lS7">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gts-V5-KSP">
@@ -217,7 +218,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="MA8-OS-jgA" kind="showDetail" id="bNf-3Q-C9s"/>
+                                    <segue destination="MA8-OS-jgA" kind="show" identifier="ShowTask" action="showDetailViewController:sender:" id="bNf-3Q-C9s"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -241,23 +242,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9r-80-xKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1090" y="1496"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Myb-Rd-zA3">
-            <objects>
-                <navigationController id="T38-cH-1cn" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J6e-oW-ecF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="XpN-YQ-i1m" kind="relationship" relationship="rootViewController" id="kfb-Kg-i2d"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jz2-j8-cID" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2020" y="1498"/>
+            <point key="canvasLocation" x="-1225" y="1497"/>
         </scene>
         <!--Display Tasks View Controller-->
         <scene sceneID="ul7-ex-AuP">
@@ -525,7 +510,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVQ-1T-one">
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="yRz-mW-GDQ" kind="show" id="OAm-fL-8Db">
+                                    <segue destination="gfk-2i-VaV" kind="show" id="OAm-fL-8Db">
                                         <nil key="action"/>
                                     </segue>
                                 </connections>
@@ -579,7 +564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFL-vI-hb3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="124"/>
+            <point key="canvasLocation" x="2176.8000000000002" y="123.68815592203899"/>
         </scene>
         <!--Edit Task View Controller-->
         <scene sceneID="mEB-ya-C6Q">
@@ -748,7 +733,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2CX-x1-2lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2270" y="124"/>
+            <point key="canvasLocation" x="3208.8000000000002" y="123.68815592203899"/>
         </scene>
         <!--Delete Task View View Controller-->
         <scene sceneID="hLc-E8-Duf">
@@ -1051,7 +1036,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FpB-dz-Un3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3212" y="124"/>
+            <point key="canvasLocation" x="4151.1999999999998" y="123.68815592203899"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="YZO-cr-3pa">
@@ -1097,7 +1082,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YK0-Dm-2qw">
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="yRz-mW-GDQ" kind="show" id="8Nt-yl-h3i"/>
+                                    <segue destination="gfk-2i-VaV" kind="show" id="8Nt-yl-h3i"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OLc-KH-1MY">
@@ -1418,14 +1403,32 @@
             </objects>
             <point key="canvasLocation" x="2850" y="-783"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VgV-7t-sRL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gfk-2i-VaV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7CL-uv-NeA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yRz-mW-GDQ" kind="relationship" relationship="rootViewController" id="H7F-DD-Ine"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tco-GV-R00" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
     </scenes>
     <resources>
         <image name="button_border2.jpg" width="524" height="716"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xEN-Zq-DTa"/>
-        <segue reference="OAm-fL-8Db"/>
-        <segue reference="Y07-no-kBH"/>
-        <segue reference="vPx-Uq-csh"/>
+        <segue reference="74P-KI-X3l"/>
+        <segue reference="eIv-dI-ucW"/>
+        <segue reference="i8H-wt-854"/>
+        <segue reference="S8n-SR-NG2"/>
     </inferredMetricsTieBreakers>
 </document>

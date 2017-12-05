@@ -7,21 +7,22 @@
 //
 
 #import "DispalyTaskTableViewController.h"
+#import "DisplayTasksViewController.h"
+
 
 @interface DispalyTaskTableViewController ()
 {
     NSArray *fetchedTasks;
-    NSArray *data;
+
 }
 @property (nonatomic, strong) NSArray *fetchedTasks;
-@property (strong, nonatomic) NSArray *data;
 
 @end
 
 @implementation DispalyTaskTableViewController
 
 @synthesize fetchedTasks;
-@synthesize data;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -158,14 +159,44 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"ShowTask"]) {
+        
+        DisplayTasksViewController *dvc = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        //Task *tempTask = [fetchedTasks objectAtIndex: indexPath.row];
+        
+        
+        
+        
+        //NSArray *selectedTask =[taskMethods searchTaskName:self.fetchedTasks];
+        
+        //Task *selectedTask =[self.fetchedTasks objectAtIndex:indexPath];
+        //DisplayTasksViewController *selectedTaskVC = [segue destinationViewController];
+        //selectedTaskVC = selectedTask;  //https://stackoverflow.com/questions/20080889/passing-a-core-data-object-to-a-new-table-view-controller-but-using-the-object
+        
+        //fetchedTasks.predicate = [NSPredicate predicateWithFormat:@"taskName = %@", self.taskEntity];
+        if (indexPath.section == 0) {
+            //Task *temporaryTask = [tempTask.taskName objectAtIndex: indexPath.row];
+            Task *tempTask = [fetchedTasks objectAtIndex:indexPath.row];        //just gets the task name from the text label
+            
+            
+            NSLog(@"Test task name is: %@",tempTask.taskName);
+            //dvc.taskEntity = tempTask.taskName;
+            dvc.taskString = tempTask.taskName;
+            dvc.dateString = [NSString stringWithFormat:@"%@",tempTask.dueDate];
+            dvc.diffcString = tempTask.difficulty;
+            dvc.timeString = [NSString stringWithFormat:@"%hd" ,tempTask.estimatedTime];
+        }
+        
+    }
 }
-*/
 
 @end
