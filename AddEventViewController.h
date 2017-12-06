@@ -15,6 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *AddDatePicker;
 
 @property (weak, nonatomic) IBOutlet UITextField *AddTimeMinutes;
-@property (weak, nonatomic) IBOutlet UITextView *OutputText;
+//@property (weak, nonatomic) IBOutlet UITextView *OutputText;
 
 @end

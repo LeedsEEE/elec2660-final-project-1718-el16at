@@ -27,6 +27,29 @@
     self.timeLabel.text = self.eventDateString;
 }
 
+
+- (IBAction)eventCompleted:(UIButton *)sender {
+    [eventMethods deleteEvent:self.eventNameString];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Welldone Event completed"
+                                                                   message:@"Completed Event will be removed fromthe Event File"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
+    NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];
+    
+}
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

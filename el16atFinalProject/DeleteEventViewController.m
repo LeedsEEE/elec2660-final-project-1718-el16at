@@ -41,6 +41,17 @@
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
     NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Event Deleted"
+                                                                   message:@"Event has been removed fromthe Event File"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    
+
 
     
 }

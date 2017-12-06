@@ -26,7 +26,7 @@
 
 - (IBAction)SaveEvent:(UIButton *)sender {
     NSDictionary *eventInfo = @{@"eventName": self.AddEventText.text, @"eventTimeHours": self.AddTimeHoursText.text, @"eventTimeMinutes": self.AddTimeMinutes.text, @"eventDate": self.AddDatePicker.date};
-     self.OutputText.text =[Event addEventInfoFromDictionary:eventInfo].description;
+     [Event addEventInfoFromDictionary:eventInfo];
     
     //save data permenantly
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "eventMethods.h"
 
 @interface EventViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *eventNameLabel;
