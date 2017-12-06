@@ -138,22 +138,16 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([[segue identifier] isEqualToString:@"ShowEvent"]) {
-        
         EventViewController *dvc = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-       
-        
-
         if (indexPath.section == 0) {
-            //Task *temporaryTask = [tempTask.taskName objectAtIndex: indexPath.row];
             Event *tempEvent = [fetchedEvents objectAtIndex:indexPath.row];        //just gets the task name from the text label
-            
-            
             NSLog(@"Test event name is: %@",tempEvent.eventName);
+            NSDateFormatter *format = [[NSDateFormatter alloc] init];
+            [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
+            NSString *formattedDate = [format stringFromDate:[tempEvent valueForKey:@"eventDate"]];
             dvc.eventNameString = tempEvent.eventName;
-            dvc.eventDateString = [NSString stringWithFormat:@"%@",tempEvent.eventDate];
-            //dvc.diffcString = tempTask.difficulty;
-            //dvc.timeString = [NSString stringWithFormat:@"%hd" ,tempTask.estimatedTime];
+            dvc.eventDateString = formattedDate;
         }
     }
 }

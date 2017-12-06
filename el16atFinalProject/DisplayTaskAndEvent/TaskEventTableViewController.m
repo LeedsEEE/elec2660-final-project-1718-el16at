@@ -44,7 +44,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //#warning Incomplete implementation, return the number of sections
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -53,7 +53,9 @@
     [taskMethods numberOfTasks];
     [eventMethods numberOfEvents];
     if (section == 0) {
-        numberOfRows = taskMethods.numberOfTasks + eventMethods.numberOfEvents;
+        numberOfRows = taskMethods.numberOfTasks;
+    } else if (section == 1) {
+        numberOfRows = eventMethods.numberOfEvents;
     }
     return numberOfRows;
 }
@@ -92,8 +94,37 @@
         cell.textLabel.text = tempTask.taskName;
         cell.detailTextLabel.text = detail;
         
-    }
+    }  else if (indexPath.section == 1) {
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSManagedObjectContext * context = appDelegate.persistentContainer.viewContext;
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:context];
+        
+        NSError *error = nil;
+        [request setEntity:entity];
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"eventDate"
+                                                                       ascending:YES];
+        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        [request setSortDescriptors:sortDescriptors];       //https://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
+        fetchedEvents = [context executeFetchRequest:request error:&error];
+        
+        
+        [request setEntity:entity];
+        fetchedEvents = [context executeFetchRequest:request error:&error];//https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
+        
+        
+        Event *tempEvent = [fetchedEvents objectAtIndex: indexPath.row];
+        
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+        [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
+        NSString *detail = [format stringFromDate:[tempEvent valueForKey:@"eventDate"]];
+        
+        //NSString *detail = [NSString stringWithFormat:@"%@", [tempTask valueForKey:@"dueDate"]];
+        cell.textLabel.text = tempEvent.eventName;
+        cell.detailTextLabel.text = detail;
+    }
+    
     return cell;
 }
 

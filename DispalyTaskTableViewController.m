@@ -189,9 +189,11 @@
             
             
             NSLog(@"Test task name is: %@",tempTask.taskName);
-            //dvc.taskEntity = tempTask.taskName;
+            NSDateFormatter *format = [[NSDateFormatter alloc] init];
+            [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
+            NSString *formattedDate = [format stringFromDate:[tempTask valueForKey:@"dueDate"]];
             dvc.taskString = tempTask.taskName;
-            dvc.dateString = [NSString stringWithFormat:@"%@",tempTask.dueDate];
+            dvc.dateString = formattedDate;
             dvc.diffcString = tempTask.difficulty;
             dvc.timeString = [NSString stringWithFormat:@"%hd" ,tempTask.estimatedTime];
         }
