@@ -11,6 +11,7 @@
 
 @interface DeleteEventViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *SearchEventField;
-@property (weak, nonatomic) IBOutlet UITextView *OutputEventField;
+@property (weak, nonatomic) IBOutlet UILabel *eventNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end

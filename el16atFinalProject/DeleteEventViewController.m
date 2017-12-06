@@ -26,8 +26,32 @@
 }
 
 - (IBAction)SearchEventButton:(UIButton *)sender {
-    self.OutputEventField.text= [eventMethods searchEventName:self.SearchEventField.text].description;
-    
+   // self.OutputEventField.text= [eventMethods searchEventName:self.SearchEventField.text].description;
+    @try{
+        NSArray* eventArray = [eventMethods searchEventName:self.SearchEventField.text];
+        NSDictionary* event = [eventArray objectAtIndex:0];
+        NSLog(@">>FOUND TASK: %@", event);
+        self.eventNameLabel.text = [event objectForKey:@"eventName"];
+        NSLog(@"Test event name is: %@",[event objectForKey:@"eventDate"]);
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+        [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
+        NSString *formattedDate = [format stringFromDate:[event valueForKey:@"eventDate"]];
+        self.dateLabel.text = formattedDate;
+        
+        
+    }
+    @catch (NSException *exception) { //if no event is found it runs the code below showing an error mesage
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error 404"
+                                                                       message:@"File not found"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    }
+
     
 }
 
@@ -46,7 +70,9 @@
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
+                                                          handler:^(UIAlertAction * action) {UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                              UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"mainMenu"];
+                                                              [self presentViewController:vc animated:YES completion:nil];}];
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
