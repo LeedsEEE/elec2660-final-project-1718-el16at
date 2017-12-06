@@ -29,6 +29,40 @@
     self.DifficutyLabel.text = self.diffcString;
 }
 
+
+
+/*- (IBAction)CompletedSwitch:(UISwitch *)sender {
+    if ([_CompletedSwitch isOn]) {*/
+
+
+
+- (IBAction)completedButton:(UIButton *)sender {
+    
+    
+    [taskMethods deleteTask:self.taskString];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Welldone Task completed"
+                                                                   message:@"Completed Task will be removed fromthe Task File"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+
+    //save data permenantly
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
+    NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];
+
+}
+
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

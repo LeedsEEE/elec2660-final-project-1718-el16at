@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "Task+AddTheTasks.h"
+#import "taskMethods.h"
 
 
 @interface DisplayTasksViewController : UIViewController
@@ -18,7 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *EstimatedTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *DifficutyLabel;
-@property (weak, nonatomic) IBOutlet UISwitch *CompletedSwitch;
+//@property (weak, nonatomic) IBOutlet UISwitch *CompletedSwitch;
 
 @property (strong, nonatomic) Task *taskEntity;
 
