@@ -368,6 +368,34 @@
             </objects>
             <point key="canvasLocation" x="-1226" y="2868"/>
         </scene>
+        <!--Display Week Table View Controller-->
+        <scene sceneID="vSX-yq-E40">
+            <objects>
+                <tableViewController id="sr8-Iq-gTf" customClass="DisplayWeekTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="igQ-RM-u0z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ncq-5c-5AS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ncq-5c-5AS" id="Dgl-UN-L9t">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sr8-Iq-gTf" id="tg6-yF-epJ"/>
+                            <outlet property="delegate" destination="sr8-Iq-gTf" id="k6b-5N-fZG"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yo-Uk-iaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1226" y="3584"/>
+        </scene>
         <!--Task Event View Controller-->
         <scene sceneID="hWi-uY-XOH">
             <objects>
@@ -1299,6 +1327,7 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="SaveButton:" destination="xaz-tC-grg" eventType="touchUpInside" id="89s-J5-hh6"/>
+                                    <segue destination="1em-qX-mxa" kind="show" id="tP8-2d-lfs"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QDe-AI-dTl">
@@ -1544,9 +1573,9 @@
         <image name="button_border2.jpg" width="524" height="716"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="CJI-DA-wsL"/>
         <segue reference="qs4-N9-XMd"/>
-        <segue reference="OAm-fL-8Db"/>
-        <segue reference="n2g-SJ-eJr"/>
-        <segue reference="vPx-Uq-csh"/>
+        <segue reference="bdu-yA-qi1"/>
+        <segue reference="8Nt-yl-h3i"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -60,6 +60,14 @@
     return numberOfRows;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if(section == 0) {
+        return @"Tasks";
+    } else  {
+        return @"Events";
+    }
+} //https://stackoverflow.com/questions/7670038/add-separate-title-to-each-section-of-uitableview
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

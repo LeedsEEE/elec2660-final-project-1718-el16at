@@ -21,6 +21,7 @@
 		A22B6D041FC752CD002CC9C8 /* Task+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6D011FC752CD002CC9C8 /* Task+CoreDataClass.m */; };
 		A22B6D051FC752CD002CC9C8 /* Task+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6D031FC752CD002CC9C8 /* Task+CoreDataProperties.m */; };
 		A22B6D081FC755D3002CC9C8 /* Task+AddTheTasks.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6D071FC755D3002CC9C8 /* Task+AddTheTasks.m */; };
+		A278A4FC1FD828C500499FC4 /* DisplayWeekTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A278A4FB1FD828C500499FC4 /* DisplayWeekTableViewController.m */; };
 		A28B7A531FD1C8F0004FDB62 /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A28B7A521FD1C8F0004FDB62 /* AddEventViewController.m */; };
 		A28B7A5C1FD1CE07004FDB62 /* Event+AddEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = A28B7A5B1FD1CE07004FDB62 /* Event+AddEvents.m */; };
 		A28B7A611FD1D00B004FDB62 /* Event+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A28B7A5E1FD1D00B004FDB62 /* Event+CoreDataClass.m */; };
@@ -84,6 +85,8 @@
 		A22B6D031FC752CD002CC9C8 /* Task+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Task+CoreDataProperties.m"; path = "../Task+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A22B6D061FC755D3002CC9C8 /* Task+AddTheTasks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Task+AddTheTasks.h"; sourceTree = SOURCE_ROOT; };
 		A22B6D071FC755D3002CC9C8 /* Task+AddTheTasks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Task+AddTheTasks.m"; sourceTree = SOURCE_ROOT; };
+		A278A4FA1FD828C500499FC4 /* DisplayWeekTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisplayWeekTableViewController.h; path = el16atFinalProject/DisplayWeekTableViewController.h; sourceTree = SOURCE_ROOT; };
+		A278A4FB1FD828C500499FC4 /* DisplayWeekTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisplayWeekTableViewController.m; path = el16atFinalProject/DisplayWeekTableViewController.m; sourceTree = SOURCE_ROOT; };
 		A28B7A511FD1C8F0004FDB62 /* AddEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddEventViewController.h; path = ../AddEventViewController.h; sourceTree = "<group>"; };
 		A28B7A521FD1C8F0004FDB62 /* AddEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddEventViewController.m; path = ../AddEventViewController.m; sourceTree = "<group>"; };
 		A28B7A5A1FD1CE07004FDB62 /* Event+AddEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Event+AddEvents.h"; path = "../Event+AddEvents.h"; sourceTree = "<group>"; };
@@ -175,6 +178,7 @@
 				A2D7C49C1FD6D34C005F7B76 /* Delete */,
 				A22B6CC71FC745E9002CC9C8 /* AppDelegate.h */,
 				A22B6CC81FC745E9002CC9C8 /* AppDelegate.m */,
+				A278A4FD1FD8292600499FC4 /* DisplayWeek */,
 				A28B7A511FD1C8F0004FDB62 /* AddEventViewController.h */,
 				A28B7A521FD1C8F0004FDB62 /* AddEventViewController.m */,
 				A22B6CFA1FC74CFE002CC9C8 /* AddTaskFormViewController.h */,
@@ -219,6 +223,15 @@
 				A22B6CEE1FC745EA002CC9C8 /* Info.plist */,
 			);
 			path = el16atFinalProjectUITests;
+			sourceTree = "<group>";
+		};
+		A278A4FD1FD8292600499FC4 /* DisplayWeek */ = {
+			isa = PBXGroup;
+			children = (
+				A278A4FA1FD828C500499FC4 /* DisplayWeekTableViewController.h */,
+				A278A4FB1FD828C500499FC4 /* DisplayWeekTableViewController.m */,
+			);
+			path = DisplayWeek;
 			sourceTree = "<group>";
 		};
 		A2D7C4971FD6D114005F7B76 /* TaskEntity */ = {
@@ -440,6 +453,7 @@
 				A2C4A2CA1FD1DCE80008DC89 /* DeleteEventViewController.m in Sources */,
 				A22B6CFC1FC74CFE002CC9C8 /* AddTaskFormViewController.m in Sources */,
 				A28B7A531FD1C8F0004FDB62 /* AddEventViewController.m in Sources */,
+				A278A4FC1FD828C500499FC4 /* DisplayWeekTableViewController.m in Sources */,
 				A22B6CCC1FC745E9002CC9C8 /* ViewController.m in Sources */,
 				A2C4A2C71FD1DCC60008DC89 /* EditEventViewController.m in Sources */,
 				A2FD96EE1FD7172D007F02CB /* TaskEventTableViewController.m in Sources */,
