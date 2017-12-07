@@ -25,13 +25,31 @@
     
 }
 - (IBAction)SearchTaskNameBtton:(UIButton*)sender {
-    //[taskMethods searchTaskName:taskname];
     
-    
-    self.TaskNameField.text = [taskMethods searchTaskName:self.SearchTaskNameText.text].description;
-    self.SelectedTaskOutput.text = [taskMethods searchTaskName:self.SearchTaskNameText.text].description;
-    
-    
+    @try{
+        NSArray* taskArray = [taskMethods searchTaskName:self.SearchTaskNameText.text];
+        NSDictionary* task = [taskArray objectAtIndex:0];
+        NSLog(@">>FOUND TASK: %@", task);
+        self.taskNameLabel.text = [NSString stringWithFormat:@"Name: %@", [task objectForKey:@"taskName"]];
+        NSLog(@"Test task name is: %@",[task objectForKey:@"dueDate"]);
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+        [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
+        NSString *formattedDate = [format stringFromDate:[task valueForKey:@"dueDate"]];
+        self.dueDateLabel.text = [NSString stringWithFormat:@"Due Date: %@", formattedDate];
+        self.timeLabel.text = [NSString stringWithFormat:@"Estimated Time: %@", [task objectForKey:@"estimatedTime"]];
+        self.difficultyLabel.text = [NSString stringWithFormat:@"Difficulty: %@", [task objectForKey:@"difficulty"]];
+    }
+    @catch (NSException *exception) { //if no event is found it runs the code below showing an error mesage
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error 404"
+                                                                       message:@"File not found"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    }
 }
 - (IBAction)DeleteButton:(UIButton*)sender {
     [taskMethods deleteTask:self.SearchTaskNameText.text];
@@ -42,7 +60,7 @@
     NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Task Deleted"
-                                                                   message:@"Task has been removed fromthe Task File"
+                                                                   message:@"Task has been removed from the Task File"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
@@ -52,20 +70,7 @@
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
-    
-    
-    
-    
 }
-
-
-
-
-
-
-
-
-
 
 
 

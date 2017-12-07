@@ -12,9 +12,5 @@
 
 @interface AddEventViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *AddEventText;
-@property (weak, nonatomic) IBOutlet UITextField *AddTimeHoursText;
 @property (weak, nonatomic) IBOutlet UIDatePicker *AddDatePicker;
-
-@property (weak, nonatomic) IBOutlet UITextField *AddTimeMinutes;
-
 @end

@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_completedSwitch setOn:NO animated:YES];
     // Do any additional setup after loading the view.
 }
 

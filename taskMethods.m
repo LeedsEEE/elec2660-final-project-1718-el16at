@@ -78,7 +78,7 @@
     NSString *dateAsString = [format stringFromDate:now];       //https://stackoverflow.com/questions/3712140/convert-nsdate-to-nsstring-with-nsdateformatter-with-timezone-without-gmt-time-m
     return dateAsString;
 }
-
+/*
 + (NSArray *)datesToOrder{//:(NSDictionary *)taskDueDate {
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"MMMM dd, yyyy (EEEE) HH:mm:ss z Z"];
@@ -87,7 +87,7 @@
     return dateAsString;
     ///just in so dont get an error may buse this to call stuff later if not delete
     
-}
+}*/
 
 
 + (void) saveData {

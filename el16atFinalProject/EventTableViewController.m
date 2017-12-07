@@ -142,10 +142,14 @@
             Event *tempEvent = [fetchedEvents objectAtIndex:indexPath.row];        //just gets the task name from the text label
             NSLog(@"Test event name is: %@",tempEvent.eventName);
             NSDateFormatter *format = [[NSDateFormatter alloc] init];
-            [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
+            [format setDateFormat:@"MMMM dd, yyyy"];
             NSString *formattedDate = [format stringFromDate:[tempEvent valueForKey:@"eventDate"]];
+            NSDateFormatter *formatTime = [[NSDateFormatter alloc] init];
+            [formatTime setDateFormat:@"HH:mm"];
+            NSString *formattedTime = [formatTime stringFromDate:[tempEvent valueForKey:@"eventDate"]];
             dvc.eventNameString = tempEvent.eventName;
             dvc.eventDateString = formattedDate;
+            dvc.eventTimeString = formattedTime;
         }
     }
 }

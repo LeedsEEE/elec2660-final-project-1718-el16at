@@ -23,10 +23,10 @@
 - (void) viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
-    self.TaskNameLabel.text = self.taskString;
-    self.EstimatedTimeLabel.text = self.timeString;
-    self.DueDateLabel.text = self.dateString;
-    self.DifficutyLabel.text = self.diffcString;
+    self.TaskNameLabel.text = [NSString stringWithFormat:@"Name: %@", self.taskString];
+    self.EstimatedTimeLabel.text = [NSString stringWithFormat:@"Estimated Time: %@", self.timeString];
+    self.DueDateLabel.text = [NSString stringWithFormat:@"Due Date: %@", self.dateString];
+    self.DifficutyLabel.text = [NSString stringWithFormat:@"Difficulty: %@", self.diffcString];
 }
 
 
@@ -41,7 +41,7 @@
     
     [taskMethods deleteTask:self.taskString];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Welldone Task completed"
-                                                                   message:@"Completed Task will be removed fromthe Task File"
+                                                                   message:@"Completed Task will be removed from the Task File"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault

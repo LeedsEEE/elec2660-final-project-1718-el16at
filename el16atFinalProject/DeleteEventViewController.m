@@ -26,18 +26,23 @@
 }
 
 - (IBAction)SearchEventButton:(UIButton *)sender {
-   // self.OutputEventField.text= [eventMethods searchEventName:self.SearchEventField.text].description;
+   
     @try{
         NSArray* eventArray = [eventMethods searchEventName:self.SearchEventField.text];
         NSDictionary* event = [eventArray objectAtIndex:0];
         NSLog(@">>FOUND TASK: %@", event);
-        self.eventNameLabel.text = [event objectForKey:@"eventName"];
+        self.eventNameLabel.text = [NSString stringWithFormat:@"Name: %@", [event objectForKey:@"eventName"]];
+        //NSString *nameString =[event objectForKey:@"eventName"]
         NSLog(@"Test event name is: %@",[event objectForKey:@"eventDate"]);
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
-        [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
+        [format setDateFormat:@"MMMM dd, yyyy"];
         NSString *formattedDate = [format stringFromDate:[event valueForKey:@"eventDate"]];
-        self.dateLabel.text = formattedDate;
-        
+        self.dateLabel.text = [NSString stringWithFormat:@"Date: %@", formattedDate];
+        NSDateFormatter *formatTime = [[NSDateFormatter alloc] init];
+        [formatTime setDateFormat:@"HH:mm"];
+        NSString *formattedTime = [formatTime stringFromDate:[event valueForKey:@"eventDate"]];
+        self.timeLabel.text = [NSString stringWithFormat:@"Time: %@", formattedTime];
+
         
     }
     @catch (NSException *exception) { //if no event is found it runs the code below showing an error mesage
@@ -66,7 +71,7 @@
     NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Event Deleted"
-                                                                   message:@"Event has been removed fromthe Event File"
+                                                                   message:@"Event has been removed from the Event File"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault

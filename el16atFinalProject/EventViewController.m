@@ -23,15 +23,16 @@
 - (void) viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
-    self.eventNameLabel.text = self.eventNameString;
-    self.timeLabel.text = self.eventDateString;
+    self.eventNameLabel.text = [NSString stringWithFormat:@"Name: %@", self.eventNameString];
+    self.dateLabel.text = [NSString stringWithFormat:@"Date: %@", self.eventDateString];
+    self.timeLabel.text = [NSString stringWithFormat:@"Time: %@", self.eventTimeString];
 }
 
 
 - (IBAction)eventCompleted:(UIButton *)sender {
     [eventMethods deleteEvent:self.eventNameString];
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Welldone Event completed"
-                                                                   message:@"Completed Event will be removed fromthe Event File"
+                                                                   message:@"Completed Event will be removed from the Event File"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault

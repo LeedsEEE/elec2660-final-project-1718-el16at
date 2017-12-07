@@ -41,7 +41,7 @@
         [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
     }else {
     
-    NSDictionary *eventInfo = @{@"eventName": self.AddEventText.text, @"eventTimeHours": self.AddTimeHoursText.text, @"eventTimeMinutes": self.AddTimeMinutes.text, @"eventDate": self.AddDatePicker.date};
+    NSDictionary *eventInfo = @{@"eventName": self.AddEventText.text, @"eventDate": self.AddDatePicker.date};
      [Event addEventInfoFromDictionary:eventInfo];
     
     //save data permenantly
