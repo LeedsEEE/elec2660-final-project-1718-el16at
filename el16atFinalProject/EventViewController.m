@@ -23,14 +23,14 @@
 - (void) viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
-    self.eventNameLabel.text = [NSString stringWithFormat:@"Name: %@", self.eventNameString];   //displays selected event from table view in labels
+    self.eventNameLabel.text = [NSString stringWithFormat:@"Name: %@", self.eventNameString];               //displays selected event from table view in labels
     self.dateLabel.text = [NSString stringWithFormat:@"Date: %@", self.eventDateString];
     self.timeLabel.text = [NSString stringWithFormat:@"Time: %@", self.eventTimeString];
 }
 
 
 - (IBAction)eventCompleted:(UIButton *)sender {
-    [eventMethods deleteEvent:self.eventNameString];            //deletes the completed event
+    [eventMethods deleteEvent:self.eventNameString];                                                        //deletes the completed event
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Welldone Event completed"
                                                                    message:@"Completed Event will be removed from the Event File"
                                                             preferredStyle:UIAlertControllerStyleAlert];    //alert congradulating user on completing thier evnt
@@ -41,13 +41,13 @@
                                                               [self presentViewController:vc animated:YES completion:nil];}];    //sends user back to main menu after they have clicked ok
     
     [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    [self presentViewController:alert animated:YES completion:nil];                                         //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
-    NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
-    [[[appDelegate persistentContainer] viewContext] save:&saveError];      //saves that event has been completed (saves that event has been deleted)
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+    NSError *saveError = nil;                                                                               //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];                                      //saves that event has been completed (saves that event has been deleted)
     
 }
 

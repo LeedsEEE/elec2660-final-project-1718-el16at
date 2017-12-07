@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
-
 @property (strong, nonatomic) NSString *eventNameString;
 @property (strong, nonatomic) NSString *eventDateString;
 @property (strong, nonatomic) NSString *eventTimeString;

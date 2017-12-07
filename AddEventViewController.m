@@ -27,9 +27,8 @@
 - (IBAction)SaveEvent:(UIButton *)sender {
     
     
-    NSArray *eventArray = [eventMethods searchEventName:self.AddEventText.text];
-    
-    if ([eventArray count] >= 1) {
+    NSArray *eventArray = [eventMethods searchEventName:self.AddEventText.text];                    //makes an array of all the events with the name of the event the user is trying to add
+    if ([eventArray count] >= 1) {                                                                  //if an event with that name already exsists there will be an alert message
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Not Saved"
                                                                        message:@"Event with this name already exsits"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -38,18 +37,18 @@
                                                               handler:^(UIAlertAction * action) {}];
         
         [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
-    }else {
+        [self presentViewController:alert animated:YES completion:nil];                             //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    }else {                                                                                         //if there are no exsisting events with this event name then the event will be saved
     
-    NSDictionary *eventInfo = @{@"eventName": self.AddEventText.text, @"eventDate": self.AddDatePicker.date};
+    NSDictionary *eventInfo = @{@"eventName": self.AddEventText.text, @"eventDate": self.AddDatePicker.date};                       //adds data entered to a dictionary
      [Event addEventInfoFromDictionary:eventInfo];
     
     //save data permenantly
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
-    NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
-    [[[appDelegate persistentContainer] viewContext] save:&saveError];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];         //defines appDelegate
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];                 //creates fetch request
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+    NSError *saveError = nil;                                                                       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];                              //saves event permenantly
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Saved"
                                                                    message:@"Event saved"
                                                             preferredStyle:UIAlertControllerStyleAlert];
@@ -57,10 +56,10 @@
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                                                               UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"mainMenu"];
-                                                              [self presentViewController:vc animated:YES completion:nil];}];
+                                                              [self presentViewController:vc animated:YES completion:nil];}];   //this takes the user back to the main menu when ok is clicked
     
     [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    [self presentViewController:alert animated:YES completion:nil];                                //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
     }
 }
 

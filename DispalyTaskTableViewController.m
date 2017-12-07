@@ -7,8 +7,6 @@
 //
 
 #import "DispalyTaskTableViewController.h"
-#import "DisplayTasksViewController.h"
-
 
 @interface DispalyTaskTableViewController ()
 {
@@ -42,16 +40,15 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-    return 1;
+    return 1;                   //sets number of sections to 1
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     NSInteger numberOfRows;
-    [taskMethods numberOfTasks];
+    [taskMethods numberOfTasks];                        //counts number of tasks
     if (section == 0) {
-        numberOfRows = taskMethods.numberOfTasks;
+        numberOfRows = taskMethods.numberOfTasks;       //makes number of rows equal to number of tasks
     }
     return numberOfRows;
 }
@@ -65,16 +62,16 @@
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         NSManagedObjectContext * context = appDelegate.persistentContainer.viewContext;
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:context]; //gets all of the tasks from the task entity
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:context];   //gets all of the tasks from the task entity
         NSError *error = nil;
         [request setEntity:entity];
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dueDate"
                                                                        ascending:YES];
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-        [request setSortDescriptors:sortDescriptors];       //Sorts all the tasks by their due date from earliest to latesthttps://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
+        [request setSortDescriptors:sortDescriptors];                                                               //Sorts all the tasks by their due date from earliest to latesthttps://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
         [request setEntity:entity];
-        fetchedTasks = [context executeFetchRequest:request error:&error];//https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
-        Task *tempTask = [fetchedTasks objectAtIndex: indexPath.row];   //makes temporary entity out of all of the fetched Tasks
+        fetchedTasks = [context executeFetchRequest:request error:&error];                                          //https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
+        Task *tempTask = [fetchedTasks objectAtIndex: indexPath.row];                                               //makes temporary entity out of all of the fetched Tasks
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
         NSString *detail = [format stringFromDate:[tempTask valueForKey:@"dueDate"]];       //formats the date to how it needs to be displayed
@@ -85,25 +82,6 @@
     
     return cell;
 }
-
-
-
-/*
- NSArray *sortedTaskArray = [tempTask sortedArrayUsingComparator:^NSComparisonResult(tempTask *tempTask1, tempTask *tempTask2) {
- return [[tempTask1.dueDate compare:tempTask2.dueDate];
- }];*/
-/* NSLog(@"nodeEventArray == %@", tempTask);
- NSSortDescriptor *dateDescriptor = [NSSortDescriptor
- sortDescriptorWithKey:@"dueDate"
- ascending:YES];
- NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
- NSArray *sortedtaskArray = [tempTask
- sortedArrayUsingDescriptors:sortDescriptors];
- NSLog(@"sortedEventArray == %@", tempTask);*/ //https://stackoverflow.com/questions/6083408/sort-nsarray-of-custom-objects-by-their-nsdate-properties
-
-//NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"dueDate" ascending:YES selector:@selector(compare:)];  //https://stackoverflow.com/questions/6083408/sort-nsarray-of-custom-objects-by-their-nsdate-properties
-
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -142,7 +120,6 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowTask"]) {
         DisplayTasksViewController *dvc = [segue destinationViewController];        //defines the destination of segue

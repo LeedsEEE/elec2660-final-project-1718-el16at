@@ -14,20 +14,14 @@
 
 @interface DisplayTasksViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *TaskNameLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *DueDateLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *EstimatedTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *DifficutyLabel;
-//@property (weak, nonatomic) IBOutlet UISwitch *CompletedSwitch;
-
 @property (strong, nonatomic) Task *taskEntity;
-
 
 @property (strong, nonatomic) NSString *taskString;
 @property (strong, nonatomic) NSString *dateString;
 @property (strong, nonatomic) NSString *timeString;
 @property (strong, nonatomic) NSString *diffcString;
-
 
 @end

@@ -11,18 +11,14 @@
 @implementation Event (AddEvents)
 
 #pragma mark - Make Event object
-+ (Event *)addEventInfoFromDictionary :(NSDictionary *)eventInfo
++ (Event *)addEventInfoFromDictionary :(NSDictionary *)eventInfo                                //https://www.youtube.com/watch?v=EGO9XBFrZE0
 {
-    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];        //defines appDelegate
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+    Event *eventEntity = nil;
     
-    Event *eventEntity = nil; //first tutorial
     //Create new object
-    
-    //First tutorial
-    
     eventEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:context];
-    
     eventEntity.eventID = (int)[(NSNumber *)[eventInfo valueForKey:@"eventID"] integerValue];
     eventEntity.eventName = [eventInfo valueForKey:@"eventName"];
     eventEntity.eventDate =  [eventInfo valueForKey:@"eventDate"];

@@ -28,8 +28,8 @@
 }
 
 - (IBAction)SaveButton:(UIButton *)sender {
-        NSArray *taskArray = [taskMethods searchTaskName:self.NameText.text];   //makes an array of all the tasks with the name of the task the user is trying to add
-    if ([taskArray count] >= 1) {       //if there are any users with that task name already an aleart will apear
+        NSArray *taskArray = [taskMethods searchTaskName:self.NameText.text];                   //makes an array of all the tasks with the name of the task the user is trying to add
+    if ([taskArray count] >= 1) {                                                               //if there are any tasks with that task name already an aleart will apear
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Not Saved"
                                                                        message:@"Task with this name already exsits"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -38,19 +38,19 @@
                                                               handler:^(UIAlertAction * action) {}];
         
         [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
-    } else {                //if there are no existing tasks with the task name then the task will be saved
+        [self presentViewController:alert animated:YES completion:nil];                         //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    } else {                                                                                    //if there are no existing tasks with the task name then the task will be saved
         NSDictionary *taskInfo = @{@"taskName": self.NameText.text,
                                    @"dueDate" : self.DatePicker.date,
                                    @"estimatedTime" : self.TimeHoursText.text,
-                                   @"difficulty": self.DifficultyText.text};    //adds the entered text and date to a dictionary
+                                   @"difficulty": self.DifficultyText.text};                    //adds the entered text and date to a dictionary
         
-        [Task addTaskInfoFromDictionary:taskInfo];      //makes dictioanry a task
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];     //defines app delegate
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];          //creates fetch request
-        NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
-        NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
-        [[[appDelegate persistentContainer] viewContext] save:&saveError];      //saves task permenantly
+        [Task addTaskInfoFromDictionary:taskInfo];
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];     //defines appDelegate
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];              //creates fetch request
+        NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+        NSError *saveError = nil;                                                                   //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+        [[[appDelegate persistentContainer] viewContext] save:&saveError];                          //saves task permenantly
         
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Saved"
                                                                        message:@"Task saved"
@@ -62,7 +62,7 @@
                                                                   [self presentViewController:vc animated:YES completion:nil];}];   //https://stackoverflow.com/questions/16134361/how-to-call-a-view-controller-programmatically        this takes the user back to the main menu when ok is clicked
         
         [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+        [self presentViewController:alert animated:YES completion:nil];                             //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
     }
 
     

@@ -50,9 +50,9 @@
     NSInteger numberOfRows;
     [taskMethods numberOfTasks];
     [eventMethods numberOfEvents];
-    if (section == 0) { //makes first section have the same amount of rows as tasks
+    if (section == 0) {                                 //makes first section have the same amount of rows as tasks
         numberOfRows = taskMethods.numberOfTasks;
-    } else if (section == 1) {  //makes second section have same amount of rows as events
+    } else if (section == 1) {                          //makes second section have same amount of rows as events
         numberOfRows = eventMethods.numberOfEvents;
     }
     return numberOfRows;
@@ -71,8 +71,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskEventCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    
     if (indexPath.section == 0) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         
@@ -84,15 +82,15 @@
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dueDate"
                                                                        ascending:YES];
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-        [request setSortDescriptors:sortDescriptors];       //Sorts all the tasks by their due date from earliest to latest https://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
+        [request setSortDescriptors:sortDescriptors];                                           //Sorts all the tasks by their due date from earliest to latest https://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
         [request setEntity:entity];
-        fetchedTasks = [context executeFetchRequest:request error:&error];//https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
-        Task *tempTask = [fetchedTasks objectAtIndex: indexPath.row];   //makes temporary entity out of all of the fetched Tasks
+        fetchedTasks = [context executeFetchRequest:request error:&error];                      //https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
+        Task *tempTask = [fetchedTasks objectAtIndex: indexPath.row];                           //makes temporary entity out of all of the fetched Tasks
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
-        NSString *detail = [format stringFromDate:[tempTask valueForKey:@"dueDate"]]; //formats the date to how it needs to be displayed
-        cell.textLabel.text = tempTask.taskName;                            //displays all the task names in the title cell of the table view
-        cell.detailTextLabel.text = detail;                                 //displays all the due dates in the detail cell of the table view
+        NSString *detail = [format stringFromDate:[tempTask valueForKey:@"dueDate"]];           //formats the date to how it needs to be displayed
+        cell.textLabel.text = tempTask.taskName;                                                //displays all the task names in the title cell of the table view
+        cell.detailTextLabel.text = detail;                                                     //displays all the due dates in the detail cell of the table view
         
     }  else if (indexPath.section == 1) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -104,15 +102,15 @@
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"eventDate"
                                                                        ascending:YES];
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-        [request setSortDescriptors:sortDescriptors];       //sorts all events by their date from earliest to latest https://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
+        [request setSortDescriptors:sortDescriptors];                                           //sorts all events by their date from earliest to latest https://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
         [request setEntity:entity];
-        fetchedEvents = [context executeFetchRequest:request error:&error];//https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
-        Event *tempEvent = [fetchedEvents objectAtIndex: indexPath.row];        //makes temporary entity out of all the fetched events
+        fetchedEvents = [context executeFetchRequest:request error:&error];                     //https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
+        Event *tempEvent = [fetchedEvents objectAtIndex: indexPath.row];                        //makes temporary entity out of all the fetched events
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
-        NSString *detail = [format stringFromDate:[tempEvent valueForKey:@"eventDate"]];    //formats date how it needs to be displayed
-        cell.textLabel.text = tempEvent.eventName;                          //displays all the event names in the title cell of the table view
-        cell.detailTextLabel.text = detail;                                 //displays all the dates in the detail cell of the table view
+        NSString *detail = [format stringFromDate:[tempEvent valueForKey:@"eventDate"]];        //formats date how it needs to be displayed
+        cell.textLabel.text = tempEvent.eventName;                                              //displays all the event names in the title cell of the table view
+        cell.detailTextLabel.text = detail;                                                     //displays all the dates in the detail cell of the table view
     }
     
     return cell;
@@ -166,20 +164,20 @@
             NSDateFormatter *format = [[NSDateFormatter alloc] init];
             [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
             NSString *formattedDate = [format stringFromDate:[tempTask valueForKey:@"dueDate"]];    //formats the date how I want it to be displayed
-            dvc.nameString = tempTask.taskName;                                             //sets strings deffined in the TaskEventViewController  to the relevant data from the selected task
+            dvc.nameString = tempTask.taskName;                                                     //sets strings deffined in the TaskEventViewController  to the relevant data from the selected task
             dvc.dateString = formattedDate;
             dvc.diffcString = tempTask.difficulty;
             dvc.timeString = [NSString stringWithFormat:@"%hd" ,tempTask.estimatedTime];
 
-        } else {                                                                //if an event was selected
+        } else {                                                                                            //if an event was selected
             Event *tempEvent = [fetchedEvents objectAtIndex:indexPath.row];
             NSDateFormatter *format = [[NSDateFormatter alloc] init];
             [format setDateFormat:@"MMMM dd, yyyy"];
-            NSString *formattedDate = [format stringFromDate:[tempEvent valueForKey:@"eventDate"]]; //formates the date how I want it to be displayed
+            NSString *formattedDate = [format stringFromDate:[tempEvent valueForKey:@"eventDate"]];         //formates the date how I want it to be displayed
             NSDateFormatter *formatTime = [[NSDateFormatter alloc] init];
             [formatTime setDateFormat:@"HH:mm"];
             NSString *formattedTime = [formatTime stringFromDate:[tempEvent valueForKey:@"eventDate"]];     //formats the time how I want it to be displayed
-            dvc.nameString = tempEvent.eventName;       //sets strings deffined in the TaskEventViewController  to the relevant data from the selected event
+            dvc.nameString = tempEvent.eventName;                                                           //sets strings deffined in the TaskEventViewController  to the relevant data from the selected event
             dvc.dateString = formattedDate;
             dvc.timeString = formattedTime;
             

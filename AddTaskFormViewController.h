@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *NameText;
 @property (weak, nonatomic) IBOutlet UIDatePicker *DatePicker;
 @property (weak, nonatomic) IBOutlet UITextField *TimeHoursText;
-//@property (weak, nonatomic) IBOutlet UITextField *TimeMinutesText;
 @property (weak, nonatomic) IBOutlet UITextField *DifficultyText;
 @end
 

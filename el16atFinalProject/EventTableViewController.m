@@ -39,16 +39,16 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
+
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
+
     NSInteger numberOfRows;
     [eventMethods numberOfEvents];
     if (section == 0) {
-        numberOfRows = eventMethods.numberOfEvents;
+        numberOfRows = eventMethods.numberOfEvents;     //sets the number of rows in the table view to the number of events in the events entity
     }
     return numberOfRows;
 }
@@ -61,16 +61,16 @@
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         NSManagedObjectContext * context = appDelegate.persistentContainer.viewContext;
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:context]; //gets all the events from the event entity
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:context];          //gets all the events from the event entity
         NSError *error = nil;
         [request setEntity:entity];
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"eventDate"
                                                                        ascending:YES];
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-        [request setSortDescriptors:sortDescriptors];       //sorts all events by their date from earliest to latest https://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
+        [request setSortDescriptors:sortDescriptors];                                                                       //sorts all events by their date from earliest to latest https://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
         [request setEntity:entity];
-        fetchedEvents = [context executeFetchRequest:request error:&error];//https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
-        Event *tempEvent = [fetchedEvents objectAtIndex: indexPath.row];    //makes temporary entity out of all the fetched events
+        fetchedEvents = [context executeFetchRequest:request error:&error];                                                 //https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
+        Event *tempEvent = [fetchedEvents objectAtIndex: indexPath.row];                                                    //makes temporary entity out of all the fetched events
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
         NSString *detail = [format stringFromDate:[tempEvent valueForKey:@"eventDate"]];    //formats date how it needs to ne displayed

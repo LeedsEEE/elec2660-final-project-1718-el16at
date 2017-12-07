@@ -12,18 +12,14 @@
 @implementation Task (AddTheTasks)
 #pragma mark - Make Task object
 
-+ (Task *)addTaskInfoFromDictionary :(NSDictionary *)taskInfo
++ (Task *)addTaskInfoFromDictionary :(NSDictionary *)taskInfo                               //I set up core data with this tutorialhttps://www.youtube.com/watch?v=EGO9XBFrZE0
 {
-    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+    AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];        //defines appDelegate
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];              
+    Task *taskEntity = nil;
     
-    Task *taskEntity = nil; //first tutorial
     //Create new object
-    
-    //First tutorial
-
     taskEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Task" inManagedObjectContext:context];
-    
     taskEntity.taskID = (int)[(NSNumber *)[taskInfo valueForKey:@"taskID"] integerValue];
     taskEntity.taskName = [taskInfo valueForKey:@"taskName"];
     taskEntity.dueDate =  [taskInfo valueForKey:@"dueDate"];
@@ -32,10 +28,7 @@
     taskEntity.difficulty = [taskInfo valueForKey:@"difficulty"];
     taskEntity.completed = [taskInfo valueForKey:@"completed"];
     
-    
     return taskEntity;
-    
 }
-
 
 @end

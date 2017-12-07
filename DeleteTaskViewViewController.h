@@ -12,16 +12,11 @@
 @interface DeleteTaskViewViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *SearchTaskNameText;
-
 @property (weak, nonatomic) IBOutlet UIButton *SearchTaskNameButton;
-
 @property (weak, nonatomic) IBOutlet UIButton *DeleteButton;
-
 @property (weak, nonatomic) IBOutlet UILabel *taskNameLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *dueDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *difficultyLabel;
 
 @end

@@ -16,8 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_completedSwitch setOn:NO animated:YES];
-    // Do any additional setup after loading the view.
+    [_completedSwitch setOn:NO animated:YES];       //sets UIswitch to off
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,16 +28,14 @@
 - (IBAction)SearchEventNameButton:(UIButton *)sender {
     
     @try{
-    NSArray* eventArray = [eventMethods searchEventName:self.SearchNameFeild.text];
-    NSDictionary* event = [eventArray objectAtIndex:0];
-    NSLog(@">>FOUND TASK: %@", event);
-    
-    self.EditNameField.text = [event objectForKey:@"eventName"];
+    NSArray* eventArray = [eventMethods searchEventName:self.SearchNameFeild.text];             //makes an array of the event searched for in SearchNameFeild
+    NSDictionary* event = [eventArray objectAtIndex:0];                                         //gets first event from array (there will only be one event in the array)
+    self.EditNameField.text = [event objectForKey:@"eventName"];                                //displays event in fext field and picker
     self.EditDatePicker.date = [event objectForKey:@"eventDate"];
 
         
     }
-    @catch (NSException *exception) { //if no event is found it runs the code below showing an error mesage
+    @catch (NSException *exception) {                                                           //if no event is found it runs the code below showing an error mesage
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error 404"
                                                                        message:@"File not found"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -47,27 +44,27 @@
                                                               handler:^(UIAlertAction * action) {}];
         
         [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+        [self presentViewController:alert animated:YES completion:nil];                         //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
     }
         
 }
 
 - (IBAction)SaveEdit:(UIButton *)sender {
-    [eventMethods deleteEvent:self.SearchNameFeild.text]; //deletes old object
+    [eventMethods deleteEvent:self.SearchNameFeild.text];                       //deletes unedited event
     
-    if ([_completedSwitch isOn]){
+    if ([_completedSwitch isOn]){                                               //if switch is on nothing is saved and event has just been deleted
         NSLog(@"switch is on");
     } else {
     NSDictionary *eventInfo = @{@"eventName": self.EditNameField.text,
-                               @"eventDate" : self.EditDatePicker.date};
+                               @"eventDate" : self.EditDatePicker.date};        //makes new event into dictionary
     [Event addEventInfoFromDictionary:eventInfo];
     
     //save data permenantly
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
-    NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
-    [[[appDelegate persistentContainer] viewContext] save:&saveError];
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+    NSError *saveError = nil;                                                               //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];                      //saves edited event permenantly in event entity
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Saved"
                                                                        message:@"Event saved"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -79,6 +76,7 @@
         
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    //alert saying the event has been saved then sends the user back to the main menu
     }
     
 }

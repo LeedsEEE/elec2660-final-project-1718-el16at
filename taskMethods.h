@@ -16,6 +16,5 @@
 + (Task *)searchTaskName :(NSDictionary *)taskname;
 + (NSDictionary *)createObjectFromEntity:(Task *)taskInfo;
 + (void) deleteTask :(NSDictionary *)taskname;
-+ (NSString *)formatDate:(NSDate *)taskDate;
 
 @end

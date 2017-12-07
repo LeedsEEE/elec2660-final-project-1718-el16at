@@ -27,38 +27,37 @@
 - (IBAction)SearchTaskNameBtton:(UIButton*)sender {
     
     @try{
-        NSArray* taskArray = [taskMethods searchTaskName:self.SearchTaskNameText.text];     //trys to find the event searcched for in the textbox
+        NSArray* taskArray = [taskMethods searchTaskName:self.SearchTaskNameText.text];                                 //trys to find the task searcched for in the textfield
         NSDictionary* task = [taskArray objectAtIndex:0];
-        //NSLog(@">>FOUND TASK: %@", task);
-        self.taskNameLabel.text = [NSString stringWithFormat:@"Name: %@", [task objectForKey:@"taskName"]];     //displays the selected task in the labels
+        self.taskNameLabel.text = [NSString stringWithFormat:@"Name: %@", [task objectForKey:@"taskName"]];             //displays the selected task in the labels
         NSLog(@"Test task name is: %@",[task objectForKey:@"dueDate"]);
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
-        [format setDateFormat:@"MMMM dd, yyyy HH:mm"];      //sets the date format to the one I want to display
+        [format setDateFormat:@"MMMM dd, yyyy HH:mm"];                                                                  //sets the date format to the way I want to display
         NSString *formattedDate = [format stringFromDate:[task valueForKey:@"dueDate"]];
         self.dueDateLabel.text = [NSString stringWithFormat:@"Due Date: %@", formattedDate];
         self.timeLabel.text = [NSString stringWithFormat:@"Estimated Time: %@", [task objectForKey:@"estimatedTime"]];
         self.difficultyLabel.text = [NSString stringWithFormat:@"Difficulty: %@", [task objectForKey:@"difficulty"]];
     }
-    @catch (NSException *exception) { //if no event is found it runs the code below showing an error mesage
+    @catch (NSException *exception) {                                                                                   //if no event is found it runs the code below showing an error mesage
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error 404"
                                                                        message:@"File not found"
-                                                                preferredStyle:UIAlertControllerStyleAlert];    //sets the title and message of the alert
+                                                                preferredStyle:UIAlertControllerStyleAlert];            //sets the title and message of the alert
         
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * action) {}];    //sets the text on the button that closes the alert
+                                                              handler:^(UIAlertAction * action) {}];                    //sets the text on the button that closes the alert
         
         [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+        [self presentViewController:alert animated:YES completion:nil];                                                 //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
     }
 }
 - (IBAction)DeleteButton:(UIButton*)sender {
-    [taskMethods deleteTask:self.SearchTaskNameText.text];  //deletes the task with the name searched
+    [taskMethods deleteTask:self.SearchTaskNameText.text];                                                              //deletes the task with the name searched
     //save data permenantly
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];              //fetches task entity
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
-    NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
-    [[[appDelegate persistentContainer] viewContext] save:&saveError];                  //saves entity permenantly so thetask has been permenantly deleted from task entity
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];                                      //fetches task entity
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
+    NSError *saveError = nil;                                                                                           //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];                                                  //saves entity permenantly so the task has been permenantly deleted from task entity
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Task Deleted"
                                                                    message:@"Task has been removed from the Task File"
                                                             preferredStyle:UIAlertControllerStyleAlert];
@@ -69,7 +68,7 @@
                                                               [self presentViewController:vc animated:YES completion:nil];}]; //when ok is clicked  it goes back to the main menu
     
     [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    [self presentViewController:alert animated:YES completion:nil];                                                     //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
 }
 
 
