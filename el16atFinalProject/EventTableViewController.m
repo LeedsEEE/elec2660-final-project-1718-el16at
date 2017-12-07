@@ -57,7 +57,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EventCell" forIndexPath:indexPath];
     
-    // Configure the cell...
     if (indexPath.section == 0) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         
@@ -79,12 +78,9 @@
         
         
         Event *tempEvent = [fetchedEvents objectAtIndex: indexPath.row];
-        
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
         NSString *detail = [format stringFromDate:[tempEvent valueForKey:@"eventDate"]];
-        
-        //NSString *detail = [NSString stringWithFormat:@"%@", [tempTask valueForKey:@"dueDate"]];
         cell.textLabel.text = tempEvent.eventName;
         cell.detailTextLabel.text = detail;
         

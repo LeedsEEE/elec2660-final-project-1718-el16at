@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "taskMethods.h"
 #import "eventMethods.h"
+#import "TaskEventViewController.h"
 
 @interface TaskEventTableViewController : UITableViewController
 

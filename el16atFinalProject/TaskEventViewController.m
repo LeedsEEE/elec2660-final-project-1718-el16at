@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.nameLabel.text = self.nameString;
+    self.dateLabel.text = self.dateString;
+    self.timeLabel.text = self.timeString;
+    self.difficultyLabel.text = self.diffcString;
 }
 
 - (void)didReceiveMemoryWarning {

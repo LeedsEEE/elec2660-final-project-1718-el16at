@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface TaskEventViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *difficultyLabel;
 
+@property (strong, nonatomic) NSString *nameString;
+@property (strong, nonatomic) NSString *dateString;
+@property (strong, nonatomic) NSString * timeString;
+@property (strong, nonatomic) NSString *diffcString;
 @end

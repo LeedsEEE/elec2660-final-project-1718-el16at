@@ -171,14 +171,44 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"ShowTaskEvent"]) {
+        TaskEventViewController *dvc = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        if (indexPath.section == 0) {
+            Task *tempTask = [fetchedTasks objectAtIndex:indexPath.row];        //just gets the task name from the text label
+            NSLog(@"Test task name is: %@",tempTask.taskName);
+            NSDateFormatter *format = [[NSDateFormatter alloc] init];
+            [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
+            NSString *formattedDate = [format stringFromDate:[tempTask valueForKey:@"dueDate"]];
+            dvc.nameString = tempTask.taskName;
+            dvc.dateString = formattedDate;
+            dvc.diffcString = tempTask.difficulty;
+            dvc.timeString = [NSString stringWithFormat:@"%hd" ,tempTask.estimatedTime];
+
+        } else {
+            Event *tempEvent = [fetchedEvents objectAtIndex:indexPath.row];        //just gets the task name from the text label
+            NSLog(@"Test event name is: %@",tempEvent.eventName);
+            NSDateFormatter *format = [[NSDateFormatter alloc] init];
+            [format setDateFormat:@"MMMM dd, yyyy"];
+            NSString *formattedDate = [format stringFromDate:[tempEvent valueForKey:@"eventDate"]];
+            NSDateFormatter *formatTime = [[NSDateFormatter alloc] init];
+            [formatTime setDateFormat:@"HH:mm"];
+            NSString *formattedTime = [formatTime stringFromDate:[tempEvent valueForKey:@"eventDate"]];
+            dvc.nameString = tempEvent.eventName;
+            dvc.dateString = formattedDate;
+            dvc.timeString = formattedTime;
+            
+        }
+    }
+    
 }
-*/
+
 
 @end

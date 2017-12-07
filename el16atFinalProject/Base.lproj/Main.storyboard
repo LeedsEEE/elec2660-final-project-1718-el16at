@@ -361,7 +361,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="fwe-Bb-ccm" kind="show" action="showDetailViewController:sender:" id="GTQ-GT-chx"/>
+                                    <segue destination="fwe-Bb-ccm" kind="show" identifier="ShowTaskEvent" action="showDetailViewController:sender:" id="GTQ-GT-chx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -428,15 +428,50 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCu-dA-ovn">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GId-ZE-qQl">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KpX-7g-Wqz">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apl-tI-PDO">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="apl-tI-PDO" firstAttribute="centerX" secondItem="mT0-1V-tsy" secondAttribute="centerX" id="3yh-L7-gQq"/>
                             <constraint firstItem="UiG-Dt-zEc" firstAttribute="top" secondItem="KEN-ey-fCL" secondAttribute="bottom" id="59V-kN-U98"/>
                             <constraint firstItem="UiG-Dt-zEc" firstAttribute="centerX" secondItem="mT0-1V-tsy" secondAttribute="centerX" id="Au4-WS-7dX"/>
+                            <constraint firstItem="GId-ZE-qQl" firstAttribute="top" secondItem="KEN-ey-fCL" secondAttribute="bottom" constant="199" id="LcZ-O0-8XF"/>
+                            <constraint firstItem="GId-ZE-qQl" firstAttribute="centerX" secondItem="mT0-1V-tsy" secondAttribute="centerX" id="PEF-WS-hmY"/>
                             <constraint firstItem="htd-pc-lkg" firstAttribute="top" secondItem="KEN-ey-fCL" secondAttribute="bottom" constant="-4" id="SQB-Y8-UPQ"/>
+                            <constraint firstItem="KpX-7g-Wqz" firstAttribute="top" secondItem="KEN-ey-fCL" secondAttribute="bottom" constant="303" id="TMj-BE-iIl"/>
+                            <constraint firstItem="GId-ZE-qQl" firstAttribute="centerX" secondItem="mT0-1V-tsy" secondAttribute="centerX" id="aoF-cP-wGY"/>
+                            <constraint firstItem="eCu-dA-ovn" firstAttribute="centerX" secondItem="mT0-1V-tsy" secondAttribute="centerX" id="iFF-Hb-pHb"/>
+                            <constraint firstItem="eCu-dA-ovn" firstAttribute="top" secondItem="KEN-ey-fCL" secondAttribute="bottom" constant="110" id="isS-ri-V6e"/>
                             <constraint firstAttribute="trailingMargin" secondItem="htd-pc-lkg" secondAttribute="trailing" constant="6" id="myz-4L-cGT"/>
+                            <constraint firstItem="KpX-7g-Wqz" firstAttribute="centerX" secondItem="mT0-1V-tsy" secondAttribute="centerX" id="oGt-Ar-fXz"/>
+                            <constraint firstItem="apl-tI-PDO" firstAttribute="top" secondItem="KEN-ey-fCL" secondAttribute="bottom" constant="416" id="pb2-Ml-nGp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="GId-ZE-qQl" id="qSi-HC-Iji"/>
+                        <outlet property="difficultyLabel" destination="apl-tI-PDO" id="omh-uA-fQW"/>
+                        <outlet property="nameLabel" destination="eCu-dA-ovn" id="8xR-eQ-OBz"/>
+                        <outlet property="timeLabel" destination="KpX-7g-Wqz" id="LUl-bd-WYu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ltd-16-F7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1597,6 +1632,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="OAm-fL-8Db"/>
         <segue reference="S8n-SR-NG2"/>
-        <segue reference="n2g-SJ-eJr"/>
+        <segue reference="NoS-dq-tlM"/>
     </inferredMetricsTieBreakers>
 </document>
