@@ -10,7 +10,6 @@
 		A223AF981FCC583A00DC0AB1 /* DisplayTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A223AF971FCC583A00DC0AB1 /* DisplayTasksViewController.m */; };
 		A22B6CC61FC745E9002CC9C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6CC51FC745E9002CC9C8 /* main.m */; };
 		A22B6CC91FC745E9002CC9C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6CC81FC745E9002CC9C8 /* AppDelegate.m */; };
-		A22B6CCC1FC745E9002CC9C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A22B6CCB1FC745E9002CC9C8 /* ViewController.m */; };
 		A22B6CCF1FC745E9002CC9C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22B6CCD1FC745E9002CC9C8 /* Main.storyboard */; };
 		A22B6CD21FC745E9002CC9C8 /* el16atFinalProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A22B6CD01FC745E9002CC9C8 /* el16atFinalProject.xcdatamodeld */; };
 		A22B6CD41FC745EA002CC9C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22B6CD31FC745EA002CC9C8 /* Assets.xcassets */; };
@@ -26,6 +25,8 @@
 		A28B7A611FD1D00B004FDB62 /* Event+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A28B7A5E1FD1D00B004FDB62 /* Event+CoreDataClass.m */; };
 		A28B7A621FD1D00B004FDB62 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A28B7A601FD1D00B004FDB62 /* Event+CoreDataProperties.m */; };
 		A29DBE4B1FD20DF8008EDA1D /* button_border2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A29DBE4A1FD20DF8008EDA1D /* button_border2.jpg */; };
+		A2A3159D1FD9E78F00747570 /* Learning Organisation Readiness.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A2A3159C1FD9E78F00747570 /* Learning Organisation Readiness.jpg */; };
+		A2A315A11FD9EF5500747570 /* notebook-take-notes-sync-3-0-3-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A2A315A01FD9EF5500747570 /* notebook-take-notes-sync-3-0-3-icon.png */; };
 		A2C4A2C71FD1DCC60008DC89 /* EditEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C4A2C61FD1DCC60008DC89 /* EditEventViewController.m */; };
 		A2C4A2CA1FD1DCE80008DC89 /* DeleteEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C4A2C91FD1DCE80008DC89 /* DeleteEventViewController.m */; };
 		A2C4A2CD1FD1DF7F0008DC89 /* eventMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C4A2CC1FD1DF7F0008DC89 /* eventMethods.m */; };
@@ -63,8 +64,6 @@
 		A22B6CC51FC745E9002CC9C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A22B6CC71FC745E9002CC9C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A22B6CC81FC745E9002CC9C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A22B6CCA1FC745E9002CC9C8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A22B6CCB1FC745E9002CC9C8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A22B6CCE1FC745E9002CC9C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A22B6CD11FC745E9002CC9C8 /* el16atFinalProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = el16atFinalProject.xcdatamodel; sourceTree = "<group>"; };
 		A22B6CD31FC745EA002CC9C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,6 +92,8 @@
 		A28B7A5F1FD1D00B004FDB62 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Event+CoreDataProperties.h"; path = "../../Event+CoreDataProperties.h"; sourceTree = "<group>"; };
 		A28B7A601FD1D00B004FDB62 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Event+CoreDataProperties.m"; path = "../../Event+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A29DBE4A1FD20DF8008EDA1D /* button_border2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = button_border2.jpg; sourceTree = "<group>"; };
+		A2A3159C1FD9E78F00747570 /* Learning Organisation Readiness.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Learning Organisation Readiness.jpg"; sourceTree = "<group>"; };
+		A2A315A01FD9EF5500747570 /* notebook-take-notes-sync-3-0-3-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notebook-take-notes-sync-3-0-3-icon.png"; sourceTree = "<group>"; };
 		A2C4A2C51FD1DCC60008DC89 /* EditEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditEventViewController.h; path = el16atFinalProject/EditEventViewController.h; sourceTree = SOURCE_ROOT; };
 		A2C4A2C61FD1DCC60008DC89 /* EditEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditEventViewController.m; path = el16atFinalProject/EditEventViewController.m; sourceTree = SOURCE_ROOT; };
 		A2C4A2C81FD1DCE80008DC89 /* DeleteEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeleteEventViewController.h; path = el16atFinalProject/DeleteEventViewController.h; sourceTree = SOURCE_ROOT; };
@@ -167,6 +168,8 @@
 			children = (
 				A2D7C4971FD6D114005F7B76 /* TaskEntity */,
 				A29DBE4A1FD20DF8008EDA1D /* button_border2.jpg */,
+				A2A3159C1FD9E78F00747570 /* Learning Organisation Readiness.jpg */,
+				A2A315A01FD9EF5500747570 /* notebook-take-notes-sync-3-0-3-icon.png */,
 				A2D7C4991FD6D187005F7B76 /* EventEntity */,
 				A2C4A2CB1FD1DF7F0008DC89 /* eventMethods.h */,
 				A2C4A2CC1FD1DF7F0008DC89 /* eventMethods.m */,
@@ -180,8 +183,6 @@
 				A22B6CFA1FC74CFE002CC9C8 /* AddTaskFormViewController.h */,
 				A22B6CFB1FC74CFE002CC9C8 /* AddTaskFormViewController.m */,
 				A2D7C49D1FD6D47E005F7B76 /* Edit */,
-				A22B6CCA1FC745E9002CC9C8 /* ViewController.h */,
-				A22B6CCB1FC745E9002CC9C8 /* ViewController.m */,
 				A2FD96EB1FD71696007F02CB /* DisplayTaskAndEvent */,
 				A22B6CCD1FC745E9002CC9C8 /* Main.storyboard */,
 				A2D7C49B1FD6D272005F7B76 /* DisplayEvent */,
@@ -411,6 +412,8 @@
 				A29DBE4B1FD20DF8008EDA1D /* button_border2.jpg in Resources */,
 				A22B6CD71FC745EA002CC9C8 /* LaunchScreen.storyboard in Resources */,
 				A22B6CD41FC745EA002CC9C8 /* Assets.xcassets in Resources */,
+				A2A3159D1FD9E78F00747570 /* Learning Organisation Readiness.jpg in Resources */,
+				A2A315A11FD9EF5500747570 /* notebook-take-notes-sync-3-0-3-icon.png in Resources */,
 				A22B6CCF1FC745E9002CC9C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,7 +443,6 @@
 				A2C4A2CA1FD1DCE80008DC89 /* DeleteEventViewController.m in Sources */,
 				A22B6CFC1FC74CFE002CC9C8 /* AddTaskFormViewController.m in Sources */,
 				A28B7A531FD1C8F0004FDB62 /* AddEventViewController.m in Sources */,
-				A22B6CCC1FC745E9002CC9C8 /* ViewController.m in Sources */,
 				A2C4A2C71FD1DCC60008DC89 /* EditEventViewController.m in Sources */,
 				A2FD96EE1FD7172D007F02CB /* TaskEventTableViewController.m in Sources */,
 				A28B7A621FD1D00B004FDB62 /* Event+CoreDataProperties.m in Sources */,

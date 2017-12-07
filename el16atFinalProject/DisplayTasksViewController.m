@@ -29,13 +29,11 @@
     self.DifficutyLabel.text = [NSString stringWithFormat:@"Difficulty: %@", self.diffcString];
 }
 
-
-
 - (IBAction)completedButton:(UIButton *)sender {
     
     
     [taskMethods deleteTask:self.taskString];                                                               //deletes completed event
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Welldone Task completed"
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Well done Task completed"
                                                                    message:@"Completed Task will be removed from the Task File"
                                                             preferredStyle:UIAlertControllerStyleAlert];    //alert congradulating user for completing task wil apear
     
@@ -49,8 +47,6 @@
 
     //save data permenantly
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];         //These lines make the task being deleted permenant
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     NSError *saveError = nil;                                                                       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];
 

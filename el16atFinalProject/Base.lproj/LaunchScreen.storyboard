@@ -17,12 +17,27 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Learning Organisation Readiness.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bne-HB-61j">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="323" id="P5x-PE-Zqc"/>
+                                    <constraint firstAttribute="width" constant="281" id="oG8-gy-tIP"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bne-HB-61j" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ik4-RO-ice"/>
+                            <constraint firstItem="bne-HB-61j" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gcz-QG-QvN"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Learning Organisation Readiness.jpg" width="3600" height="3000"/>
+    </resources>
 </document>

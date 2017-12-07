@@ -54,8 +54,6 @@
     [taskMethods deleteTask:self.SearchTaskNameText.text];                                                              //deletes the task with the name searched
     //save data permenantly
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];                                      //fetches task entity
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     NSError *saveError = nil;                                                                                           //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];                                                  //saves entity permenantly so the task has been permenantly deleted from task entity
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Task Deleted"

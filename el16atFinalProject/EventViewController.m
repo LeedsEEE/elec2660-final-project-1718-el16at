@@ -31,7 +31,7 @@
 
 - (IBAction)eventCompleted:(UIButton *)sender {
     [eventMethods deleteEvent:self.eventNameString];                                                        //deletes the completed event
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Welldone Event completed"
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Well done Event completed"
                                                                    message:@"Completed Event will be removed from the Event File"
                                                             preferredStyle:UIAlertControllerStyleAlert];    //alert congradulating user on completing thier evnt
     
@@ -44,8 +44,6 @@
     [self presentViewController:alert animated:YES completion:nil];                                         //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     NSError *saveError = nil;                                                                               //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];                                      //saves that event has been completed (saves that event has been deleted)
     

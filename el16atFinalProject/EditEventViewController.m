@@ -54,6 +54,20 @@
     
     if ([_completedSwitch isOn]){                                               //if switch is on nothing is saved and event has just been deleted
         NSLog(@"switch is on");
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Well done Event completed"
+                                                                       message:@"Completed Event will be removed from the Event File"
+                                                                preferredStyle:UIAlertControllerStyleAlert];    //alert congradulating user for completing task wil apear
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                  UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"mainMenu"];
+                                                                  [self presentViewController:vc animated:YES completion:nil];}];   //when user clicks ok the get sent back to the main menu
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];                                         //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+        
+
+        
     } else {
     NSDictionary *eventInfo = @{@"eventName": self.EditNameField.text,
                                @"eventDate" : self.EditDatePicker.date};        //makes new event into dictionary
@@ -61,8 +75,6 @@
     
     //save data permenantly
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     NSError *saveError = nil;                                                               //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];                      //saves edited event permenantly in event entity
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Saved"

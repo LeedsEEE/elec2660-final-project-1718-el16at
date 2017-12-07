@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "taskMethods.h"
+#import "eventMethods.h"
 
 @interface TaskEventViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -18,4 +20,5 @@
 @property (strong, nonatomic) NSString *dateString;
 @property (strong, nonatomic) NSString * timeString;
 @property (strong, nonatomic) NSString *diffcString;
+@property NSInteger *taskOrEvent;
 @end

@@ -64,8 +64,6 @@
     
     //save data permenantly
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     NSError *saveError = nil;                                                                                   //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];                                          //saves entity permenantly therefore task has been permenantly deleted
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Event Deleted"

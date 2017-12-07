@@ -26,6 +26,47 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)completedButton:(UIButton *)sender {
+    if (_taskOrEvent == 1) {
+    [taskMethods deleteTask:self.nameString];                                                               //deletes completed event
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Well done Task completed"
+                                                                   message:@"Completed Task will be removed from the Task File"
+                                                            preferredStyle:UIAlertControllerStyleAlert];    //alert congradulating user for completing task wil apear
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                              UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"mainMenu"];
+                                                              [self presentViewController:vc animated:YES completion:nil];}];   //when user clicks ok the get sent back to the main menu
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];                                         //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+    
+    //save data permenantly
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];         //These lines make the task being deleted permenant
+    NSError *saveError = nil;                                                                       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];
+    } else {
+        [eventMethods deleteEvent:self.nameString];                                                        //deletes the completed event
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Well done Event completed"
+                                                                       message:@"Completed Event will be removed from the Event File"
+                                                                preferredStyle:UIAlertControllerStyleAlert];    //alert congradulating user on completing thier evnt
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                  UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"mainMenu"];
+                                                                  [self presentViewController:vc animated:YES completion:nil];}];    //sends user back to main menu after they have clicked ok
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];                                         //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
+        
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        NSError *saveError = nil;                                                                               //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+        [[[appDelegate persistentContainer] viewContext] save:&saveError];                                      //saves that event has been completed (saves that event has been deleted)
+        
+    }
+    
+
+}
 
 /*
 #pragma mark - Navigation

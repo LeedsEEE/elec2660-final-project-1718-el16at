@@ -168,6 +168,7 @@
             dvc.dateString = formattedDate;
             dvc.diffcString = tempTask.difficulty;
             dvc.timeString = [NSString stringWithFormat:@"%hd" ,tempTask.estimatedTime];
+            dvc.taskOrEvent = 1;
 
         } else {                                                                                            //if an event was selected
             Event *tempEvent = [fetchedEvents objectAtIndex:indexPath.row];

@@ -72,6 +72,17 @@
     
     if ([_CompletedSwitch isOn]){                                               //if the switch is on nothing is saved the task has just been deleted
         NSLog(@"switch is on");
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Well done Task completed"
+                                                                       message:@"Completed Task will be removed from the Task File"
+                                                                preferredStyle:UIAlertControllerStyleAlert];    //alert congradulating user for completing task wil apear
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                                  UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"mainMenu"];
+                                                                  [self presentViewController:vc animated:YES completion:nil];}];   //when user clicks ok the get sent back to the main menu
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];                                         //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
     } else {
     NSDictionary *taskInfo = @{@"taskName": self.TaskNameField.text,
                                @"dueDate" : self.EditDueDate.date,
@@ -80,8 +91,6 @@
                                @"completed": [NSNumber numberWithBool:self.CompletedSwitch.on]};    //makes new task into dictionary
     [Task addTaskInfoFromDictionary:taskInfo];          //makes dictionary a task
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];         //defines appDelegate
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];                  //makes fetch request
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     NSError *saveError = nil;                                                                       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
     [[[appDelegate persistentContainer] viewContext] save:&saveError];                              //saved edited task permenantly
         
