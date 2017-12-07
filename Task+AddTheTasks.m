@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 
 @implementation Task (AddTheTasks)
+#pragma mark - Make Task object
 
 + (Task *)addTaskInfoFromDictionary :(NSDictionary *)taskInfo
 {

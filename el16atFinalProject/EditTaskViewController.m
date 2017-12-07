@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_CompletedSwitch setOn:NO animated:YES];
+    [_CompletedSwitch setOn:NO animated:YES]; //sets UIswitch off
     
 }
 
@@ -40,16 +40,15 @@
     
     
     @try{
-        NSArray* taskArray = [taskMethods searchTaskName:self.SearchTaskNameField.text];
-        NSDictionary* task = [taskArray objectAtIndex:0];
-        NSLog(@">>FOUND TASK: %@", task);
-        self.TaskNameField.text = [task objectForKey:@"taskName"];
+        NSArray* taskArray = [taskMethods searchTaskName:self.SearchTaskNameField.text]; //makes an array of the task searched for in SearchTaskNameField
+        NSDictionary* task = [taskArray objectAtIndex:0]; //gets first task from array (only task in array)
+        self.TaskNameField.text = [task objectForKey:@"taskName"];      //displays task in text fields and date picker
         self.EditTimeField.text = [task objectForKey:@"estimatedTime"];
         self.EditDifficultyField.text = [task objectForKey:@"difficulty"];
         self.EditDueDate.date = [task objectForKey:@"dueDate"];
         
     }
-    @catch (NSException *exception) {
+    @catch (NSException *exception) {       //if there is no task with the name searched an alert apears
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error 404"
                                                                        message:@"File not found"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -69,24 +68,22 @@
 
 - (IBAction)SaveEditButton:(UIButton *)sender {
     
-    [taskMethods deleteTask:self.SearchTaskNameField.text]; //deletes old object
+    [taskMethods deleteTask:self.SearchTaskNameField.text]; //deletes unedited task
     
-    if ([_CompletedSwitch isOn]){
+    if ([_CompletedSwitch isOn]){ //if the switch is on nothing is saved the task has just been deleted
         NSLog(@"switch is on");
     } else {
     NSDictionary *taskInfo = @{@"taskName": self.TaskNameField.text,
                                @"dueDate" : self.EditDueDate.date,
                                @"estimatedTime" : self.EditTimeField.text,
                                @"difficulty": self.EditDifficultyField.text,
-                               @"completed": [NSNumber numberWithBool:self.CompletedSwitch.on]};
-    [Task addTaskInfoFromDictionary:taskInfo];
-    
-    //save data permenantly
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
-    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
+                               @"completed": [NSNumber numberWithBool:self.CompletedSwitch.on]};    //makes new task into dictionary
+    [Task addTaskInfoFromDictionary:taskInfo];          //makes dictionary a task
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];     //defines appDelegate
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];          //makes fetch request
+    NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
-    [[[appDelegate persistentContainer] viewContext] save:&saveError];
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];      //saved edited task permenantly
         
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Saved"
                                                                        message:@"Task saved"
@@ -99,7 +96,7 @@
         
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
-        
+    //aleart saying the task has been saved thensends user back to min menu
 
     }
 }

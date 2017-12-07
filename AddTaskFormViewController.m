@@ -7,18 +7,9 @@
 //
 
 #import "AddTaskFormViewController.h"
-#import "Task+AddTheTasks.h"
-#import "Task+AddTheTasks.m"
-#import "AppDelegate.h"
-//#import "taskMethods.h"
+
 
 @interface AddTaskFormViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *NameText;
-@property (weak, nonatomic) IBOutlet UIDatePicker *DatePicker;
-@property (weak, nonatomic) IBOutlet UITextField *TimeHoursText; //NEDD TO SORT TIE SO THAT HOURS AND MINUTES GO TO ONE TIME NOT GOING TO ADDTO DICITIONARY JUST YET WELL ILL ADD A TIME BUT NOT MINUTES
-@property (weak, nonatomic) IBOutlet UITextField *TimeMinutesText;
-@property (weak, nonatomic) IBOutlet UITextField *DifficultyText;
-//@property (weak, nonatomic) IBOutlet UITextView *DisplayOutput;
 
 @end
 
@@ -37,17 +28,8 @@
 }
 
 - (IBAction)SaveButton:(UIButton *)sender {
-    [taskMethods numberOfTasks];
-    _calculatedTaskID =  taskMethods.numberOfTasks + 1;
-    NSNumber *IDOfTask = [NSNumber numberWithInt:_calculatedTaskID]; //Converts int to NSNumber as core data cant save data type inthttps://forums.macrumors.com/threads/converting-an-int-into-an-nsnumber-then-saving-to-an-array.547952/
-    
-    
-        NSArray *taskArray = [taskMethods searchTaskName:self.NameText.text];
-
-        NSLog(@"count = %d", [taskArray count]);
-        
-
-    if ([taskArray count] >= 1) {
+        NSArray *taskArray = [taskMethods searchTaskName:self.NameText.text];   //makes an array of all the tasks with the name of the task the user is trying to add
+    if ([taskArray count] >= 1) {       //if there are any users with that task name already an aleart will apear
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Not Saved"
                                                                        message:@"Task with this name already exsits"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -57,20 +39,18 @@
         
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
-    } else {
+    } else {                //if there are no existing tasks with the task name then the task will be saved
         NSDictionary *taskInfo = @{@"taskName": self.NameText.text,
                                    @"dueDate" : self.DatePicker.date,
                                    @"estimatedTime" : self.TimeHoursText.text,
-                                   @"difficulty": self.DifficultyText.text,
-                                   @"taskID": IDOfTask};
+                                   @"difficulty": self.DifficultyText.text};    //adds the entered text and date to a dictionary
         
-        [Task addTaskInfoFromDictionary:taskInfo];
-        //save data permenantly
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];
+        [Task addTaskInfoFromDictionary:taskInfo];      //makes dictioanry a task
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];     //defines app delegate
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Task"];          //creates fetch request
         NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];//
         NSError *saveError = nil;       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
-        [[[appDelegate persistentContainer] viewContext] save:&saveError];
+        [[[appDelegate persistentContainer] viewContext] save:&saveError];      //saves task permenantly
         
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Saved"
                                                                        message:@"Task saved"
@@ -79,7 +59,7 @@
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction * action) {UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                                                                   UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"mainMenu"];
-                                                                  [self presentViewController:vc animated:YES completion:nil];}];   //https://stackoverflow.com/questions/16134361/how-to-call-a-view-controller-programmatically
+                                                                  [self presentViewController:vc animated:YES completion:nil];}];   //https://stackoverflow.com/questions/16134361/how-to-call-a-view-controller-programmatically        this takes the user back to the main menu when ok is clicked
         
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller

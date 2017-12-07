@@ -10,7 +10,7 @@
 
 @implementation eventMethods
 
-
+#pragma mark - counts all events 
 + (int)numberOfEvents {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
@@ -21,7 +21,7 @@
     NSUInteger eventCount = [context countForFetchRequest:request error:&error]; //Oran Deutsch (student) this line counts the number of tasks in the entity task
     return (int)eventCount;
 }
-
+#pragma mark - Search for specified Event name
 + (NSArray*)searchEventName :(NSDictionary *)eventname {
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
@@ -36,8 +36,8 @@
     }
     return results;
 }
-+ (NSDictionary *)createObjectFromEntity:(Event *)eventInfo
-{
+#pragma mark - Creates object from event entity
++ (NSDictionary *)createObjectFromEntity:(Event *)eventInfo {
     NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];
     tempDict[@"eventName"] = eventInfo.eventName;
     tempDict[@"eventID"] = [NSString stringWithFormat:@"%D", eventInfo.eventID];
@@ -48,8 +48,8 @@
     return tempDict;
 }
 
-+ (void) deleteEvent :(NSDictionary *)eventname
-{
+#pragma mark - Deletes Event
++ (void) deleteEvent :(NSDictionary *)eventname {
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [[appDelegate persistentContainer] viewContext];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];

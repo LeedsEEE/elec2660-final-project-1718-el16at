@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "taskMethods.h"
+#import "Task+AddTheTasks.h"
+#import "AppDelegate.h"
 
 
 @interface AddTaskFormViewController : UIViewController
 @property (nonatomic) int calculatedTaskID;
 
+@property (weak, nonatomic) IBOutlet UITextField *NameText;
+@property (weak, nonatomic) IBOutlet UIDatePicker *DatePicker;
+@property (weak, nonatomic) IBOutlet UITextField *TimeHoursText;
+//@property (weak, nonatomic) IBOutlet UITextField *TimeMinutesText;
+@property (weak, nonatomic) IBOutlet UITextField *DifficultyText;
 @end
 
 

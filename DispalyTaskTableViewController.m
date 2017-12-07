@@ -63,48 +63,28 @@
 
     if (indexPath.section == 0) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         NSManagedObjectContext * context = appDelegate.persistentContainer.viewContext;
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:context];
-        
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:context]; //gets all of the tasks from the task entity
         NSError *error = nil;
         [request setEntity:entity];
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"dueDate"
                                                                        ascending:YES];
         NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-        [request setSortDescriptors:sortDescriptors];       //https://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
-        fetchedTasks = [context executeFetchRequest:request error:&error];
-        
-        
-        
-        for(Task *t in fetchedTasks){ //////////
-            NSLog(@" %@", t.dueDate);
-        }
-        
-        
-      //  [fetchedTasks objectAtIndex:0];
+        [request setSortDescriptors:sortDescriptors];       //Sorts all the tasks by their due date from earliest to latesthttps://stackoverflow.com/questions/11600571/what-is-the-best-way-to-sort-a-core-data-entity
         [request setEntity:entity];
         fetchedTasks = [context executeFetchRequest:request error:&error];//https://stackoverflow.com/questions/11110431/core-data-to-populate-uitableview-cant-get-a-nsstring
-
-
-        Task *tempTask = [fetchedTasks objectAtIndex: indexPath.row];
-        
+        Task *tempTask = [fetchedTasks objectAtIndex: indexPath.row];   //makes temporary entity out of all of the fetched Tasks
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
-        NSString *detail = [format stringFromDate:[tempTask valueForKey:@"dueDate"]];
-        
-        //NSString *detail = [NSString stringWithFormat:@"%@", [tempTask valueForKey:@"dueDate"]];
-        cell.textLabel.text = tempTask.taskName;
-        cell.detailTextLabel.text = detail;
+        NSString *detail = [format stringFromDate:[tempTask valueForKey:@"dueDate"]];       //formats the date to how it needs to be displayed
+        cell.textLabel.text = tempTask.taskName;                                            //displays all the task names in the title cell of the table view
+        cell.detailTextLabel.text = detail;                                                 //displays all the due dates in the detail cell of the table view
 
     }
     
     return cell;
 }
-
-
-
 
 
 
@@ -164,40 +144,20 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
     if ([[segue identifier] isEqualToString:@"ShowTask"]) {
-        
-        DisplayTasksViewController *dvc = [segue destinationViewController];
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        //Task *tempTask = [fetchedTasks objectAtIndex: indexPath.row];
-        
-        
-        
-        
-        //NSArray *selectedTask =[taskMethods searchTaskName:self.fetchedTasks];
-        
-        //Task *selectedTask =[self.fetchedTasks objectAtIndex:indexPath];
-        //DisplayTasksViewController *selectedTaskVC = [segue destinationViewController];
-        //selectedTaskVC = selectedTask;  //https://stackoverflow.com/questions/20080889/passing-a-core-data-object-to-a-new-table-view-controller-but-using-the-object
-        
-        //fetchedTasks.predicate = [NSPredicate predicateWithFormat:@"taskName = %@", self.taskEntity];
+        DisplayTasksViewController *dvc = [segue destinationViewController];        //defines the destination of segue
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];          //finds selected row
         if (indexPath.section == 0) {
-            //Task *temporaryTask = [tempTask.taskName objectAtIndex: indexPath.row];
             Task *tempTask = [fetchedTasks objectAtIndex:indexPath.row];        //just gets the task name from the text label
-            
-            
             NSLog(@"Test task name is: %@",tempTask.taskName);
             NSDateFormatter *format = [[NSDateFormatter alloc] init];
             [format setDateFormat:@"MMMM dd, yyyy HH:mm"];
-            NSString *formattedDate = [format stringFromDate:[tempTask valueForKey:@"dueDate"]];
-            dvc.taskString = tempTask.taskName;
+            NSString *formattedDate = [format stringFromDate:[tempTask valueForKey:@"dueDate"]];        //formats the date how I want it to be displayed
+            dvc.taskString = tempTask.taskName;                                         //sets strings deffined in the TaskEventViewController  to the relevant data from the selected task
             dvc.dateString = formattedDate;
             dvc.diffcString = tempTask.difficulty;
             dvc.timeString = [NSString stringWithFormat:@"%hd" ,tempTask.estimatedTime];
         }
-        
     }
 }
 

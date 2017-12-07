@@ -16,10 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.nameLabel.text = self.nameString;
-    self.dateLabel.text = self.dateString;
-    self.timeLabel.text = self.timeString;
+    self.nameLabel.text = [NSString stringWithFormat:@"Name: %@", self.nameString];     //displays selected task or event from table view in labels
+    self.dateLabel.text = [NSString stringWithFormat:@"Date: %@", self.dateString];
+    self.timeLabel.text = [NSString stringWithFormat:@"Time: %@", self.timeString];
     self.difficultyLabel.text = self.diffcString;
 }
 

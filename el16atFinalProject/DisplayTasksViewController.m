@@ -23,16 +23,11 @@
 - (void) viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
-    self.TaskNameLabel.text = [NSString stringWithFormat:@"Name: %@", self.taskString];
+    self.TaskNameLabel.text = [NSString stringWithFormat:@"Name: %@", self.taskString];     //displays selected task from table view in labels
     self.EstimatedTimeLabel.text = [NSString stringWithFormat:@"Estimated Time: %@", self.timeString];
     self.DueDateLabel.text = [NSString stringWithFormat:@"Due Date: %@", self.dateString];
     self.DifficutyLabel.text = [NSString stringWithFormat:@"Difficulty: %@", self.diffcString];
 }
-
-
-
-/*- (IBAction)CompletedSwitch:(UISwitch *)sender {
-    if ([_CompletedSwitch isOn]) {*/
 
 
 
@@ -45,7 +40,9 @@
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
+                                                          handler:^(UIAlertAction * action) {UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                                              UIViewController *vc = [mainStoryBoard instantiateViewControllerWithIdentifier:@"mainMenu"];
+                                                              [self presentViewController:vc animated:YES completion:nil];}];
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller

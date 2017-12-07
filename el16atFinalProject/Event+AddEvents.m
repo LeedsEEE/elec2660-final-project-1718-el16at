@@ -10,7 +10,7 @@
 
 @implementation Event (AddEvents)
 
-
+#pragma mark - Make Event object
 + (Event *)addEventInfoFromDictionary :(NSDictionary *)eventInfo
 {
     AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
