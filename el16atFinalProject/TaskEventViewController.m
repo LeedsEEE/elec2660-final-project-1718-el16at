@@ -19,8 +19,13 @@
     self.nameLabel.text = [NSString stringWithFormat:@"Name: %@", self.nameString];     //displays selected task or event from table view in labels
     self.dateLabel.text = [NSString stringWithFormat:@"Date: %@", self.dateString];
     self.timeLabel.text = [NSString stringWithFormat:@"Time: %@", self.timeString];
-    self.difficultyLabel.text = self.diffcString;
+    if (_taskOrEvent == 1) {                                                            //if a task is selected it displays its difficulty
+        self.difficultyLabel.text = [NSString stringWithFormat:@"Difficulty: %@",self.diffcString];
+    } else {                                                                            //if event is slected it hides difficulty label
+        self.difficultyLabel.hidden = true;
+    }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

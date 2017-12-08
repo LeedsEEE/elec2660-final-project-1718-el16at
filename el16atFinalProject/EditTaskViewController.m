@@ -90,9 +90,7 @@
                                @"difficulty": self.EditDifficultyField.text,
                                @"completed": [NSNumber numberWithBool:self.CompletedSwitch.on]};    //makes new task into dictionary
     [Task addTaskInfoFromDictionary:taskInfo];          //makes dictionary a task
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];         //defines appDelegate
-    NSError *saveError = nil;                                                                       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
-    [[[appDelegate persistentContainer] viewContext] save:&saveError];                              //saved edited task permenantly
+
         
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Saved"
                                                                        message:@"Task saved"
@@ -108,6 +106,9 @@
     //alert saying the task has been saved then sends user back to main menu
 
     }
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];         //defines appDelegate
+    NSError *saveError = nil;                                                                       //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];                              //saved edited task permenantly
 }
 
 

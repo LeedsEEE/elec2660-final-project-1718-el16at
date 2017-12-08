@@ -20,5 +20,5 @@
 @property (strong, nonatomic) NSString *dateString;
 @property (strong, nonatomic) NSString * timeString;
 @property (strong, nonatomic) NSString *diffcString;
-@property NSInteger *taskOrEvent;
+@property (nonatomic, assign) int *taskOrEvent;
 @end

@@ -17,7 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.eventNameLabel.hidden = true;          //hides labels
+    self.dateLabel.hidden = true;
+    self.timeLabel.hidden = true;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +42,9 @@
         [formatTime setDateFormat:@"HH:mm"];                                                                    //sets the time to the way I want to display
         NSString *formattedTime = [formatTime stringFromDate:[event valueForKey:@"eventDate"]];
         self.timeLabel.text = [NSString stringWithFormat:@"Time: %@", formattedTime];
+        self.eventNameLabel.hidden = false;                                                                     //shows labels
+        self.dateLabel.hidden = false;
+        self.timeLabel.hidden = false;
 
         
     }

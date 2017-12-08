@@ -16,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.taskNameLabel.hidden = true;           //hides labels
+    self.dueDateLabel.hidden = true;
+    self.timeLabel.hidden = true;
+    self.difficultyLabel.hidden = true;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,6 +40,10 @@
         self.dueDateLabel.text = [NSString stringWithFormat:@"Due Date: %@", formattedDate];
         self.timeLabel.text = [NSString stringWithFormat:@"Estimated Time: %@", [task objectForKey:@"estimatedTime"]];
         self.difficultyLabel.text = [NSString stringWithFormat:@"Difficulty: %@", [task objectForKey:@"difficulty"]];
+        self.taskNameLabel.hidden = false;                                                                              //shows labels
+        self.dueDateLabel.hidden = false;
+        self.timeLabel.hidden = false;
+        self.difficultyLabel.hidden = false;
     }
     @catch (NSException *exception) {                                                                                   //if no event is found it runs the code below showing an error mesage
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error 404"

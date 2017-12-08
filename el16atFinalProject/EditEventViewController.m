@@ -73,10 +73,6 @@
                                @"eventDate" : self.EditDatePicker.date};        //makes new event into dictionary
     [Event addEventInfoFromDictionary:eventInfo];
     
-    //save data permenantly
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSError *saveError = nil;                                                               //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
-    [[[appDelegate persistentContainer] viewContext] save:&saveError];                      //saves edited event permenantly in event entity
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Saved"
                                                                        message:@"Event saved"
                                                                 preferredStyle:UIAlertControllerStyleAlert];
@@ -90,7 +86,10 @@
     [self presentViewController:alert animated:YES completion:nil]; //https://stackoverflow.com/questions/42173060/how-to-use-uialertcontroller
     //alert saying the event has been saved then sends the user back to the main menu
     }
-    
+    //save data permenantly
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSError *saveError = nil;                                                               //https://stackoverflow.com/questions/11878107/saving-coredata-permanently
+    [[[appDelegate persistentContainer] viewContext] save:&saveError];                      //saves edited event permenantly in event entity
 }
 
 
